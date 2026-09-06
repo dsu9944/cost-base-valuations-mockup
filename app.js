@@ -36,7 +36,7 @@
       for (var i = 0; i < fileInput.files.length; i++) {
         names.push(fileInput.files[i].name);
       }
-      docs.push({ uploadedFilenames: names, note: "filenames only — no upload in mockup" });
+      docs.push({ uploadedFilenames: names, note: "filenames only — no upload yet" });
     }
     return docs;
   }
@@ -235,8 +235,41 @@
     }
   }
 
+
+  function initMobileNav() {
+    var toggle = document.querySelector(".nav-toggle");
+    var nav = document.getElementById("site-nav");
+    if (!toggle || !nav) return;
+
+    function closeNav() {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    function openNav() {
+      nav.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (nav.classList.contains("is-open")) closeNav();
+      else openNav();
+    });
+
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeNav();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
+    initMobileNav();
     initWizard();
     initIntake();
   });
