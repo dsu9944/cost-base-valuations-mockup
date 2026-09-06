@@ -912,6 +912,33 @@ h3 {
   max-width: 34em;
 }
 
+/* —— Accountant thin strip (above footer) —— */
+.accountant-strip.section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.accountant-strip-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.accountant-strip h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  margin: 0.35rem 0 0.5rem;
+  max-width: 22em;
+}
+.accountant-strip .lead-tight {
+  margin: 0;
+  max-width: 36em;
+  font-size: 0.98rem;
+}
+.accountant-strip .btn-group { margin: 0; }
+@media (max-width: 720px) {
+  .accountant-strip-inner { align-items: flex-start; }
+}
+
 /* —— FAQ —— */
 .faq-list {
   display: flex;
