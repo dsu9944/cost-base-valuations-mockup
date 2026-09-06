@@ -1,5 +1,5 @@
 /**
- * Cost Base Valuations — retail mockup JS (client-side only)
+ * Lock the Date Valuations — mockup JS (client-side only)
  */
 (function () {
   "use strict";
@@ -44,8 +44,8 @@
   function buildPayload(form) {
     var sku = form.sku.value;
     var purposeMap = {
-      cgt_retrospective: "Signed market valuation — CGT cost-base reconstruction (retrospective)",
-      mv_2027_06_30: "Signed market valuation as at 30 June 2027"
+      cgt_retrospective: "Signed market valuation as at nominated tax date (desktop)",
+      mv_2027_06_30: "Signed market valuation as at 30 June 2027 (inspected)"
     };
     var defaultDate = sku === "mv_2027_06_30" ? "2027-06-30" : form.valuationDate.value;
 
@@ -177,13 +177,13 @@
       if (sku === "mv_2027_06_30") {
         dateField.value = "2027-06-30";
         if (!purposeField.value || purposeField.dataset.auto === "1") {
-          purposeField.value = "Signed market valuation as at 30 June 2027";
+          purposeField.value = "Signed market valuation as at 30 June 2027 (inspected)";
           purposeField.dataset.auto = "1";
         }
       } else if (sku === "cgt_retrospective") {
         if (dateField.value === "2027-06-30") dateField.value = "";
         if (!purposeField.value || purposeField.dataset.auto === "1") {
-          purposeField.value = "Signed market valuation — CGT cost-base reconstruction (retrospective)";
+          purposeField.value = "Signed market valuation as at nominated tax date (desktop)";
           purposeField.dataset.auto = "1";
         }
       }

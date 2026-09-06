@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Start my request — Cost Base Valuations (Draft)</title>
-  <meta name="description" content="Check records, choose a report, and request an AVI-signed market valuation. Client-side JSON handoff demo.">
+  <title>Get a fixed-price valuation — Lock the Date (Draft)</title>
+  <meta name="description" content="Request a signed market valuation as at your tax date. Fixed prices. AVI-qualified. NSW &amp; VIC. Client-side JSON handoff demo.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,17 +14,18 @@
     <div class="header-inner">
       <a class="logo" href="index.html">
         <span class="logo-glyph" aria-hidden="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L21 11v9h-6v-5H9v5H3v-9l9-7.5z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="15" r="2.2" fill="#fff"/></svg>
         </span>
         <span class="logo-text">
-          <span class="logo-mark">Cost Base Valuations</span>
-          <span class="logo-sub">For Aussie investors</span>
+          <span class="logo-mark">Lock the Date</span>
+          <span class="logo-sub">Valuations · NSW &amp; VIC</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
+        <a href="index.html#why">Why it matters</a>
+        <a href="index.html#products">Products</a>
         <a href="index.html#how">How it works</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a class="nav-cta" href="start.html" aria-current="page">Start my request</a>
+        <a class="nav-cta" href="start.html" aria-current="page">Get a fixed-price valuation</a>
       </nav>
     </div>
   </header>
@@ -32,20 +33,20 @@
   <main>
     <section class="section page-intro">
       <div class="container wizard-wrap">
-        <p class="eyebrow">Your request</p>
-        <h1>Let’s get this sorted</h1>
-        <p class="lead">Records first (cheaper). Then pick a report and add a few details. On submit we’ll show the handoff JSON — nothing leaves your browser.</p>
+        <p class="eyebrow">Fixed-price path</p>
+        <h1>Lock your tax date</h1>
+        <p class="lead">Tell us the property and the date. We’ll show the handoff JSON on submit — nothing leaves your browser in this mockup.</p>
 
         <div class="wizard-progress" id="wizardProgress" aria-label="Progress">
-          <span class="wizard-pill active" data-step="1"><span class="num">1</span> Records</span>
-          <span class="wizard-pill" data-step="2"><span class="num">2</span> Report</span>
+          <span class="wizard-pill active" data-step="1"><span class="num">1</span> Context</span>
+          <span class="wizard-pill" data-step="2"><span class="num">2</span> Product</span>
           <span class="wizard-pill" data-step="3"><span class="num">3</span> Details</span>
         </div>
 
-        <!-- Step 1: Records -->
+        <!-- Step 1: Context / records -->
         <div class="wizard-panel active" id="step1" data-panel="1">
-          <h2>Tried the cheap path yet?</h2>
-          <p class="muted">Before paying for a valuation, check whether title, stamp duty, or an old contract already closes your cost-base gap.</p>
+          <h2>Any records already in hand?</h2>
+          <p class="muted">Title, duty papers, or an old contract can help the valuer — especially for past tax dates. Not required to continue.</p>
 
           <div class="records-check-grid">
             <div class="records-item">
@@ -58,7 +59,7 @@
             </div>
             <div class="records-item">
               <h3>Old contract</h3>
-              <p>Gold standard when you or your conveyancer still have it.</p>
+              <p>Helpful when you or your conveyancer still have it.</p>
             </div>
           </div>
 
@@ -66,34 +67,34 @@
           <div class="choice-cards" id="recordsChoices">
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="not_started">
-              <strong>Haven’t dug yet</strong>
-              <span>I’ll chase records first — or skip ahead if I’m sure I need a valuation.</span>
+              <strong>Haven’t gathered yet</strong>
+              <span>I’ll chase records — or skip ahead if I already know the tax date I need signed.</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="in_progress">
               <strong>Still chasing</strong>
-              <span>Records are in progress, but I want the valuation path ready.</span>
+              <span>Records are in progress; I want the valuation path ready.</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="recovered">
               <strong>Records recovered</strong>
-              <span>I found enough — or I still want a signed report for a specific date.</span>
+              <span>I found useful docs — and I still want a signed market value as at a tax date.</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="failed" checked>
-              <strong>Records failed / incomplete</strong>
+              <strong>Records incomplete</strong>
               <span>Gaps remain — continue to an AVI-signed market valuation.</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="skipped">
               <strong>Skip to valuation</strong>
-              <span>I already know I need a signed market valuation report.</span>
+              <span>I already know I need a signed market valuation as at a specific date.</span>
             </label>
           </div>
 
           <div id="recordsRecoveredNote" class="callout success" hidden>
-            <strong>Nice — you may be done</strong>
-            <p>If your accountant has enough for cost base, you don’t need us. Still want a signed market valuation for a specific date? Continue below.</p>
+            <strong>Good — bring what you have</strong>
+            <p>Useful records strengthen a desktop opinion. Your accountant still decides how any signed valuation fits your tax work. Continue below to lock the date.</p>
           </div>
 
           <div class="btn-group">
@@ -105,24 +106,24 @@
 
         <!-- Step 2: SKU -->
         <div class="wizard-panel" id="step2" data-panel="2">
-          <h2>Which report do you need?</h2>
-          <p class="muted">Both are residential market valuations prepared and signed by a suitably qualified AVI valuer (George).</p>
+          <h2>Which product?</h2>
+          <p class="muted">Both are residential market valuations prepared and signed by an AVI-qualified valuer. NSW &amp; VIC only.</p>
 
           <div class="choice-cards" id="skuChoices">
             <label class="choice-card">
               <input type="radio" name="skuChoice" value="cgt_retrospective" checked>
-              <strong>CGT cost base — signed desktop retrospective</strong>
-              <span>$229 incl GST · 15+ years / thin comps +$50 (cap $279), then quote · 3 business days · cgt_retrospective</span>
+              <strong>Tax-date desktop — first rented / other past dates</strong>
+              <span>From $229 incl GST · signed · 15+ years / thin comps +$50 (cap $279), then quote · 3 business days · desktop limits apply · cgt_retrospective</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="skuChoice" value="mv_2027_06_30">
-              <strong>30 June 2027 — inspected market valuation</strong>
-              <span>$369 incl GST · Regional/complex from $449 · 5–7 business days · mv_2027_06_30</span>
+              <strong>30 June 2027 — inspected (tax-recommended)</strong>
+              <span>From $369 incl GST · Regional/complex from $449 · 5–7 business days · mv_2027_06_30</span>
             </label>
             <div class="choice-card unavailable" aria-disabled="true">
               <input type="radio" name="skuChoice" value="mv_2027_06_30_desktop" disabled>
-              <strong>30 June 2027 — desktop (restricted)</strong>
-              <span>$269 incl GST · Coming soon / Off until George enables · Would be 3 business days</span>
+              <strong>SKU2 desktop restricted — 30 June 2027</strong>
+              <span>$269 incl GST · Off until George enables · Would be 3 business days</span>
             </div>
           </div>
 
@@ -141,22 +142,22 @@
             <div class="form-section">
               <h3>Report &amp; purpose</h3>
               <div class="field">
-                <label for="sku">Report type</label>
+                <label for="sku">Product</label>
                 <select id="sku" name="sku" required>
-                  <option value="cgt_retrospective">CGT cost base — signed desktop retrospective · $229 · cgt_retrospective</option>
-                  <option value="mv_2027_06_30">30 June 2027 — inspected · $369 · mv_2027_06_30</option>
+                  <option value="cgt_retrospective">Tax-date desktop — first rented / other past dates · from $229 · cgt_retrospective</option>
+                  <option value="mv_2027_06_30">30 June 2027 — inspected · from $369 · mv_2027_06_30</option>
                 </select>
               </div>
               <div class="field-row">
                 <div class="field">
-                  <label for="valuationDate">Valuation date</label>
+                  <label for="valuationDate">Valuation date (tax date)</label>
                   <input type="date" id="valuationDate" name="valuationDate" required>
                   <span class="hint">For 30 June 2027 this defaults to 2027-06-30.</span>
                 </div>
                 <div class="field">
                   <label for="purpose">Purpose</label>
                   <input type="text" id="purpose" name="purpose" required maxlength="200" data-auto="1"
-                    placeholder="e.g. Signed market valuation — CGT cost base">
+                    placeholder="e.g. Signed market valuation as at first rented date">
                 </div>
               </div>
             </div>
@@ -182,6 +183,7 @@
                     <option value="ACT">ACT</option>
                     <option value="NT">NT</option>
                   </select>
+                  <span class="hint">Service scope is NSW &amp; VIC residential.</span>
                 </div>
                 <div class="field">
                   <label for="postcode">Postcode</label>
@@ -259,7 +261,7 @@
               <div class="field">
                 <label for="notes">Notes for the valuer</label>
                 <textarea id="notes" name="notes" maxlength="2000"
-                  placeholder="e.g. Inherited 2014; no contract; renovations ~2018; accountant needs cost base as at acquisition."></textarea>
+                  placeholder="e.g. First rented March 2019; NSW unit; accountant needs market value as at that date."></textarea>
               </div>
             </div>
 
@@ -276,7 +278,7 @@
             <pre id="jsonOutput" class="json-output"></pre>
             <div class="btn-group">
               <a class="btn btn-primary" href="index.html">Back to home</a>
-              <a class="btn btn-outline" href="index.html#pricing">See pricing</a>
+              <a class="btn btn-outline" href="index.html#products">See products</a>
             </div>
           </div>
         </div>
@@ -287,15 +289,15 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <div class="footer-brand">Cost Base Valuations <span class="footer-draft">Draft</span></div>
-        <p>Retail mockup. Request flow is a UI contract demo only.</p>
+        <div class="footer-brand">Lock the Date Valuations <span class="footer-draft">Draft</span></div>
+        <p>Request flow is a UI contract demo only. Not a live service.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <ul class="footer-links">
+          <li><a href="index.html#products">Products</a></li>
           <li><a href="index.html#how">How it works</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="start.html">Start my request</a></li>
+          <li><a href="start.html">Get a fixed-price valuation</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -307,7 +309,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Cost Base Valuations (draft). Not financial, tax, or legal advice. Mockup — not live.
+      © 2026 Lock the Date Valuations (draft). Not financial, tax, or legal advice. Mockup — not live.
     </div>
   </footer>
 
