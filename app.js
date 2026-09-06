@@ -1,5 +1,5 @@
 /**
- * Cost Base Valuations — draft mockup JS (client-side only)
+ * Cost Base Valuations — retail mockup JS (client-side only)
  */
 (function () {
   "use strict";

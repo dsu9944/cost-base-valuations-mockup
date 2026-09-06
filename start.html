@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Get started — Cost Base Valuations (Draft)</title>
-  <meta name="description" content="Records check then instruct an AVI-signed market valuation. Client-side JSON handoff demo for Cost Base Valuations.">
+  <title>Start my request — Cost Base Valuations (Draft)</title>
+  <meta name="description" content="Check records, choose a report, and request an AVI-signed market valuation. Client-side JSON handoff demo.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,51 +18,51 @@
         </span>
         <span class="logo-text">
           <span class="logo-mark">Cost Base Valuations</span>
-          <span class="logo-sub">Draft brand placeholder</span>
+          <span class="logo-sub">For Aussie investors</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="index.html#how">How it works</a>
         <a href="index.html#pricing">Pricing</a>
-        <a class="nav-cta" href="start.html" aria-current="page">Get started</a>
+        <a class="nav-cta" href="start.html" aria-current="page">Start my request</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="section page-intro">
-      <div class="container" style="max-width:760px;">
-        <p class="eyebrow">Get started</p>
-        <h1>One simple path</h1>
-        <p class="lead">Check records first (cheaper). If you still need a signed market valuation, fill in the details — we’ll show the handoff JSON on submit.</p>
+      <div class="container wizard-wrap">
+        <p class="eyebrow">Your request</p>
+        <h1>Let’s get this sorted</h1>
+        <p class="lead">Records first (cheaper). Then pick a report and add a few details. On submit we’ll show the handoff JSON — nothing leaves your browser.</p>
 
         <div class="wizard-progress" id="wizardProgress" aria-label="Progress">
           <span class="wizard-pill active" data-step="1"><span class="num">1</span> Records</span>
-          <span class="wizard-pill" data-step="2"><span class="num">2</span> Choose report</span>
+          <span class="wizard-pill" data-step="2"><span class="num">2</span> Report</span>
           <span class="wizard-pill" data-step="3"><span class="num">3</span> Details</span>
         </div>
 
         <!-- Step 1: Records -->
         <div class="wizard-panel active" id="step1" data-panel="1">
-          <h2>Have you tried the cheap path yet?</h2>
-          <p class="muted">Before instructing a valuation, see if title, stamp duty, or an old contract already closes your cost-base gap.</p>
+          <h2>Tried the cheap path yet?</h2>
+          <p class="muted">Before paying for a valuation, check whether title, stamp duty, or an old contract already closes your cost-base gap.</p>
 
           <div class="records-check-grid">
             <div class="records-item">
-              <h3>Title / ownership</h3>
-              <p>Confirms transfer dates and parties — useful anchors for your timeline.</p>
+              <h3>Title</h3>
+              <p>Transfer dates and parties — useful timeline anchors.</p>
             </div>
             <div class="records-item">
-              <h3>Stamp duty / duty</h3>
-              <p>Assessments often record consideration or dutiable value around a transfer.</p>
+              <h3>Stamp duty</h3>
+              <p>Often records consideration or dutiable value around a transfer.</p>
             </div>
             <div class="records-item">
               <h3>Old contract</h3>
-              <p>Purchase contracts and settlement files are the gold standard when they still exist.</p>
+              <p>Gold standard when you or your conveyancer still have it.</p>
             </div>
           </div>
 
-          <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Where are you at?</p>
+          <p class="choice-prompt">Where are you at?</p>
           <div class="choice-cards" id="recordsChoices">
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="not_started">
@@ -72,7 +72,7 @@
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="in_progress">
               <strong>Still chasing</strong>
-              <span>Records are in progress, but I want to set up the valuation path now.</span>
+              <span>Records are in progress, but I want the valuation path ready.</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="recordsChoice" value="recovered">
@@ -93,36 +93,36 @@
 
           <div id="recordsRecoveredNote" class="callout success" hidden>
             <strong>Nice — you may be done</strong>
-            <p>If your accountant has enough for cost base, you don’t need us. Keep copies organised. Still want a signed market valuation for a specific date? Continue below.</p>
+            <p>If your accountant has enough for cost base, you don’t need us. Still want a signed market valuation for a specific date? Continue below.</p>
           </div>
 
           <div class="btn-group">
-            <button type="button" class="btn btn-primary" id="toStep2">Continue to choose a report</button>
+            <button type="button" class="btn btn-primary" id="toStep2">Continue</button>
             <a class="btn btn-ghost" href="index.html">Back to home</a>
           </div>
-          <p class="muted" style="font-size:0.85rem;margin-top:1rem;">Mockup note: this page doesn’t run live registry searches. In a future build, recovery helpers could sit here.</p>
+          <p class="muted tiny-note">Mockup note: this page doesn’t run live registry searches.</p>
         </div>
 
         <!-- Step 2: SKU -->
         <div class="wizard-panel" id="step2" data-panel="2">
           <h2>Which report do you need?</h2>
-          <p class="muted">Two instructions. Every report is a residential market valuation prepared and signed by a suitably qualified AVI valuer (George).</p>
+          <p class="muted">Both are residential market valuations prepared and signed by a suitably qualified AVI valuer (George).</p>
 
           <div class="choice-cards" id="skuChoices">
             <label class="choice-card">
               <input type="radio" name="skuChoice" value="cgt_retrospective" checked>
-              <strong>Signed desktop retrospective — CGT cost base</strong>
-              <span>$229 incl GST · 15+ years / thin comps +$50 (cap $279), then quote · Desktop turnaround 3 business days · SKU: cgt_retrospective</span>
+              <strong>CGT cost base — signed desktop retrospective</strong>
+              <span>$229 incl GST · 15+ years / thin comps +$50 (cap $279), then quote · 3 business days · cgt_retrospective</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="skuChoice" value="mv_2027_06_30">
-              <strong>Inspected market valuation — 30 June 2027</strong>
-              <span>$369 incl GST · Regional/complex from $449 · Inspected turnaround 5–7 business days · SKU: mv_2027_06_30</span>
+              <strong>30 June 2027 — inspected market valuation</strong>
+              <span>$369 incl GST · Regional/complex from $449 · 5–7 business days · mv_2027_06_30</span>
             </label>
             <div class="choice-card unavailable" aria-disabled="true">
               <input type="radio" name="skuChoice" value="mv_2027_06_30_desktop" disabled>
-              <strong>Desktop market valuation — 30 June 2027</strong>
-              <span>$269 incl GST · Coming soon / Off for now (until George enables) · Desktop turnaround would be 3 business days</span>
+              <strong>30 June 2027 — desktop (restricted)</strong>
+              <span>$269 incl GST · Coming soon / Off until George enables · Would be 3 business days</span>
             </div>
           </div>
 
@@ -134,24 +134,24 @@
 
         <!-- Step 3: Intake form -->
         <div class="wizard-panel" id="step3" data-panel="3">
-          <h2>Property &amp; contact details</h2>
-          <p class="muted">On submit, this mockup shows the JSON handoff for the valuer — nothing is sent over the network.</p>
+          <h2>A few details</h2>
+          <p class="muted">On submit, this mockup shows the JSON handoff — nothing is sent over the network.</p>
 
-          <form id="intakeForm" class="form-panel" novalidate style="max-width:none;">
+          <form id="intakeForm" class="form-panel" novalidate>
             <div class="form-section">
-              <h3>Report type &amp; purpose</h3>
+              <h3>Report &amp; purpose</h3>
               <div class="field">
-                <label for="sku">Report type (SKU)</label>
+                <label for="sku">Report type</label>
                 <select id="sku" name="sku" required>
-                  <option value="cgt_retrospective">cgt_retrospective — Signed desktop retrospective (CGT cost base) · $229 incl GST</option>
-                  <option value="mv_2027_06_30">mv_2027_06_30 — Inspected market valuation as at 30 June 2027 · $369 incl GST</option>
+                  <option value="cgt_retrospective">CGT cost base — signed desktop retrospective · $229 · cgt_retrospective</option>
+                  <option value="mv_2027_06_30">30 June 2027 — inspected · $369 · mv_2027_06_30</option>
                 </select>
               </div>
               <div class="field-row">
                 <div class="field">
                   <label for="valuationDate">Valuation date</label>
                   <input type="date" id="valuationDate" name="valuationDate" required>
-                  <span class="hint">For mv_2027_06_30 this defaults to 2027-06-30.</span>
+                  <span class="hint">For 30 June 2027 this defaults to 2027-06-30.</span>
                 </div>
                 <div class="field">
                   <label for="purpose">Purpose</label>
@@ -162,7 +162,7 @@
             </div>
 
             <div class="form-section">
-              <h3>Property (Australia)</h3>
+              <h3>Property</h3>
               <div class="field">
                 <label for="address">Street address</label>
                 <input type="text" id="address" name="address" required maxlength="200"
@@ -222,7 +222,7 @@
             </div>
 
             <div class="form-section">
-              <h3>Documents you already have</h3>
+              <h3>Docs you already have</h3>
               <div class="field">
                 <span class="sr-only">Document checklist</span>
                 <div class="checkboxes">
@@ -238,7 +238,7 @@
               <div class="field">
                 <label for="docFiles">File upload (placeholder)</label>
                 <div class="file-placeholder">
-                  Mockup only — filenames are listed in the JSON; files are not uploaded or stored.
+                  Mockup only — filenames listed in JSON; files not uploaded.
                   <input type="file" id="docFiles" name="docFiles" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
                 </div>
               </div>
@@ -264,19 +264,19 @@
             </div>
 
             <div class="btn-group">
-              <button type="submit" class="btn btn-primary">Submit job (show handoff JSON)</button>
+              <button type="submit" class="btn btn-primary btn-lg">Submit my request</button>
               <button type="button" class="btn btn-ghost" id="backTo2">Back</button>
               <button type="button" class="btn btn-outline" id="resetForm">Reset</button>
             </div>
           </form>
 
           <div id="confirmBox" class="confirm-box" role="status" aria-live="polite">
-            <h3>Job captured (client-side only)</h3>
-            <p class="mb-0">No network request was made. Below is the handoff JSON a future backend would receive — including <code>jobId</code>, <code>sku</code>, property, client, docs, <code>recordsTried</code>, notes, and <code>createdAt</code>.</p>
+            <h3>Request captured (client-side only)</h3>
+            <p class="mb-0">No network request was made. Here’s the handoff JSON a future backend would receive — <code>jobId</code>, <code>sku</code>, property, client, docs, <code>recordsTried</code>, notes, and <code>createdAt</code>.</p>
             <pre id="jsonOutput" class="json-output"></pre>
             <div class="btn-group">
-              <a class="btn btn-outline" href="index.html#pricing">Back to reports</a>
-              <a class="btn btn-primary" href="index.html#how">How it works</a>
+              <a class="btn btn-primary" href="index.html">Back to home</a>
+              <a class="btn btn-outline" href="index.html#pricing">See pricing</a>
             </div>
           </div>
         </div>
@@ -288,14 +288,14 @@
     <div class="footer-inner">
       <div>
         <div class="footer-brand">Cost Base Valuations <span class="footer-draft">Draft</span></div>
-        <p>Working brand placeholder. Start flow is a UI contract demo only.</p>
+        <p>Retail mockup. Request flow is a UI contract demo only.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <ul class="footer-links">
           <li><a href="index.html#how">How it works</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="start.html">Get started</a></li>
+          <li><a href="start.html">Start my request</a></li>
         </ul>
       </div>
       <div class="footer-col">

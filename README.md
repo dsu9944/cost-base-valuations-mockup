@@ -1,6 +1,8 @@
 # Cost Base Valuations — static site mockup
 
-Draft HTML/CSS/vanilla JS mockup for an Australian residential valuation practice (D2C investors, CGT cost-base / AVI-signed market valuation reports).
+Draft HTML/CSS/vanilla JS mockup for a retail D2C Australian residential valuation product (investors reconstructing CGT cost base / AVI-signed market valuation reports).
+
+**Design direction:** consumer product landing page — clear, bold, scannable — closer to a sharp tax/property consumer brand than a traditional valuer-firm brochure. Short sentences, obvious primary CTA ("Start my request"), social-proof strip, simple pricing, FAQ.
 
 **Not live.** No backend, no payments, no deploy. Intake builds a client-side JSON handoff payload only.
 
@@ -19,15 +21,15 @@ You can also open `index.html` directly via `file://` (all assets are relative �
 
 ## Page structure
 
-Simplified IA (fewer nav items, one primary CTA):
+Retail IA (lean nav, one primary CTA):
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Landing — investor headline, 3-step how it works, two report cards, trust, primary CTA |
-| `start.html` | Combined wizard: records check → choose report → intake → handoff JSON |
+| `index.html` | Retail landing — hero → how it works (3 steps) → pricing → trust → FAQ → CTA |
+| `start.html` | Short wizard: records → choose report → details → confirm + JSON |
 | `privacy.html` | Privacy stub (DRAFT) — footer only |
 | `terms.html` | Terms stub (DRAFT) — footer only |
-| `styles.css` | Shared styles (warmer investor-facing palette + typography) |
+| `styles.css` | Shared retail styles |
 | `app.js` | Nav highlight, wizard steps, intake JSON builder |
 
 **Legacy redirects** (old bookmarks still work):
@@ -39,7 +41,7 @@ Simplified IA (fewer nav items, one primary CTA):
 | `records.html` | `start.html` |
 | `intake.html` | `start.html` (+ query string preserved) |
 
-**Top nav:** How it works · Pricing · **Get started** (primary). Privacy/terms only in the footer.
+**Top nav:** How it works · Pricing · FAQ · **Start my request**. Privacy/terms only in the footer.
 
 ## Product truth (marketing)
 
@@ -52,7 +54,7 @@ Simplified IA (fewer nav items, one primary CTA):
   - SKU1 signed desktop retrospective (CGT cost base): **$229**; 15+ years / thin comps +$50 (cap **$279**), then quote. Turnaround **3 business days**.
   - SKU2 inspected 30 June 2027 market value: **$369**; regional/complex from **$449**. Turnaround **5–7 business days**.
   - SKU2 desktop restricted: **$269** — off / not available until enabled.
-- Do **not** show HTW-style $149 assessment pricing. Valuation-practice tone only.
+- Do **not** show HTW-style $149 assessment pricing. Keep retail/investor tone — not firm-brochure copy.
 
 ## Handoff JSON (intake)
 
@@ -67,5 +69,5 @@ On submit, the form displays a payload shaped like:
 ## Brand / design
 
 - Placeholder brand: **Cost Base Valuations** (DRAFT banner + footer badge)
-- Warmer investor palette: deep navy, terracotta, sand/cream; Fraunces + DM Sans via Google Fonts
-- Subtle house mark in the logo; richer hero with 3-step card
+- Retail palette: deep navy, bright terracotta CTA, sand/cream cards; Fraunces + DM Sans 
+- Mobile-first; bold pricing cards; FAQ accordion; proof strip under hero
