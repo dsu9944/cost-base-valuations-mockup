@@ -1,6 +1,6 @@
 # Cost Base Valuations — static site mockup
 
-Draft multi-page HTML/CSS/vanilla JS mockup for an Australian residential valuation startup (D2C investors, CGT cost-base / signed desktop reports).
+Draft HTML/CSS/vanilla JS mockup for an Australian residential valuation practice (D2C investors, CGT cost-base / AVI-signed market valuation reports).
 
 **Not live.** No backend, no payments, no deploy. Intake builds a client-side JSON handoff payload only.
 
@@ -15,21 +15,39 @@ python3 -m http.server 8080
 
 Then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/) in a browser.
 
-You can also open `index.html` directly via `file://` (all assets are relative).
+You can also open `index.html` directly via `file://` (all assets are relative — works on GitHub Pages from repo root).
 
-## Pages
+## Page structure
+
+Simplified IA (fewer nav items, one primary CTA):
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Landing — investor value prop, trust, funnel CTA |
-| `products.html` | Two SKUs with draft “From $X” pricing |
-| `records.html` | Records-first step (title / stamp duty / old contract) |
-| `intake.html` | Job intake → confirmation + pretty-printed handoff JSON |
-| `how-it-works.html` | Process + licensed valuer signing |
-| `privacy.html` | Privacy stub (DRAFT) |
-| `terms.html` | Terms stub (DRAFT) |
-| `styles.css` | Shared styles |
-| `app.js` | Nav highlight + intake JSON builder |
+| `index.html` | Landing — investor headline, 3-step how it works, two report cards, trust, primary CTA |
+| `start.html` | Combined wizard: records check → choose report → intake → handoff JSON |
+| `privacy.html` | Privacy stub (DRAFT) — footer only |
+| `terms.html` | Terms stub (DRAFT) — footer only |
+| `styles.css` | Shared styles (warmer investor-facing palette + typography) |
+| `app.js` | Nav highlight, wizard steps, intake JSON builder |
+
+**Legacy redirects** (old bookmarks still work):
+
+| Old file | Goes to |
+|----------|---------|
+| `products.html` | `index.html#pricing` |
+| `how-it-works.html` | `index.html#how` |
+| `records.html` | `start.html` |
+| `intake.html` | `start.html` (+ query string preserved) |
+
+**Top nav:** How it works · Pricing · **Get started** (primary). Privacy/terms only in the footer.
+
+## Product truth (marketing)
+
+- Sell **AVI-signed residential market valuation reports** for CGT / cost base / 30 June 2027, prepared by a suitably qualified AVI valuer (George).
+- Reports are framed for **ATO-process expectations** (not “ATO-grade” slogans or bargain “$149 assessment” language).
+- **Do not advertise** AVM / automated valuation / instant estimate / AI valuation as the offer — any model use is back-office only, not the product.
+- Funnel: try recover title / stamp duty / old contract first (cheaper), then signed valuation if records fail.
+- Two SKUs: `cgt_retrospective` · `mv_2027_06_30`.
 
 ## Handoff JSON (intake)
 
@@ -43,5 +61,6 @@ On submit, the form displays a payload shaped like:
 
 ## Brand / design
 
-- Placeholder brand: **Cost Base Valuations** (marked DRAFT in footer + top banner)
-- Palette: deep navy (`#0b1f3a`), warm off-white (`#f7f4ef`), accent copper (`#c47a3a`)
+- Placeholder brand: **Cost Base Valuations** (DRAFT banner + footer badge)
+- Warmer investor palette: deep navy, terracotta, sand/cream; Fraunces + DM Sans via Google Fonts
+- Subtle house mark in the logo; richer hero with 3-step card

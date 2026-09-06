@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get started — Cost Base Valuations (Draft)</title>
+  <meta name="description" content="Records check then instruct an AVI-signed market valuation. Client-side JSON handoff demo for Cost Base Valuations.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="draft-banner" role="status">Draft mockup — nothing is sent to a server · JSON handoff demo only</div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L21 11v9h-6v-5H9v5H3v-9l9-7.5z"/></svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-mark">Cost Base Valuations</span>
+          <span class="logo-sub">Draft brand placeholder</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a class="nav-cta" href="start.html" aria-current="page">Get started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-intro">
+      <div class="container" style="max-width:760px;">
+        <p class="eyebrow">Get started</p>
+        <h1>One simple path</h1>
+        <p class="lead">Check records first (cheaper). If you still need a signed market valuation, fill in the details — we’ll show the handoff JSON on submit.</p>
+
+        <div class="wizard-progress" id="wizardProgress" aria-label="Progress">
+          <span class="wizard-pill active" data-step="1"><span class="num">1</span> Records</span>
+          <span class="wizard-pill" data-step="2"><span class="num">2</span> Choose report</span>
+          <span class="wizard-pill" data-step="3"><span class="num">3</span> Details</span>
+        </div>
+
+        <!-- Step 1: Records -->
+        <div class="wizard-panel active" id="step1" data-panel="1">
+          <h2>Have you tried the cheap path yet?</h2>
+          <p class="muted">Before instructing a valuation, see if title, stamp duty, or an old contract already closes your cost-base gap.</p>
+
+          <div class="records-check-grid">
+            <div class="records-item">
+              <h3>Title / ownership</h3>
+              <p>Confirms transfer dates and parties — useful anchors for your timeline.</p>
+            </div>
+            <div class="records-item">
+              <h3>Stamp duty / duty</h3>
+              <p>Assessments often record consideration or dutiable value around a transfer.</p>
+            </div>
+            <div class="records-item">
+              <h3>Old contract</h3>
+              <p>Purchase contracts and settlement files are the gold standard when they still exist.</p>
+            </div>
+          </div>
+
+          <p style="font-weight:600;color:var(--navy);margin-bottom:0.5rem;">Where are you at?</p>
+          <div class="choice-cards" id="recordsChoices">
+            <label class="choice-card">
+              <input type="radio" name="recordsChoice" value="not_started">
+              <strong>Haven’t dug yet</strong>
+              <span>I’ll chase records first — or skip ahead if I’m sure I need a valuation.</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="recordsChoice" value="in_progress">
+              <strong>Still chasing</strong>
+              <span>Records are in progress, but I want to set up the valuation path now.</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="recordsChoice" value="recovered">
+              <strong>Records recovered</strong>
+              <span>I found enough — or I still want a signed report for a specific date.</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="recordsChoice" value="failed" checked>
+              <strong>Records failed / incomplete</strong>
+              <span>Gaps remain — continue to an AVI-signed market valuation.</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="recordsChoice" value="skipped">
+              <strong>Skip to valuation</strong>
+              <span>I already know I need a signed market valuation report.</span>
+            </label>
+          </div>
+
+          <div id="recordsRecoveredNote" class="callout success" hidden>
+            <strong>Nice — you may be done</strong>
+            <p>If your accountant has enough for cost base, you don’t need us. Keep copies organised. Still want a signed market valuation for a specific date? Continue below.</p>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" id="toStep2">Continue to choose a report</button>
+            <a class="btn btn-ghost" href="index.html">Back to home</a>
+          </div>
+          <p class="muted" style="font-size:0.85rem;margin-top:1rem;">Mockup note: this page doesn’t run live registry searches. In a future build, recovery helpers could sit here.</p>
+        </div>
+
+        <!-- Step 2: SKU -->
+        <div class="wizard-panel" id="step2" data-panel="2">
+          <h2>Which report do you need?</h2>
+          <p class="muted">Two instructions. Every report is a residential market valuation prepared and signed by a suitably qualified AVI valuer (George).</p>
+
+          <div class="choice-cards" id="skuChoices">
+            <label class="choice-card">
+              <input type="radio" name="skuChoice" value="cgt_retrospective" checked>
+              <strong>Signed market valuation — CGT cost base</strong>
+              <span>Retrospective market valuation for cost-base reconstruction. SKU: cgt_retrospective</span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="skuChoice" value="mv_2027_06_30">
+              <strong>Signed market valuation — 30 June 2027</strong>
+              <span>Market value as at that fixed date. SKU: mv_2027_06_30</span>
+            </label>
+          </div>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" id="toStep3">Continue to details</button>
+            <button type="button" class="btn btn-ghost" id="backTo1">Back</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Intake form -->
+        <div class="wizard-panel" id="step3" data-panel="3">
+          <h2>Property &amp; contact details</h2>
+          <p class="muted">On submit, this mockup shows the JSON handoff for the valuer — nothing is sent over the network.</p>
+
+          <form id="intakeForm" class="form-panel" novalidate style="max-width:none;">
+            <div class="form-section">
+              <h3>Report type &amp; purpose</h3>
+              <div class="field">
+                <label for="sku">Report type (SKU)</label>
+                <select id="sku" name="sku" required>
+                  <option value="cgt_retrospective">cgt_retrospective — Signed market valuation (CGT cost base)</option>
+                  <option value="mv_2027_06_30">mv_2027_06_30 — Signed market valuation as at 30 June 2027</option>
+                </select>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="valuationDate">Valuation date</label>
+                  <input type="date" id="valuationDate" name="valuationDate" required>
+                  <span class="hint">For mv_2027_06_30 this defaults to 2027-06-30.</span>
+                </div>
+                <div class="field">
+                  <label for="purpose">Purpose</label>
+                  <input type="text" id="purpose" name="purpose" required maxlength="200" data-auto="1"
+                    placeholder="e.g. Signed market valuation — CGT cost base">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Property (Australia)</h3>
+              <div class="field">
+                <label for="address">Street address</label>
+                <input type="text" id="address" name="address" required maxlength="200"
+                  placeholder="e.g. 12 Example Street, Suburb" autocomplete="street-address">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="state">State / territory</label>
+                  <select id="state" name="state" required>
+                    <option value="">Select…</option>
+                    <option value="NSW">NSW</option>
+                    <option value="VIC">VIC</option>
+                    <option value="QLD">QLD</option>
+                    <option value="SA">SA</option>
+                    <option value="WA">WA</option>
+                    <option value="TAS">TAS</option>
+                    <option value="ACT">ACT</option>
+                    <option value="NT">NT</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="postcode">Postcode</label>
+                  <input type="text" id="postcode" name="postcode" required pattern="[0-9]{4}" maxlength="4"
+                    placeholder="4 digits" inputmode="numeric">
+                </div>
+              </div>
+              <div class="field">
+                <label for="propertyType">Property type</label>
+                <select id="propertyType" name="propertyType" required>
+                  <option value="">Select…</option>
+                  <option value="house">House</option>
+                  <option value="apartment">Apartment / unit</option>
+                  <option value="townhouse">Townhouse</option>
+                  <option value="land">Vacant land (residential)</option>
+                  <option value="other_residential">Other residential</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Your details</h3>
+              <div class="field">
+                <label for="clientName">Full name</label>
+                <input type="text" id="clientName" name="clientName" required maxlength="120" autocomplete="name">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="clientEmail">Email</label>
+                  <input type="email" id="clientEmail" name="clientEmail" required maxlength="160" autocomplete="email">
+                </div>
+                <div class="field">
+                  <label for="clientPhone">Phone</label>
+                  <input type="tel" id="clientPhone" name="clientPhone" required maxlength="40" autocomplete="tel"
+                    placeholder="Australian mobile or landline">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Documents you already have</h3>
+              <div class="field">
+                <span class="sr-only">Document checklist</span>
+                <div class="checkboxes">
+                  <label><input type="checkbox" name="docs" value="title_search"> Title search / title documents</label>
+                  <label><input type="checkbox" name="docs" value="stamp_duty"> Stamp duty / duty assessment</label>
+                  <label><input type="checkbox" name="docs" value="old_contract"> Old contract of sale</label>
+                  <label><input type="checkbox" name="docs" value="settlement_statement"> Settlement statement</label>
+                  <label><input type="checkbox" name="docs" value="improvement_invoices"> Improvement / renovation invoices</label>
+                  <label><input type="checkbox" name="docs" value="prior_valuation"> Prior valuation report</label>
+                  <label><input type="checkbox" name="docs" value="other"> Other supporting docs</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="docFiles">File upload (placeholder)</label>
+                <div class="file-placeholder">
+                  Mockup only — filenames are listed in the JSON; files are not uploaded or stored.
+                  <input type="file" id="docFiles" name="docFiles" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Records status &amp; notes</h3>
+              <div class="field">
+                <label for="recordsTried">Records tried status</label>
+                <select id="recordsTried" name="recordsTried" required>
+                  <option value="not_started">not_started — Haven’t tried recovery yet</option>
+                  <option value="in_progress">in_progress — Still chasing records</option>
+                  <option value="recovered">recovered — Records found (may still want valuation)</option>
+                  <option value="failed">failed — Records incomplete / unavailable</option>
+                  <option value="skipped">skipped — Going straight to valuation</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="notes">Notes for the valuer</label>
+                <textarea id="notes" name="notes" maxlength="2000"
+                  placeholder="e.g. Inherited 2014; no contract; renovations ~2018; accountant needs cost base as at acquisition."></textarea>
+              </div>
+            </div>
+
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary">Submit job (show handoff JSON)</button>
+              <button type="button" class="btn btn-ghost" id="backTo2">Back</button>
+              <button type="button" class="btn btn-outline" id="resetForm">Reset</button>
+            </div>
+          </form>
+
+          <div id="confirmBox" class="confirm-box" role="status" aria-live="polite">
+            <h3>Job captured (client-side only)</h3>
+            <p class="mb-0">No network request was made. Below is the handoff JSON a future backend would receive — including <code>jobId</code>, <code>sku</code>, property, client, docs, <code>recordsTried</code>, notes, and <code>createdAt</code>.</p>
+            <pre id="jsonOutput" class="json-output"></pre>
+            <div class="btn-group">
+              <a class="btn btn-outline" href="index.html#pricing">Back to reports</a>
+              <a class="btn btn-primary" href="index.html#how">How it works</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Cost Base Valuations <span class="footer-draft">Draft</span></div>
+        <p>Working brand placeholder. Start flow is a UI contract demo only.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="start.html">Get started</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal (stubs)</h4>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Cost Base Valuations (draft). Not financial, tax, or legal advice. Mockup — not live.
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

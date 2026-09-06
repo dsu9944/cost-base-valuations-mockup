@@ -4,13 +4,13 @@
 (function () {
   "use strict";
 
-  // Highlight current nav link
   function setActiveNav() {
     var path = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     if (!path || path === "") path = "index.html";
     document.querySelectorAll(".nav a[href]").forEach(function (a) {
       var href = (a.getAttribute("href") || "").toLowerCase();
-      if (href === path) a.setAttribute("aria-current", "page");
+      var hrefFile = href.split("?")[0].split("#")[0];
+      if (hrefFile === path) a.setAttribute("aria-current", "page");
     });
   }
 
@@ -44,8 +44,8 @@
   function buildPayload(form) {
     var sku = form.sku.value;
     var purposeMap = {
-      cgt_retrospective: "CGT cost-base reconstruction (retrospective desktop)",
-      mv_2027_06_30: "Market value as at 30 June 2027"
+      cgt_retrospective: "Signed market valuation — CGT cost-base reconstruction (retrospective)",
+      mv_2027_06_30: "Signed market valuation as at 30 June 2027"
     };
     var defaultDate = sku === "mv_2027_06_30" ? "2027-06-30" : form.valuationDate.value;
 
@@ -72,6 +72,96 @@
     };
   }
 
+  function goToStep(n) {
+    document.querySelectorAll(".wizard-panel").forEach(function (p) {
+      p.classList.toggle("active", Number(p.getAttribute("data-panel")) === n);
+    });
+    document.querySelectorAll(".wizard-pill").forEach(function (pill) {
+      var s = Number(pill.getAttribute("data-step"));
+      pill.classList.remove("active", "done");
+      if (s === n) pill.classList.add("active");
+      else if (s < n) pill.classList.add("done");
+    });
+    var target = document.getElementById("step" + n);
+    if (target) {
+      try {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (e) { /* ignore */ }
+    }
+  }
+
+  function syncRecordsChoice() {
+    var form = document.getElementById("intakeForm");
+    var selected = document.querySelector('input[name="recordsChoice"]:checked');
+    var note = document.getElementById("recordsRecoveredNote");
+    if (!selected) return;
+    if (form && form.recordsTried) form.recordsTried.value = selected.value;
+    if (note) note.hidden = selected.value !== "recovered";
+  }
+
+  function syncSkuChoice() {
+    var form = document.getElementById("intakeForm");
+    var selected = document.querySelector('input[name="skuChoice"]:checked');
+    if (!selected || !form || !form.sku) return;
+    form.sku.value = selected.value;
+    form.sku.dispatchEvent(new Event("change"));
+  }
+
+  function initWizard() {
+    if (!document.getElementById("step1")) return;
+
+    document.querySelectorAll('input[name="recordsChoice"]').forEach(function (r) {
+      r.addEventListener("change", syncRecordsChoice);
+    });
+    document.querySelectorAll('input[name="skuChoice"]').forEach(function (r) {
+      r.addEventListener("change", syncSkuChoice);
+    });
+    syncRecordsChoice();
+
+    var to2 = document.getElementById("toStep2");
+    var to3 = document.getElementById("toStep3");
+    var back1 = document.getElementById("backTo1");
+    var back2 = document.getElementById("backTo2");
+
+    if (to2) {
+      to2.addEventListener("click", function () {
+        syncRecordsChoice();
+        goToStep(2);
+      });
+    }
+    if (to3) {
+      to3.addEventListener("click", function () {
+        syncSkuChoice();
+        goToStep(3);
+      });
+    }
+    if (back1) back1.addEventListener("click", function () { goToStep(1); });
+    if (back2) back2.addEventListener("click", function () { goToStep(2); });
+
+    // Query prefill may jump past records if sku + recordsTried=failed/skipped
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var sku = params.get("sku");
+      var records = params.get("recordsTried");
+      if (sku) {
+        var skuRadio = document.querySelector('input[name="skuChoice"][value="' + sku + '"]');
+        if (skuRadio) skuRadio.checked = true;
+      }
+      if (records) {
+        var recRadio = document.querySelector('input[name="recordsChoice"][value="' + records + '"]');
+        if (recRadio) recRadio.checked = true;
+        syncRecordsChoice();
+      }
+      if (sku && (records === "failed" || records === "skipped")) {
+        syncSkuChoice();
+        goToStep(3);
+      } else if (sku) {
+        syncSkuChoice();
+        goToStep(2);
+      }
+    } catch (e) { /* ignore */ }
+  }
+
   function initIntake() {
     var form = document.getElementById("intakeForm");
     if (!form) return;
@@ -87,16 +177,19 @@
       if (sku === "mv_2027_06_30") {
         dateField.value = "2027-06-30";
         if (!purposeField.value || purposeField.dataset.auto === "1") {
-          purposeField.value = "Market value as at 30 June 2027";
+          purposeField.value = "Signed market valuation as at 30 June 2027";
           purposeField.dataset.auto = "1";
         }
       } else if (sku === "cgt_retrospective") {
         if (dateField.value === "2027-06-30") dateField.value = "";
         if (!purposeField.value || purposeField.dataset.auto === "1") {
-          purposeField.value = "CGT cost-base reconstruction (retrospective desktop)";
+          purposeField.value = "Signed market valuation — CGT cost-base reconstruction (retrospective)";
           purposeField.dataset.auto = "1";
         }
       }
+      // Keep wizard radio in sync if present
+      var radio = document.querySelector('input[name="skuChoice"][value="' + sku + '"]');
+      if (radio) radio.checked = true;
     }
 
     purposeField.addEventListener("input", function () {
@@ -105,7 +198,6 @@
     skuSelect.addEventListener("change", syncSkuDefaults);
     syncSkuDefaults();
 
-    // Prefill from query string (e.g. ?sku=cgt_retrospective&recordsTried=failed)
     try {
       var params = new URLSearchParams(window.location.search);
       if (params.get("sku")) {
@@ -114,6 +206,8 @@
       }
       if (params.get("recordsTried")) {
         form.recordsTried.value = params.get("recordsTried");
+        var recRadio = document.querySelector('input[name="recordsChoice"][value="' + params.get("recordsTried") + '"]');
+        if (recRadio) recRadio.checked = true;
       }
     } catch (e) { /* ignore */ }
 
@@ -134,6 +228,8 @@
         confirmBox.classList.remove("visible");
         jsonOut.textContent = "";
         purposeField.dataset.auto = "1";
+        syncRecordsChoice();
+        syncSkuChoice();
         syncSkuDefaults();
       });
     }
@@ -141,6 +237,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
+    initWizard();
     initIntake();
   });
 })();
