@@ -47,7 +47,12 @@ Simplified IA (fewer nav items, one primary CTA):
 - Reports are framed for **ATO-process expectations** (not “ATO-grade” slogans or bargain “$149 assessment” language).
 - **Do not advertise** AVM / automated valuation / instant estimate / AI valuation as the offer — any model use is back-office only, not the product.
 - Funnel: try recover title / stamp duty / old contract first (cheaper), then signed valuation if records fail.
-- Two SKUs: `cgt_retrospective` · `mv_2027_06_30`.
+- Two active SKUs: `cgt_retrospective` · `mv_2027_06_30`. Desktop restricted SKU2 (`mv_2027_06_30_desktop`) is shown as **off / coming soon** until George enables it.
+- **Working default pricing (incl. GST):**
+  - SKU1 signed desktop retrospective (CGT cost base): **$229**; 15+ years / thin comps +$50 (cap **$279**), then quote. Turnaround **3 business days**.
+  - SKU2 inspected 30 June 2027 market value: **$369**; regional/complex from **$449**. Turnaround **5–7 business days**.
+  - SKU2 desktop restricted: **$269** — off / not available until enabled.
+- Do **not** show HTW-style $149 assessment pricing. Valuation-practice tone only.
 
 ## Handoff JSON (intake)
 

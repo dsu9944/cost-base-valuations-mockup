@@ -111,14 +111,19 @@
           <div class="choice-cards" id="skuChoices">
             <label class="choice-card">
               <input type="radio" name="skuChoice" value="cgt_retrospective" checked>
-              <strong>Signed market valuation — CGT cost base</strong>
-              <span>Retrospective market valuation for cost-base reconstruction. SKU: cgt_retrospective</span>
+              <strong>Signed desktop retrospective — CGT cost base</strong>
+              <span>$229 incl GST · 15+ years / thin comps +$50 (cap $279), then quote · Desktop turnaround 3 business days · SKU: cgt_retrospective</span>
             </label>
             <label class="choice-card">
               <input type="radio" name="skuChoice" value="mv_2027_06_30">
-              <strong>Signed market valuation — 30 June 2027</strong>
-              <span>Market value as at that fixed date. SKU: mv_2027_06_30</span>
+              <strong>Inspected market valuation — 30 June 2027</strong>
+              <span>$369 incl GST · Regional/complex from $449 · Inspected turnaround 5–7 business days · SKU: mv_2027_06_30</span>
             </label>
+            <div class="choice-card unavailable" aria-disabled="true">
+              <input type="radio" name="skuChoice" value="mv_2027_06_30_desktop" disabled>
+              <strong>Desktop market valuation — 30 June 2027</strong>
+              <span>$269 incl GST · Coming soon / Off for now (until George enables) · Desktop turnaround would be 3 business days</span>
+            </div>
           </div>
 
           <div class="btn-group">
@@ -138,8 +143,8 @@
               <div class="field">
                 <label for="sku">Report type (SKU)</label>
                 <select id="sku" name="sku" required>
-                  <option value="cgt_retrospective">cgt_retrospective — Signed market valuation (CGT cost base)</option>
-                  <option value="mv_2027_06_30">mv_2027_06_30 — Signed market valuation as at 30 June 2027</option>
+                  <option value="cgt_retrospective">cgt_retrospective — Signed desktop retrospective (CGT cost base) · $229 incl GST</option>
+                  <option value="mv_2027_06_30">mv_2027_06_30 — Inspected market valuation as at 30 June 2027 · $369 incl GST</option>
                 </select>
               </div>
               <div class="field-row">
