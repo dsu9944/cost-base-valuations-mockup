@@ -4,7 +4,7 @@ Draft HTML/CSS/vanilla JS mockup for **Lock the Date** / Lock the Date Valuation
 
 **Strategy:** mass-market AU rental investors; ICP ~45–65 higher-income one-property NSW/VIC holder with an accountant. Brand the **date**. Enemy: ATO straight-line formula + waiting until 2035. Model stays secret (back-office only — never sell automation).
 
-**Visual:** calm date-stamp / ledger feel; serious typography; white space; tax-adjacent professional — not flashy proptech.
+**Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · Fraunces (H1 only) + IBM Plex Sans · calm AU professional services, not SaaS.
 
 **Not live.** No backend, no payments. Intake builds a client-side JSON handoff payload only. Do **not** git push from casual edits unless the parent agent owns the push.
 
@@ -25,7 +25,7 @@ Then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/). Also works via `file
 | `start.html` | Wizard: context → product → details → confirm + JSON |
 | `privacy.html` | Privacy stub (DRAFT) |
 | `terms.html` | Terms stub (DRAFT) |
-| `styles.css` | Shared ledger / date-stamp styles |
+| `styles.css` | Shared paper / ink / oxblood design system |
 | `app.js` | Nav, wizard, intake JSON builder |
 
 **Legacy redirects:**
@@ -55,6 +55,6 @@ Shape unchanged: `jobId`, `sku` (`cgt_retrospective` \| `mv_2027_06_30`), `purpo
 
 ## Brand / design
 
-- **Lock the Date** / Lock the Date Valuations — DRAFT banner + footer badge
-- Palette: deep navy, restrained terracotta stamp accent, sand/cream; Fraunces + DM Sans
+- **Lock the Date** / Lock the Date Valuations — no draft banners in main UI; tiny footer note only
+- Palette: off-white paper, deep ink, one oxblood accent; Fraunces H1 + IBM Plex Sans body
 - Master line: “Signed market value for the tax date that splits your gain.”

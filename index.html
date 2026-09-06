@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lock the Date — Signed market value for the tax date that matters (Draft)</title>
+  <title>Lock the Date — Signed market value for the tax date that matters</title>
   <meta name="description" content="Signed market valuation as at the tax date that splits your gain — 30 June 2027, or the day your home first became an investment. AVI-qualified. NSW &amp; VIC. Fixed prices from $229.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="draft-banner" role="status">Draft mockup — not a live service · No payments · Client-side only</div>
 
   <header class="site-header">
     <div class="header-inner">
       <a class="logo" href="index.html">
         <span class="logo-glyph" aria-hidden="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12" cy="15" r="2.2" fill="#fff"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="16" height="15" stroke="#1A1A1A" stroke-width="1.5"/>
+            <path d="M4 10h16" stroke="#1A1A1A" stroke-width="1.5"/>
+            <path d="M8 3v4M16 3v4" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="square"/>
+            <circle cx="12" cy="15.5" r="1.75" fill="#6B2E2E"/>
+          </svg>
         </span>
         <span class="logo-text">
           <span class="logo-mark">Lock the Date</span>
@@ -27,24 +31,53 @@
         <a href="#how">How it works</a>
         <a href="#faq">FAQ</a>
         <a href="#accountants">Accountants</a>
-        <a class="nav-cta" href="start.html">Get a fixed-price valuation</a>
+        <a class="nav-cta" href="start.html">Get valuation</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- ABOVE FOLD -->
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="ledger" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M48 0H0V48" fill="none" stroke="#3A3530" stroke-width="0.6"/>
+            </pattern>
+          </defs>
+          <rect width="1200" height="640" fill="#1A1A1A"/>
+          <rect width="1200" height="640" fill="url(#ledger)" opacity="0.45"/>
+          <!-- abstract date stamp -->
+          <g transform="translate(720,140)" opacity="0.35">
+            <rect x="0" y="0" width="320" height="360" fill="none" stroke="#8A7060" stroke-width="1.5"/>
+            <line x1="0" y1="56" x2="320" y2="56" stroke="#8A7060" stroke-width="1"/>
+            <text x="160" y="38" text-anchor="middle" fill="#C4A090" font-family="Georgia, serif" font-size="18" letter-spacing="4">AS AT</text>
+            <text x="160" y="160" text-anchor="middle" fill="#E8D5C4" font-family="Georgia, serif" font-size="42" font-weight="600">30 JUN</text>
+            <text x="160" y="220" text-anchor="middle" fill="#E8D5C4" font-family="Georgia, serif" font-size="56" font-weight="600">2027</text>
+            <line x1="40" y1="260" x2="280" y2="260" stroke="#8A7060" stroke-width="1"/>
+            <text x="160" y="300" text-anchor="middle" fill="#8A7060" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="3">MARKET VALUE</text>
+            <circle cx="160" cy="340" r="8" fill="none" stroke="#6B2E2E" stroke-width="1.5"/>
+          </g>
+          <!-- quiet ledger lines left -->
+          <g opacity="0.2" stroke="#8A7060" stroke-width="0.8">
+            <line x1="80" y1="200" x2="420" y2="200"/>
+            <line x1="80" y1="240" x2="380" y2="240"/>
+            <line x1="80" y1="280" x2="400" y2="280"/>
+            <line x1="80" y1="320" x2="360" y2="320"/>
+            <line x1="80" y1="360" x2="390" y2="360"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-stack">
-        <p class="eyebrow">Working brand · draft</p>
         <h1>Lock the date.</h1>
-        <p class="hero-caption">Property doesn’t grow in a straight line.</p>
-        <p class="lead hero-lead">Signed market valuation as at the tax date that matters — 30&nbsp;June&nbsp;2027, or the day your home first became an investment.</p>
+        <p class="hero-sub">Signed market value for the tax date that splits your gain.</p>
+        <p class="hero-lead">30&nbsp;June&nbsp;2027, or the day your home first became an investment. AVI-qualified. NSW &amp; VIC.</p>
         <div class="btn-group">
           <a class="btn btn-primary btn-lg" href="start.html">Get a fixed-price valuation</a>
-          <a class="btn btn-secondary" href="#accountants">Talk to your accountant</a>
         </div>
-        <ul class="trust-strip-inline" aria-label="Trust">
+        <ul class="trust-plain" aria-label="Trust">
           <li>AVI-qualified signing valuer</li>
           <li>NSW &amp; VIC</li>
           <li>Fixed prices from $229</li>
@@ -53,10 +86,10 @@
       </div>
     </section>
 
-    <!-- MASTER LINE / BRAND STRIP -->
+    <!-- MASTER LINE -->
     <section class="proof-strip" aria-label="Brand line">
       <div class="container">
-        <p class="master-line">Signed market value for the tax date that splits your gain.</p>
+        <p class="master-line">Property doesn’t grow in a straight line.</p>
       </div>
     </section>
 
@@ -69,58 +102,42 @@
           <p class="lead">When part of your gain is taxed as if the property grew smoothly to a split date — especially the 30&nbsp;June&nbsp;2027 spike — a contemporaneous signed market value can differ from waiting until 2035 and reconstructing with a formula.</p>
         </div>
 
-        <div class="why-grid">
-          <div class="why-copy">
-            <h3>Formula vs signed market value</h3>
-            <p>The default path leans on a straight-line assumption between known points. Real neighbourhoods move in fits: booms, flat years, local shocks. An AVI-signed market value <em>as at</em> the tax date locks the date that splits your gain — while evidence is still current.</p>
-            <h3>Contemporaneous 2027 &gt; reconstruct in 2035</h3>
-            <p>Ordering closer to the date means comps, condition, and context are still available. Waiting a decade invites thinner evidence and more argument about what the market “must have been.”</p>
-          </div>
-          <figure class="chart-card">
-            <figcaption>Illustrative only — not tax advice</figcaption>
-            <svg class="growth-chart" viewBox="0 0 420 260" role="img" aria-label="Straight-line formula path versus an uneven real market path between purchase and a 2027 split date">
-              <defs>
-                <pattern id="ledger" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M20 0H0V20" fill="none" stroke="#e8ddd2" stroke-width="0.6"/>
-                </pattern>
-              </defs>
-              <rect x="48" y="24" width="348" height="180" fill="url(#ledger)" stroke="#e8ddd2"/>
-              <!-- axes -->
-              <line x1="48" y1="204" x2="396" y2="204" stroke="#1a3354" stroke-width="1.5"/>
-              <line x1="48" y1="24" x2="48" y2="204" stroke="#1a3354" stroke-width="1.5"/>
-              <!-- labels -->
-              <text x="48" y="228" font-size="11" fill="#5a6573" font-family="DM Sans, sans-serif">Purchase</text>
-              <text x="210" y="228" font-size="11" fill="#5a6573" font-family="DM Sans, sans-serif" text-anchor="middle">Tax date</text>
-              <text x="396" y="228" font-size="11" fill="#5a6573" font-family="DM Sans, sans-serif" text-anchor="end">Later sale</text>
-              <text x="210" y="248" font-size="10" fill="#9a3412" font-family="DM Sans, sans-serif" text-anchor="middle" font-weight="700">e.g. 30 June 2027</text>
-              <!-- date stamp marker -->
-              <line x1="210" y1="30" x2="210" y2="204" stroke="#c44a22" stroke-width="1.2" stroke-dasharray="3 3"/>
-              <!-- straight line (formula) -->
-              <polyline points="48,170 396,48" fill="none" stroke="#2d5280" stroke-width="2.5" stroke-dasharray="6 4"/>
-              <!-- real market path -->
-              <polyline points="48,170 90,155 130,95 170,110 210,72 260,88 310,55 360,62 396,48" fill="none" stroke="#c44a22" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- points -->
-              <circle cx="48" cy="170" r="4.5" fill="#0f1f35"/>
-              <circle cx="210" cy="72" r="5.5" fill="#c44a22" stroke="#fff" stroke-width="2"/>
-              <circle cx="396" cy="48" r="4.5" fill="#0f1f35"/>
-              <!-- legend -->
-              <line x1="56" y1="40" x2="78" y2="40" stroke="#2d5280" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <text x="84" y="43" font-size="10" fill="#5a6573" font-family="DM Sans, sans-serif">Straight-line formula</text>
-              <line x1="210" y1="40" x2="232" y2="40" stroke="#c44a22" stroke-width="2.8"/>
-              <text x="238" y="43" font-size="10" fill="#5a6573" font-family="DM Sans, sans-serif">Uneven real market</text>
-            </svg>
-          </figure>
+        <div class="why-editorial">
+          <h3>Formula vs signed market value</h3>
+          <p>The default path leans on a straight-line assumption between known points. Real neighbourhoods move in fits: booms, flat years, local shocks. An AVI-signed market value <em>as at</em> the tax date locks the date that splits your gain — while evidence is still current.</p>
+          <h3>Contemporaneous 2027 &gt; reconstruct in 2035</h3>
+          <p>Ordering closer to the date means comps, condition, and context are still available. Waiting a decade invites thinner evidence and more argument about what the market “must have been.”</p>
         </div>
 
-        <div class="example-card">
-          <div class="example-stamp">Example</div>
+        <div class="example-block">
+          <p class="example-label">Example only · not tax advice</p>
           <h3>Simple numbers (illustrative)</h3>
-          <p>Suppose a home was worth $600k at purchase and $1.2m at a later sale. A straight-line formula to a mid-period tax date might imply ~$900k at that date. If the local market had already jumped earlier, a signed market value as at the tax date might sit closer to $1.05m — changing how much of the gain sits on each side of the split.</p>
+          <p>Suppose a home was worth $600k at purchase and $1.2m at a later sale. How the mid-period tax date is valued changes how much of the gain sits on each side of the split.</p>
+
+          <div class="compare-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">Approach</th>
+                  <th scope="col">Value at tax date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Straight-line formula</td>
+                  <td>~$900,000</td>
+                </tr>
+                <tr class="row-accent">
+                  <td>Signed market value<br><span style="font-weight:400;color:var(--muted);font-size:0.88em;">(if market jumped earlier)</span></td>
+                  <td>~$1,050,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <p class="example-disclaimer"><strong>Not tax advice.</strong> Your accountant applies any signed valuation within your own facts, elections, and ATO-process work. Figures here are made-up to show the idea.</p>
         </div>
       </div>
     </section>
-
 
     <!-- IS THIS YOU? -->
     <section class="section section-alt" id="is-this-you">
@@ -131,47 +148,67 @@
           <p class="lead">People in your situation — the confusion first, then what usually helps.</p>
         </div>
 
-        <div class="story-grid">
-          <article class="story-card">
-            <p class="story-who"><strong>Priya, 54</strong> — One investment unit, not selling yet</p>
-            <p class="story-confusion">“Why pay for a valuation if I’m not selling?”</p>
-            <p class="story-beat">30&nbsp;June&nbsp;2027 is the split date for later tax. The free straight-line formula and a signed market value can land in different places. Do 2027 in 2027 — while evidence is still current. <span class="story-note">Illustrative only — not tax advice.</span></p>
-            <a class="story-cta" href="start.html?sku=mv_2027_06_30">Lock 30 June 2027 →</a>
+        <div class="story-list">
+          <article class="story-row">
+            <span class="story-num" aria-hidden="true">01</span>
+            <div class="story-body">
+              <p class="story-who">Priya, 54</p>
+              <p class="story-life">One investment unit, not selling yet</p>
+              <p class="story-quote">“Why pay for a valuation if I’m not selling?”</p>
+              <p class="story-beat">30&nbsp;June&nbsp;2027 is the split date for later tax. The free straight-line formula and a signed market value can land in different places. Do 2027 in 2027 — while evidence is still current. <span class="story-note">Illustrative only — not tax advice.</span></p>
+              <a class="story-cta" href="start.html?sku=mv_2027_06_30">Lock 30 June 2027</a>
+            </div>
           </article>
 
-          <article class="story-card">
-            <p class="story-who"><strong>Mark, 48</strong> — Moved out and rented the old home</p>
-            <p class="story-confusion">“It was our home — what date even matters?”</p>
-            <p class="story-beat">Often it’s the first-rented / first income-producing date. A signed retrospective market value as at that day gives your accountant a clear number to work with.</p>
-            <a class="story-cta" href="start.html?sku=cgt_retrospective">Lock the first-rented date →</a>
+          <article class="story-row">
+            <span class="story-num" aria-hidden="true">02</span>
+            <div class="story-body">
+              <p class="story-who">Mark, 48</p>
+              <p class="story-life">Moved out and rented the old home</p>
+              <p class="story-quote">“It was our home — what date even matters?”</p>
+              <p class="story-beat">Often it’s the first-rented / first income-producing date. A signed retrospective market value as at that day gives your accountant a clear number to work with.</p>
+              <a class="story-cta" href="start.html?sku=cgt_retrospective">Lock the first-rented date</a>
+            </div>
           </article>
 
-          <article class="story-card">
-            <p class="story-who"><strong>Helen, 61</strong> — Can’t find the old contract</p>
-            <p class="story-confusion">“I feel stupid about the paperwork.”</p>
-            <p class="story-beat">You’re not alone — this is common. Try records first. If gaps remain, a signed retrospective can still help. No shame either way.</p>
-            <a class="story-cta" href="start.html">Start with records →</a>
+          <article class="story-row">
+            <span class="story-num" aria-hidden="true">03</span>
+            <div class="story-body">
+              <p class="story-who">Helen, 61</p>
+              <p class="story-life">Can’t find the old contract</p>
+              <p class="story-quote">“I feel stupid about the paperwork.”</p>
+              <p class="story-beat">You’re not alone — this is common. Try records first. If gaps remain, a signed retrospective can still help. No shame either way.</p>
+              <a class="story-cta" href="start.html">Start with records</a>
+            </div>
           </article>
 
-          <article class="story-card">
-            <p class="story-who"><strong>David, 57</strong> — “The formula is free”</p>
-            <p class="story-confusion">“Why pay if ATO has a free formula?”</p>
-            <p class="story-beat">Property doesn’t grow in a straight line. A free formula can mis-split the gain. A signed 2027 market value is the comparison — not an online estimate.</p>
-            <a class="story-cta" href="#why">Compare formula vs valuation →</a>
+          <article class="story-row">
+            <span class="story-num" aria-hidden="true">04</span>
+            <div class="story-body">
+              <p class="story-who">David, 57</p>
+              <p class="story-life">“The formula is free”</p>
+              <p class="story-quote">“Why pay if ATO has a free formula?”</p>
+              <p class="story-beat">Property doesn’t grow in a straight line. A free formula can mis-split the gain. A signed 2027 market value is the comparison — not an online estimate.</p>
+              <a class="story-cta" href="#why">Compare formula vs valuation</a>
+            </div>
           </article>
 
-          <article class="story-card">
-            <p class="story-who"><strong>Janine</strong> — Mum’s estate</p>
-            <p class="story-confusion">“I need a number without jargon.”</p>
-            <p class="story-beat">A date-of-death signed market value, as a calm PDF for the adviser. Plain English. We stay in the valuation lane — your adviser handles the rest.</p>
-            <a class="story-cta" href="start.html?sku=cgt_retrospective">Lock date of death →</a>
+          <article class="story-row">
+            <span class="story-num" aria-hidden="true">05</span>
+            <div class="story-body">
+              <p class="story-who">Janine</p>
+              <p class="story-life">Mum’s estate</p>
+              <p class="story-quote">“I need a number without jargon.”</p>
+              <p class="story-beat">A date-of-death signed market value, as a calm PDF for the adviser. Plain English. We stay in the valuation lane — your adviser handles the rest.</p>
+              <a class="story-cta" href="start.html?sku=cgt_retrospective">Lock date of death</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- PRODUCTS -->
-    <section class="section section-sand" id="products">
+    <section class="section" id="products">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Products</p>
@@ -184,7 +221,7 @@
             <span class="sku-badge">Tax-recommended</span>
             <h3>30 June 2027<br><span class="sku-sub">Inspected market valuation</span></h3>
             <p class="sku-price">from $369 <span>incl GST</span></p>
-            <p class="sku-meta">Regional / complex from <strong>$449</strong>.<br>Turnaround: <strong>5–7 business days</strong>.</p>
+            <p class="sku-meta">Regional / complex from <strong>$449</strong>. Turnaround: <strong>5–7 business days</strong>.</p>
             <ul>
               <li>Inspected market value as at 30 June 2027</li>
               <li>AVI-qualified valuer prepares and signs</li>
@@ -198,7 +235,7 @@
             <span class="sku-badge badge-alt">Tax-date desktop</span>
             <h3>Tax-date desktop<br><span class="sku-sub">First rented / other past dates</span></h3>
             <p class="sku-price">from $229 <span>incl GST · signed</span></p>
-            <p class="sku-meta">15+ years / thin comps: +$50 (cap $279), then quote.<br>Turnaround: <strong>3 business days</strong>.</p>
+            <p class="sku-meta">15+ years / thin comps: +$50 (cap $279), then quote. Turnaround: <strong>3 business days</strong>.</p>
             <ul>
               <li>Desktop market valuation as at a past tax date you nominate</li>
               <li>AVI-qualified valuer prepares and signs</li>
@@ -209,21 +246,16 @@
           </article>
         </div>
 
-        <article class="sku-card unavailable coming-soon-row" id="sku2-desktop" aria-disabled="true">
-          <div class="coming-soon-copy">
-            <span class="sku-badge">Off until enabled</span>
-            <h3>SKU2 desktop restricted <span class="sku-price-inline">$269 incl GST</span></h3>
-            <p class="muted mb-0">Restricted desktop option for 30 June 2027 — off until George enables it. Would be 3 business days once live.</p>
-          </div>
-          <span class="btn btn-disabled" aria-disabled="true">Off for now</span>
-        </article>
+        <p class="sku-quiet" id="sku2-desktop">
+          <strong>SKU2 desktop restricted — $269 incl GST</strong> · Off until enabled. Would be 3 business days once live. Restricted desktop option for 30 June 2027.
+        </p>
 
         <p class="pricing-note">Desktop turnaround: <strong>3 business days</strong>. Inspected: <strong>5–7 business days</strong>. Not tax, legal, or financial advice.</p>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section" id="how">
+    <section class="section section-alt" id="how">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">How it works</p>
@@ -255,7 +287,7 @@
     </section>
 
     <!-- FOR / NOT FOR -->
-    <section class="section section-alt" id="scope">
+    <section class="section" id="scope">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Scope</p>
@@ -286,7 +318,7 @@
     </section>
 
     <!-- ACCOUNTANT -->
-    <section class="section" id="accountants">
+    <section class="section section-alt" id="accountants">
       <div class="container accountant-panel">
         <div class="section-head">
           <p class="eyebrow">For accountants</p>
@@ -314,9 +346,8 @@
       </div>
     </section>
 
-
     <!-- FAQ -->
-    <section class="section section-sand" id="faq">
+    <section class="section" id="faq">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">FAQ</p>
@@ -352,7 +383,6 @@
           <p>Fixed-price path for NSW &amp; VIC residential investors. AVI-signed. Built for the tax date — not an online estimate.</p>
           <div class="btn-group">
             <a class="btn btn-primary btn-lg" href="start.html">Get a fixed-price valuation</a>
-            <a class="btn btn-secondary" href="#accountants">Talk to your accountant</a>
           </div>
         </div>
       </div>
@@ -362,8 +392,9 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <div class="footer-brand">Lock the Date Valuations <span class="footer-draft">Draft</span></div>
-        <p>Signed market value for the tax date that splits your gain. NSW &amp; VIC residential. Mockup — not a live service.</p>
+        <div class="footer-brand">Lock the Date Valuations</div>
+        <p>Signed market value for the tax date that splits your gain. AVI-qualified. NSW &amp; VIC residential.</p>
+        <p class="footer-meta">ABN XX XXX XXX XXX (placeholder) · AVI-qualified signing valuer · NSW &amp; VIC</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -374,11 +405,11 @@
           <li><a href="#is-this-you">Is this you?</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#accountants">Accountants</a></li>
-          <li><a href="start.html">Get a fixed-price valuation</a></li>
+          <li><a href="start.html">Get valuation</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Legal (stubs)</h4>
+        <h4>Legal</h4>
         <ul class="footer-links">
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="terms.html">Terms</a></li>
@@ -386,12 +417,11 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Lock the Date Valuations (draft). Not financial, tax, or legal advice. Mockup — not live.
+      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice. Valuation opinions only — your accountant applies them to your facts.
+      <span class="footer-draft">Site mockup — not a live service.</span>
     </div>
   </footer>
 
   <script src="app.js"></script>
 </body>
 </html>
-
-<!-- pages rebuild 20260906T090432Z -->
