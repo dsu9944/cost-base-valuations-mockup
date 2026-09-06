@@ -643,43 +643,40 @@ h3 {
   text-decoration: none;
 }
 
-/* Alternate rhythm on wider screens */
-@media (min-width: 720px) {
-  .story-row:nth-child(even) {
-    grid-template-columns: 1fr 4.5rem;
-  }
-  .story-row:nth-child(even) .story-num {
-    order: 2;
-    text-align: right;
-  }
-  .story-row:nth-child(even) .story-body {
-    order: 1;
-    padding-left: 3rem;
-  }
-  .story-row:nth-child(even) .story-quote {
-    margin-left: auto;
-  }
-  .story-row:nth-child(even) .story-who,
-  .story-row:nth-child(even) .story-life,
-  .story-row:nth-child(even) .story-beat {
-    text-align: right;
-    margin-left: auto;
-  }
-  .story-row:nth-child(even) .story-cta {
-    float: right;
-  }
-  .story-row:nth-child(even)::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+/* Safari-safe: consistent left editorial stack (no order/float zig-zag) */
+.story-row {
+  -webkit-box-align: start;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+.story-body {
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}
+.story-quote,
+.story-who,
+.story-life,
+.story-beat {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  float: none;
+}
+.story-cta {
+  float: none;
+  clear: both;
+  display: inline-block;
 }
 
 @media (max-width: 719px) {
   .story-row {
-    grid-template-columns: 3rem 1fr;
-    gap: 1rem;
-    padding: 2rem 0;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 1.75rem 0;
+  }
+  .story-quote {
+    font-size: clamp(1.15rem, 4.5vw, 1.4rem);
   }
 }
 
