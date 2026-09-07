@@ -324,7 +324,7 @@ h3 {
 .hero-stack {
   position: relative;
   z-index: 1;
-  max-width: 34rem;
+  max-width: 40rem;
 }
 
 .hero h1 {
@@ -366,6 +366,56 @@ h3 {
 .trust-plain li:not(:last-child)::after {
   content: "  ·  ";
   color: rgba(247, 245, 240, 0.35);
+}
+.trust-phone-item::after { content: "  ·  "; color: rgba(247, 245, 240, 0.35); }
+.trust-phone {
+  color: var(--paper) !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 245, 240, 0.35);
+}
+.trust-phone:hover {
+  color: #fff !important;
+  border-bottom-color: #fff;
+  text-decoration: none;
+}
+
+/* Phone CTA prominence */
+.btn-phone {
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.hero .btn-phone,
+.cta-band .btn-phone {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: #fff;
+  font-size: 1.05rem;
+  padding: 1rem 1.85rem;
+}
+.hero .btn-phone:hover,
+.cta-band .btn-phone:hover {
+  background: #8a3a3a;
+  border-color: #8a3a3a;
+  color: #fff;
+}
+.hero .btn-quiet {
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.92;
+}
+.nav-cta-phone {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+.sku-ctas {
+  margin-top: 1.25rem;
+}
+.sku-card .sku-ctas {
+  margin-top: auto;
+  padding-top: 1.25rem;
 }
 
 /* Brand strip */
@@ -484,7 +534,7 @@ h3 {
 
 /* Comparison table (replaces chart doodle) */
 .example-block {
-  max-width: 40rem;
+  max-width: 48rem;
   margin-top: 0.5rem;
 }
 .example-label {
@@ -548,6 +598,60 @@ h3 {
 }
 .compare-table .row-accent td:last-child { color: var(--oxblood); }
 
+.example-label-loud {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 0.75rem;
+  background: var(--oxblood-wash);
+  border-left: 3px solid var(--oxblood);
+  display: inline-block;
+  max-width: 100%;
+  line-height: 1.4;
+}
+.example-setup {
+  font-size: 1.02rem !important;
+  color: var(--ink) !important;
+}
+.example-setup strong { font-weight: 700; }
+
+.compare-table-gain th,
+.compare-table-gain td {
+  font-size: 0.9rem;
+}
+.compare-table-gain td:nth-child(n+2),
+.compare-table-gain th:nth-child(n+2) {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.compare-table-gain td:first-child { width: 28%; }
+.compare-table .td-note {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.88em;
+}
+.compare-table-gain .row-accent td {
+  font-weight: 600;
+}
+.compare-table-gain .row-accent td:nth-child(n+2) {
+  color: var(--oxblood);
+}
+
+.example-saving {
+  margin: 1.15rem 0 0.75rem;
+  padding: 1rem 1.15rem;
+  background: var(--oxblood-wash);
+  border: 1px solid rgba(107, 46, 46, 0.2);
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 500;
+}
+.example-saving strong {
+  font-weight: 700;
+  color: var(--oxblood);
+  font-size: 1.15em;
+}
+
 .example-disclaimer {
   font-size: 0.84rem;
   color: var(--muted);
@@ -558,30 +662,48 @@ h3 {
 }
 .example-disclaimer strong { color: var(--ink); font-weight: 600; }
 
+@media (max-width: 720px) {
+  .compare-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare-table-gain { min-width: 36rem; }
+}
+
 /* —— Is this you? — editorial stories —— */
 .story-list {
   display: flex;
   flex-direction: column;
   gap: 0;
-  max-width: 44rem;
+  max-width: 48rem;
 }
 .story-row {
   display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 80px 3.25rem minmax(0, 1fr);
+  gap: 1.25rem 1.35rem;
   padding: 2.75rem 0;
   border-top: 1px solid var(--line);
   align-items: start;
+  /* Safari-safe: no float, no order zig-zag */
+  float: none;
 }
 .story-row:last-child { border-bottom: 1px solid var(--line); }
 
+.story-face {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  flex-shrink: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
 .story-num {
   font-family: var(--font);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--oxblood);
-  padding-top: 0.2rem;
+  padding-top: 0.35rem;
 }
 
 .story-body { min-width: 0; }
@@ -671,9 +793,13 @@ h3 {
 
 @media (max-width: 719px) {
   .story-row {
-    grid-template-columns: 2.75rem minmax(0, 1fr);
-    gap: 0.85rem;
+    grid-template-columns: 72px 2.5rem minmax(0, 1fr);
+    gap: 0.75rem 0.85rem;
     padding: 1.75rem 0;
+  }
+  .story-face {
+    width: 72px;
+    height: 72px;
   }
   .story-quote {
     font-size: clamp(1.15rem, 4.5vw, 1.4rem);
@@ -1372,14 +1498,15 @@ h3 {
   color: rgba(247, 245, 240, 0.4);
   line-height: 1.55;
 }
-.footer-draft {
-  /* tiny footer-only note — not a banner */
-  font-weight: 400;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: rgba(247, 245, 240, 0.35);
-  margin-left: 0.35rem;
+.footer-draft { display: none; }
+.footer-meta a {
+  color: rgba(247, 245, 240, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-meta a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* Draft banner — hidden from main experience; keep class inert if present */
