@@ -1555,3 +1555,54 @@ h3 {
 .coming-soon-row { display: none; }
 .sku-card.unavailable { display: none; }
 .trust-strip { display: none; }
+
+
+/* —— Call-to-book landing (start.html) —— */
+.call-landing { max-width: 640px; }
+.call-phone-block {
+  margin: 2rem 0 1.75rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.call-phone-number {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 600;
+  color: var(--oxblood);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+.call-phone-number:hover { color: #8a3a3a; }
+.call-phone-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+}
+.call-reassure { margin: 1.5rem 0 2rem; }
+.call-ready-heading {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+.call-ready-list {
+  margin: 1rem 0 1.75rem;
+  padding-left: 1.15rem;
+}
+.call-ready-list li {
+  margin-bottom: 0.65rem;
+  line-height: 1.45;
+}
+.footer-privacy {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  max-width: 28rem;
+}
+.privacy-line {
+  margin-top: 1.5rem;
+}

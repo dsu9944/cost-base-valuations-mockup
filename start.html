@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Request a valuation — Lock the Date</title>
-  <meta name="description" content="Request a signed market valuation as at your tax date. Fixed prices. Qualified valuer. NSW &amp; VIC.">
+  <title>Call to book — Lock the Date</title>
+  <meta name="description" content="Book a signed market valuation by phone. We don’t ask you to upload documents on this website. NSW &amp; VIC.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -39,251 +39,38 @@
 
   <main>
     <section class="section page-intro">
-      <div class="container wizard-wrap">
-        <p class="eyebrow">Fixed-price path</p>
-        <h1>Lock your tax date</h1>
-        <p class="lead">Tell us the property and the date. On submit you’ll see the handoff JSON in your browser — nothing is sent yet.</p>
+      <div class="container call-landing">
+        <p class="eyebrow">Book by phone</p>
+        <h1>Call to lock your tax date</h1>
+        <p class="lead">We book signed market valuations over the phone — not through an online form. No document uploads on this website.</p>
 
-        <div class="wizard-progress" id="wizardProgress" aria-label="Progress">
-          <span class="wizard-pill active" data-step="1"><span class="num">1</span> Context</span>
-          <span class="wizard-pill" data-step="2"><span class="num">2</span> Product</span>
-          <span class="wizard-pill" data-step="3"><span class="num">3</span> Details</span>
+        <div class="call-phone-block">
+          <a class="call-phone-number btn-phone" href="tel:1300000000">1300 000 000</a>
+          <p class="call-phone-note">Placeholder number · NSW &amp; VIC residential tax dates</p>
+          <a class="btn btn-primary btn-lg btn-phone" href="tel:1300000000">Call 1300 000 000</a>
         </div>
 
-        <!-- Step 1: Context / records -->
-        <div class="wizard-panel active" id="step1" data-panel="1">
-          <h2>Any records already in hand?</h2>
-          <p class="muted">Title, duty papers, or an old contract can help the valuer — especially for past tax dates. Not required to continue.</p>
-
-          <div class="records-check-grid">
-            <div class="records-item">
-              <h3>Title</h3>
-              <p>Transfer dates and parties — useful timeline anchors.</p>
-            </div>
-            <div class="records-item">
-              <h3>Stamp duty</h3>
-              <p>Often records consideration or dutiable value around a transfer.</p>
-            </div>
-            <div class="records-item">
-              <h3>Old contract</h3>
-              <p>Helpful when you or your conveyancer still have it.</p>
-            </div>
-          </div>
-
-          <p class="choice-prompt">Where are you at?</p>
-          <div class="choice-cards" id="recordsChoices">
-            <label class="choice-card">
-              <input type="radio" name="recordsChoice" value="not_started">
-              <strong>Haven’t gathered yet</strong>
-              <span>I’ll chase records — or skip ahead if I already know the tax date I need signed.</span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="recordsChoice" value="in_progress">
-              <strong>Still chasing</strong>
-              <span>Records are in progress; I want the valuation path ready.</span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="recordsChoice" value="recovered">
-              <strong>Records recovered</strong>
-              <span>I found useful docs — and I still want a signed market value as at a tax date.</span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="recordsChoice" value="failed" checked>
-              <strong>Records incomplete</strong>
-              <span>Gaps remain — continue to a signed market valuation.</span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="recordsChoice" value="skipped">
-              <strong>Skip to valuation</strong>
-              <span>I already know I need a signed market valuation as at a specific date.</span>
-            </label>
-          </div>
-
-          <div id="recordsRecoveredNote" class="callout success" hidden>
-            <strong>Good — bring what you have</strong>
-            <p>Useful records strengthen a desktop opinion. Your accountant still decides how any signed valuation fits your tax work. Continue below to lock the date.</p>
-          </div>
-
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary" id="toStep2">Continue</button>
-            <a class="btn btn-ghost" href="index.html">Back to home</a>
-          </div>
-          <p class="tiny-note">This page doesn’t run live registry searches.</p>
+        <div class="callout success call-reassure">
+          <strong>We don’t ask you to upload documents on this website</strong>
+          <p class="mb-0">Property paperwork and personal details stay offline. Tell us what you need on the call — we’ll arrange the rest verbally.</p>
         </div>
 
-        <!-- Step 2: SKU -->
-        <div class="wizard-panel" id="step2" data-panel="2">
-          <h2>Which product?</h2>
-          <p class="muted">Both are residential market valuations prepared and signed by a qualified valuer. NSW &amp; VIC only.</p>
+        <h2 class="call-ready-heading">Have ready when you call</h2>
+        <p class="muted">You don’t need to send files through the site. Just know these (or have them nearby) so we can book the right product:</p>
+        <ul class="call-ready-list">
+          <li><strong>Property address</strong> — street, suburb, state (NSW or VIC)</li>
+          <li><strong>Tax date</strong> — e.g. 30&nbsp;June&nbsp;2027, first rented, date of death, or another past date your accountant nominated</li>
+          <li><strong>Any paperwork you already hold</strong> — title, duty papers, old contract, settlement statement — we’ll talk through it on the phone; keep originals offline</li>
+          <li><strong>Which product fits</strong> — inspected 30&nbsp;June&nbsp;2027 (from $369) or tax-date desktop for past dates (from $229) — we can help you choose</li>
+        </ul>
 
-          <div class="choice-cards" id="skuChoices">
-            <label class="choice-card">
-              <input type="radio" name="skuChoice" value="cgt_retrospective" checked>
-              <strong>Tax-date desktop — first rented / other past dates</strong>
-              <span>From $229 incl GST · signed · 15+ years / thin comps +$50 (cap $279), then quote · 3 business days · desktop limits apply · cgt_retrospective</span>
-            </label>
-            <label class="choice-card">
-              <input type="radio" name="skuChoice" value="mv_2027_06_30">
-              <strong>30 June 2027 — inspected (tax-recommended)</strong>
-              <span>From $369 incl GST · Regional/complex from $449 · 5–7 business days · mv_2027_06_30</span>
-            </label>
-          </div>
-
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary" id="toStep3">Continue to details</button>
-            <button type="button" class="btn btn-ghost" id="backTo1">Back</button>
-          </div>
+        <div class="btn-group">
+          <a class="btn btn-primary btn-phone" href="tel:1300000000">Call 1300 000 000</a>
+          <a class="btn btn-ghost" href="index.html#products">See products &amp; prices</a>
+          <a class="btn btn-outline" href="index.html">Back to home</a>
         </div>
 
-        <!-- Step 3: Intake form -->
-        <div class="wizard-panel" id="step3" data-panel="3">
-          <h2>A few details</h2>
-          <p class="muted">On submit, you’ll see the JSON handoff on screen — nothing is sent over the network.</p>
-
-          <form id="intakeForm" class="form-panel" novalidate>
-            <div class="form-section">
-              <h3>Report &amp; purpose</h3>
-              <div class="field">
-                <label for="sku">Product</label>
-                <select id="sku" name="sku" required>
-                  <option value="cgt_retrospective">Tax-date desktop — first rented / other past dates · from $229 · cgt_retrospective</option>
-                  <option value="mv_2027_06_30">30 June 2027 — inspected · from $369 · mv_2027_06_30</option>
-                </select>
-              </div>
-              <div class="field-row">
-                <div class="field">
-                  <label for="valuationDate">Valuation date (tax date)</label>
-                  <input type="date" id="valuationDate" name="valuationDate" required>
-                  <span class="hint">For 30 June 2027 this defaults to 2027-06-30.</span>
-                </div>
-                <div class="field">
-                  <label for="purpose">Purpose</label>
-                  <input type="text" id="purpose" name="purpose" required maxlength="200" data-auto="1"
-                    placeholder="e.g. Signed market valuation as at first rented date">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3>Property</h3>
-              <div class="field">
-                <label for="address">Street address</label>
-                <input type="text" id="address" name="address" required maxlength="200"
-                  placeholder="e.g. 12 Example Street, Suburb" autocomplete="street-address">
-              </div>
-              <div class="field-row">
-                <div class="field">
-                  <label for="state">State / territory</label>
-                  <select id="state" name="state" required>
-                    <option value="">Select…</option>
-                    <option value="NSW">NSW</option>
-                    <option value="VIC">VIC</option>
-                    <option value="QLD">QLD</option>
-                    <option value="SA">SA</option>
-                    <option value="WA">WA</option>
-                    <option value="TAS">TAS</option>
-                    <option value="ACT">ACT</option>
-                    <option value="NT">NT</option>
-                  </select>
-                  <span class="hint">Service scope is NSW &amp; VIC residential.</span>
-                </div>
-                <div class="field">
-                  <label for="postcode">Postcode</label>
-                  <input type="text" id="postcode" name="postcode" required pattern="[0-9]{4}" maxlength="4"
-                    placeholder="4 digits" inputmode="numeric">
-                </div>
-              </div>
-              <div class="field">
-                <label for="propertyType">Property type</label>
-                <select id="propertyType" name="propertyType" required>
-                  <option value="">Select…</option>
-                  <option value="house">House</option>
-                  <option value="apartment">Apartment / unit</option>
-                  <option value="townhouse">Townhouse</option>
-                  <option value="land">Vacant land (residential)</option>
-                  <option value="other_residential">Other residential</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3>Your details</h3>
-              <div class="field">
-                <label for="clientName">Full name</label>
-                <input type="text" id="clientName" name="clientName" required maxlength="120" autocomplete="name">
-              </div>
-              <div class="field-row">
-                <div class="field">
-                  <label for="clientEmail">Email</label>
-                  <input type="email" id="clientEmail" name="clientEmail" required maxlength="160" autocomplete="email">
-                </div>
-                <div class="field">
-                  <label for="clientPhone">Phone</label>
-                  <input type="tel" id="clientPhone" name="clientPhone" required maxlength="40" autocomplete="tel"
-                    placeholder="Australian mobile or landline">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3>Docs you already have</h3>
-              <div class="field">
-                <span class="sr-only">Document checklist</span>
-                <div class="checkboxes">
-                  <label><input type="checkbox" name="docs" value="title_search"> Title search / title documents</label>
-                  <label><input type="checkbox" name="docs" value="stamp_duty"> Stamp duty / duty assessment</label>
-                  <label><input type="checkbox" name="docs" value="old_contract"> Old contract of sale</label>
-                  <label><input type="checkbox" name="docs" value="settlement_statement"> Settlement statement</label>
-                  <label><input type="checkbox" name="docs" value="improvement_invoices"> Improvement / renovation invoices</label>
-                  <label><input type="checkbox" name="docs" value="prior_valuation"> Prior valuation report</label>
-                  <label><input type="checkbox" name="docs" value="other"> Other supporting docs</label>
-                </div>
-              </div>
-              <div class="field">
-                <label for="docFiles">File upload (placeholder)</label>
-                <div class="file-placeholder">
-                  Filenames listed in JSON only — files not uploaded yet.
-                  <input type="file" id="docFiles" name="docFiles" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3>Records status &amp; notes</h3>
-              <div class="field">
-                <label for="recordsTried">Records tried status</label>
-                <select id="recordsTried" name="recordsTried" required>
-                  <option value="not_started">not_started — Haven’t tried recovery yet</option>
-                  <option value="in_progress">in_progress — Still chasing records</option>
-                  <option value="recovered">recovered — Records found (may still want valuation)</option>
-                  <option value="failed">failed — Records incomplete / unavailable</option>
-                  <option value="skipped">skipped — Going straight to valuation</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="notes">Notes for the valuer</label>
-                <textarea id="notes" name="notes" maxlength="2000"
-                  placeholder="e.g. First rented March 2019; NSW unit; accountant needs market value as at that date."></textarea>
-              </div>
-            </div>
-
-            <div class="btn-group">
-              <button type="submit" class="btn btn-primary btn-lg">Submit my request</button>
-              <button type="button" class="btn btn-ghost" id="backTo2">Back</button>
-              <button type="button" class="btn btn-outline" id="resetForm">Reset</button>
-            </div>
-          </form>
-
-          <div id="confirmBox" class="confirm-box" role="status" aria-live="polite">
-            <h3>Request captured (client-side only)</h3>
-            <p class="mb-0">No network request was made. Here’s the handoff JSON a future backend would receive — <code>jobId</code>, <code>sku</code>, property, client, docs, <code>recordsTried</code>, notes, and <code>createdAt</code>.</p>
-            <pre id="jsonOutput" class="json-output"></pre>
-            <div class="btn-group">
-              <a class="btn btn-primary" href="index.html">Back to home</a>
-              <a class="btn btn-outline" href="index.html#products">See products</a>
-            </div>
-          </div>
-        </div>
+        <p class="tiny-note privacy-line">We don’t collect property documents or personal details through this website.</p>
       </div>
     </section>
   </main>
@@ -294,6 +81,7 @@
         <div class="footer-brand">Lock the Date Valuations</div>
         <p>Signed market value for the tax date that splits your gain. NSW &amp; VIC residential.</p>
         <p class="footer-meta">Signing valuer: George · ABN XX XXX XXX XXX (placeholder)<br>NSW &amp; VIC · <a href="tel:1300000000">1300 000 000</a> · Email (placeholder)</p>
+        <p class="footer-privacy">We don’t collect property documents or personal details through this website.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -301,7 +89,7 @@
           <li><a href="index.html#products">Products</a></li>
           <li><a href="index.html#how">How it works</a></li>
           <li><a href="tel:1300000000">Call 1300 000 000</a></li>
-          <li><a href="start.html">Request a valuation</a></li>
+          <li><a href="start.html">Call to book</a></li>
         </ul>
       </div>
       <div class="footer-col">
