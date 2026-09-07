@@ -6,7 +6,7 @@ Draft HTML/CSS/vanilla JS mockup for **Lock the Date** / Lock the Date Valuation
 
 **Funnel (Tesla / UX framing):**
 1. **FREE Stage 1** — address + purpose/tax date → **fake/demo indicative estimate** (hardcoded AU$ figure + range) with heavy disclaimer: not a valuation, not for tax, illustrative only.
-2. **PAID Stage 2** — **Buy the stamp**: George-signed comprehensive assessment usable for tax/CGT. Call or short enquire note. **No** private doc uploads / evidence vault on the public site.
+2. **PAID Stage 2** — **Full signed valuation**: George-signed comprehensive assessment usable for tax/CGT. Call or short enquire note. **No** private doc uploads / evidence vault on the public site.
 
 **Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · Fraunces (H1 only) + IBM Plex Sans · calm AU professional services, not SaaS.
 
@@ -25,8 +25,8 @@ Then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/). Also works via `file
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage — hero (FB cut-through) → buy-the-stamp products → stories → why → how → FAQ → scope → accountants → CTA |
-| `start.html` | **Free indicative estimate** UX mock — address + date/purpose form → hardcoded demo result + disclaimer + Buy the stamp upsell / enquire |
+| `index.html` | Homepage — hero (FB cut-through) → full signed valuation products → stories → why → how → FAQ → scope → accountants → CTA |
+| `start.html` | **Free indicative estimate** UX mock — address + date/purpose form → hardcoded demo result + disclaimer + full signed valuation upsell / enquire |
 | `privacy.html` | Privacy stub (DRAFT) — no property docs on site; free demo uses address + date only |
 | `terms.html` | Terms stub (DRAFT) |
 | `styles.css` | Shared paper / ink / oxblood design system + estimate UX |
@@ -57,7 +57,7 @@ Then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/). Also works via `file
 - We do **not** give tax advice; accountants apply the report.
 - Free Stage 1 is demo-only on the site; Stage 2 purchase via phone (`1300 000 000` placeholder) or short enquire note.
 - SKUs (price cues):
-  - `cgt_retrospective` — **tax-date desktop** (first rented / other past dates): **from $229** signed; 15+ years / thin comps +$50 (cap **$279**), then quote. Turnaround **3 business days**.
+  - `cgt_retrospective` — **past-date desktop valuation** (first rented / other past dates — done from records, no site inspection): **from $229** signed; 15+ years / thin comps +$50 (cap **$279**), then quote. Turnaround **3 business days**.
   - `mv_2027_06_30` — **30 June 2027 inspected** (tax-recommended): **from $369**; regional/complex from **$449**. Turnaround **5–7 business days**.
   - `mv_2027_06_30_desktop` — SKU2 desktop restricted **$269** — **OFF** until George enables (AVI / not on browse path).
 - Kill on site: AVM branding, automated/AI valuation as product, “Cost Base Valuations” naming, $149 assessment framing, proptech hype, public evidence vault / private doc uploads.
