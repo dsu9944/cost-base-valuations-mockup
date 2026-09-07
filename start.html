@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Call to book — Lock the Date</title>
-  <meta name="description" content="Book a signed market valuation by phone. We don’t ask you to upload documents on this website. NSW &amp; VIC.">
+  <title>Free indicative estimate — Lock the Date</title>
+  <meta name="description" content="Get a free indicative estimate as at a CGT tax date (e.g. 30 June 2027 or first rented). Not a valuation. Then buy a George-signed assessment usable for tax/CGT. NSW &amp; VIC.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,8 +30,9 @@
       </button>
       <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="index.html#why">Why it matters</a>
-        <a href="index.html#products">Products</a>
+        <a href="index.html#products">Buy the stamp</a>
         <a href="index.html#how">How it works</a>
+        <a class="nav-cta" href="start.html" aria-current="page">Free estimate</a>
         <a class="nav-cta nav-cta-phone" href="tel:1300000000">Call 1300 000 000</a>
       </nav>
     </div>
@@ -39,38 +40,154 @@
 
   <main>
     <section class="section page-intro">
-      <div class="container call-landing">
-        <p class="eyebrow">Book by phone</p>
-        <h1>Call to lock your tax date</h1>
-        <p class="lead">We book signed market valuations over the phone — not through an online form. No document uploads on this website.</p>
+      <div class="container estimate-landing">
+        <p class="eyebrow">Stage 1 · Free</p>
+        <h1>Get a free indicative estimate</h1>
+        <p class="lead">Enter the property address and the <strong>CGT tax date</strong> that matters — e.g. <strong>30&nbsp;June&nbsp;2027</strong>, first rented, or another date your accountant nominated. Unlike Domain or REA “today” consumer estimates, we frame value <em>as at</em> that tax date.</p>
 
-        <div class="call-phone-block">
-          <a class="call-phone-number btn-phone" href="tel:1300000000">1300 000 000</a>
-          <p class="call-phone-note">Placeholder number · NSW &amp; VIC residential tax dates</p>
-          <a class="btn btn-primary btn-lg btn-phone" href="tel:1300000000">Call 1300 000 000</a>
+        <div class="callout soft estimate-diff">
+          <strong>Not a “today’s value” consumer estimate</strong>
+          <p class="mb-0">Portal-style estimates usually answer “what might it sell for now?” We answer a different question: indicative market context <em>as at</em> a retrospective or nominated CGT date. The free result is <strong>indicative only</strong> — not a valuation, not for tax.</p>
         </div>
 
-        <div class="callout success call-reassure">
-          <strong>We don’t ask you to upload documents on this website</strong>
-          <p class="mb-0">Call or email first. If we need title, contract, rates or ID later, we’ll send a <strong>separate secure request</strong> — never an upload form on this public site.</p>
+        <!-- ESTIMATE FORM (demo UX only) -->
+        <div class="form-panel estimate-form-panel" id="estimate-form-panel">
+          <form id="estimate-form" novalidate>
+            <div class="form-section">
+              <h3>Property &amp; tax date</h3>
+              <div class="field">
+                <label for="property-address">Property address</label>
+                <input type="text" id="property-address" name="address" autocomplete="street-address" placeholder="e.g. 12 Example St, Parramatta NSW 2150" required>
+                <span class="hint">NSW or VIC residential. Used only for this on-page demo — nothing is sent to a server.</span>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="purpose">Purpose / tax date</label>
+                  <select id="purpose" name="purpose" required>
+                    <option value="">Select…</option>
+                    <option value="30 June 2027">30 June 2027 (CGT split date)</option>
+                    <option value="First rented / change of use">First rented / change of use</option>
+                    <option value="Date of death">Date of death</option>
+                    <option value="Other tax date">Other tax date (your accountant nominated)</option>
+                  </select>
+                </div>
+                <div class="field" id="custom-date-wrap" hidden>
+                  <label for="custom-date">Date (if other / first rented)</label>
+                  <input type="text" id="custom-date" name="customDate" placeholder="e.g. 15 March 2019" autocomplete="off">
+                  <span class="hint">Optional for the demo — type any plausible date.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Optional callback</h3>
+              <div class="field">
+                <label for="phone">Phone <span class="label-optional">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="For a callback — not required for the demo">
+                <span class="hint">No email required. No ID. No document uploads on this website.</span>
+              </div>
+            </div>
+
+            <p class="tiny-note privacy-line">Free indicative estimate uses address + date only for this demo. We don’t collect property documents on this website.</p>
+
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary btn-lg">Show free indicative estimate</button>
+              <a class="btn btn-outline btn-phone" href="tel:1300000000">Or call 1300 000 000</a>
+            </div>
+          </form>
         </div>
 
-        <h2 class="call-ready-heading">Have ready when you call</h2>
-        <p class="muted">You don’t need to send files through the site. Just know these (or have them nearby) so we can book the right product:</p>
-        <ul class="call-ready-list">
-          <li><strong>Property address</strong> — street, suburb, state (NSW or VIC)</li>
-          <li><strong>Tax date</strong> — e.g. 30&nbsp;June&nbsp;2027, first rented, date of death, or another past date your accountant nominated</li>
-          <li><strong>Any paperwork you already hold</strong> — title, duty papers, old contract, settlement statement — we’ll talk through it on the phone; keep originals offline</li>
-          <li><strong>Which product fits</strong> — inspected 30&nbsp;June&nbsp;2027 (from $369) or tax-date desktop for past dates (from $229) — we can help you choose</li>
-        </ul>
+        <!-- DEMO RESULT (revealed client-side) -->
+        <div class="estimate-result" id="estimate-result" hidden aria-live="polite">
+          <p class="eyebrow">Demo result · Stage 1</p>
+          <h2>Your free indicative estimate</h2>
 
-        <div class="btn-group">
-          <a class="btn btn-primary btn-phone" href="tel:1300000000">Call 1300 000 000</a>
-          <a class="btn btn-ghost" href="index.html#products">See products &amp; prices</a>
-          <a class="btn btn-outline" href="index.html">Back to home</a>
+          <div class="estimate-demo-card">
+            <p class="estimate-demo-badge" role="status">UX mock · placeholder · not calculated</p>
+            <p class="estimate-address" id="result-address"></p>
+            <p class="estimate-as-at" id="result-as-at"></p>
+            <p class="estimate-figure" id="result-figure">$1,050,000</p>
+            <p class="estimate-range" id="result-range">Illustrative range: $980,000 – $1,120,000</p>
+            <p class="estimate-mock-note">Indicative estimate as at <span id="result-date-inline">the nominated date</span>: <strong>$1,050,000</strong> (illustrative demo — not calculated).</p>
+          </div>
+
+          <div class="callout estimate-disclaimer" role="alert">
+            <strong>Heavy disclaimer — read this</strong>
+            <p>This is a <strong>free indicative estimate</strong> for UX review only. It is <strong>not a valuation</strong>, <strong>not calculated</strong> from market data, <strong>not for tax or CGT</strong>, and must not be given to an accountant as evidence. No automated valuation model is implied. Figures are hardcoded placeholders so you can review the funnel.</p>
+          </div>
+
+          <!-- STAGE 2 UPSSELL -->
+          <div class="stamp-upsell" id="buy-the-stamp">
+            <p class="eyebrow">Stage 2 · Paid</p>
+            <h2>Buy the stamp</h2>
+            <p class="lead lead-tight">Need a number your accountant can use? Purchase a <strong>signed valuation by a qualified valuer</strong> (George-signed comprehensive assessment) usable for tax/CGT — as at your nominated date.</p>
+
+            <div class="sku-grid sku-grid-2 stamp-sku-grid">
+              <article class="sku-card featured">
+                <span class="sku-badge">Tax-recommended</span>
+                <h3>30 June 2027<br><span class="sku-sub">Inspected · buy the stamp</span></h3>
+                <p class="sku-price">from $369 <span>incl GST</span></p>
+                <p class="sku-meta">Regional / complex from <strong>$449</strong>. Turnaround: <strong>5–7 business days</strong>.</p>
+                <ul>
+                  <li>Signed valuation by a qualified valuer</li>
+                  <li>Market value as at 30 June 2027</li>
+                  <li>PDF ready for your accountant</li>
+                </ul>
+              </article>
+              <article class="sku-card">
+                <span class="sku-badge badge-alt">Tax-date desktop</span>
+                <h3>Tax-date desktop<br><span class="sku-sub">First rented / other past dates</span></h3>
+                <p class="sku-price">from $229 <span>incl GST · signed</span></p>
+                <p class="sku-meta">15+ years / thin comps: +$50 (cap $279). Turnaround: <strong>3 business days</strong>.</p>
+                <ul>
+                  <li>Signed valuation by a qualified valuer</li>
+                  <li>As at a past tax date you nominate</li>
+                  <li>Honest desktop limits (no inspection)</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="enquire-block">
+              <h3>Call or enquire to purchase</h3>
+              <p>No private document uploads on this public site. Call to buy the stamp, or leave a short enquire note and we’ll call you back.</p>
+              <div class="btn-group">
+                <a class="btn btn-primary btn-lg btn-phone" href="tel:1300000000">Call 1300 000 000 to buy the stamp</a>
+                <a class="btn btn-secondary" href="#enquire">Enquire to purchase</a>
+              </div>
+            </div>
+
+            <div class="form-panel enquire-panel" id="enquire">
+              <h3 class="enquire-heading">Short enquire note</h3>
+              <p class="muted enquire-intro">Optional UX mock — nothing is submitted to a server. Prefer the phone for a real purchase.</p>
+              <form id="enquire-form">
+                <div class="field">
+                  <label for="enquire-note">What do you need?</label>
+                  <textarea id="enquire-note" name="note" rows="3" placeholder="e.g. I’d like the inspected 30 June 2027 stamp for the address above — please call me."></textarea>
+                </div>
+                <div class="field">
+                  <label for="enquire-phone">Best number to call</label>
+                  <input type="tel" id="enquire-phone" name="enquirePhone" autocomplete="tel" placeholder="Phone for callback">
+                </div>
+                <div class="btn-group">
+                  <button type="submit" class="btn btn-primary">Send enquire note (demo)</button>
+                  <a class="btn btn-outline btn-phone" href="tel:1300000000">Or just call</a>
+                </div>
+              </form>
+              <div class="confirm-box" id="enquire-confirm" hidden>
+                <h3>Enquire note captured locally (demo)</h3>
+                <p class="mb-0">In this mockup nothing is emailed or stored on a server. For a real purchase, call <a href="tel:1300000000">1300 000 000</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="tiny-note privacy-line">We don’t collect property documents on this website. Free estimate uses address + date only for the demo. Paperwork for a paid signed valuation is requested securely after we speak — never via an upload vault on this public site.</p>
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-ghost" id="estimate-reset">Try another address (demo)</button>
+            <a class="btn btn-outline" href="index.html#products">See all products</a>
+            <a class="btn btn-outline" href="index.html">Back to home</a>
+          </div>
         </div>
-
-        <p class="tiny-note privacy-line">We don’t collect property documents or personal details through this website.</p>
       </div>
     </section>
   </main>
@@ -81,15 +198,15 @@
         <div class="footer-brand">Lock the Date Valuations</div>
         <p>Signed market value for the tax date that splits your gain. NSW &amp; VIC residential.</p>
         <p class="footer-meta">Signing valuer: George · ABN XX XXX XXX XXX (placeholder)<br>NSW &amp; VIC · <a href="tel:1300000000">1300 000 000</a> · Email (placeholder)</p>
-        <p class="footer-privacy">We don’t collect property documents or personal details through this website.</p>
+        <p class="footer-privacy">We don’t collect property documents on this website. Free estimate uses address + date only for the demo.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <ul class="footer-links">
-          <li><a href="index.html#products">Products</a></li>
+          <li><a href="start.html">Free indicative estimate</a></li>
+          <li><a href="index.html#products">Buy the stamp</a></li>
           <li><a href="index.html#how">How it works</a></li>
           <li><a href="tel:1300000000">Call 1300 000 000</a></li>
-          <li><a href="start.html">Call to book</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -101,7 +218,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice.
+      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice. Free indicative estimates are not valuations.
     </div>
   </footer>
 

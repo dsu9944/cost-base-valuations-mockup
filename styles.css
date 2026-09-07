@@ -1606,3 +1606,104 @@ h3 {
 .privacy-line {
   margin-top: 1.5rem;
 }
+
+/* —— Free indicative estimate UX (start.html) —— */
+.estimate-landing { max-width: 720px; }
+.estimate-diff { margin: 1.25rem 0 1.75rem; }
+.label-optional {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+.estimate-form-panel { margin-top: 0.5rem; }
+
+.estimate-result { margin-top: 0.5rem; }
+.estimate-demo-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  padding: 1.75rem 1.5rem;
+  margin: 1.25rem 0 1.5rem;
+  text-align: center;
+}
+.estimate-demo-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--oxblood);
+  background: rgba(107, 46, 46, 0.08);
+  border: 1px solid rgba(107, 46, 46, 0.25);
+  padding: 0.35rem 0.7rem;
+  margin: 0 0 1rem;
+}
+.estimate-address {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.35rem;
+}
+.estimate-as-at {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+.estimate-figure {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+}
+.estimate-range {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+.estimate-mock-note {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.estimate-disclaimer {
+  background: var(--warning-bg);
+  border-color: #E5D9C4;
+  margin-bottom: 2rem;
+}
+.estimate-disclaimer strong { color: var(--oxblood); }
+
+.stamp-upsell {
+  margin: 2.5rem 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+.stamp-sku-grid { margin: 1.5rem 0; }
+.enquire-block {
+  margin: 1.75rem 0 1.25rem;
+  padding: 1.5rem;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+}
+.enquire-block h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+}
+.enquire-panel {
+  margin-top: 1rem;
+}
+.enquire-heading {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+.enquire-intro { margin-bottom: 1rem; }
+
+/* Confirm box: support [hidden] + .visible */
+.confirm-box[hidden] { display: none !important; }
+.confirm-box.visible:not([hidden]) { display: block; }
