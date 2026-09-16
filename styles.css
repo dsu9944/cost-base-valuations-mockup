@@ -1707,3 +1707,39 @@ h3 {
 /* Confirm box: support [hidden] + .visible */
 .confirm-box[hidden] { display: none !important; }
 .confirm-box.visible:not([hidden]) { display: block; }
+
+
+/* —— Demand-validation polish —— */
+.footer-illustrative {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: rgba(247, 245, 240, 0.35);
+  font-style: italic;
+}
+.form-status {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.form-status-error {
+  color: var(--oxblood);
+}
+.enquire-panel .field-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.enquire-panel .field-row .field {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 220px;
+  flex: 1 1 220px;
+  min-width: 0;
+}
+#enquire-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}

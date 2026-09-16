@@ -1,6 +1,6 @@
 /**
- * Lock the Date Valuations — mockup JS
- * Nav + client-side demo indicative estimate (hardcoded; no API / no engine).
+ * Lock the Date Valuations — static landing JS
+ * Nav + client-side indicative estimate (illustrative figures) + Formspree enquire.
  */
 (function () {
   "use strict";
@@ -46,7 +46,7 @@
     });
   }
 
-  /** Hardcoded demo figures — UX mock only. Never calculated. */
+  /** Illustrative figures until the model is live — not calculated. */
   var DEMO_ESTIMATE = {
     figure: "$1,050,000",
     rangeLow: "$980,000",
@@ -61,6 +61,20 @@
     if (purpose === "Date of death") return "date of death";
     if (purpose) return purpose;
     return "the nominated date";
+  }
+
+  function prefillEnquire(address, asAt) {
+    var addrEl = document.getElementById("enquire-address");
+    var dateEl = document.getElementById("enquire-tax-date");
+    var msgEl = document.getElementById("enquire-message");
+    if (addrEl && address) addrEl.value = address;
+    if (dateEl && asAt) dateEl.value = asAt;
+    if (msgEl && asAt) {
+      msgEl.value =
+        "I’d like to arrange a signed valuation as at " +
+        asAt +
+        " for the address above. Please get in touch.";
+    }
   }
 
   function initEstimateDemo() {
@@ -127,6 +141,8 @@
       }
       if (resultDateInline) resultDateInline.textContent = asAt;
 
+      prefillEnquire(address, asAt);
+
       if (formPanel) formPanel.hidden = true;
       if (result) {
         result.hidden = false;
@@ -143,23 +159,124 @@
         if (formPanel) formPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
+  }
 
-    var enquireForm = document.getElementById("enquire-form");
-    var enquireConfirm = document.getElementById("enquire-confirm");
-    if (enquireForm) {
-      enquireForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (enquireConfirm) {
-          enquireConfirm.hidden = false;
-          enquireConfirm.classList.add("visible");
-        }
-      });
+  function isFormspreePlaceholder(action) {
+    return !action || action.indexOf("/f/xxxxxxxx") !== -1;
+  }
+
+  function showEnquireSuccess(form) {
+    var confirm = document.getElementById("enquire-confirm");
+    var status = document.getElementById("enquire-status");
+    if (form) form.hidden = true;
+    if (status) {
+      status.hidden = true;
+      status.textContent = "";
     }
+    if (confirm) {
+      confirm.hidden = false;
+      confirm.classList.add("visible");
+      confirm.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }
+
+  function initEnquireForm() {
+    var enquireForm = document.getElementById("enquire-form");
+    if (!enquireForm) return;
+
+    var submitBtn = document.getElementById("enquire-submit");
+    var status = document.getElementById("enquire-status");
+
+    enquireForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var nameEl = document.getElementById("enquire-name");
+      var emailEl = document.getElementById("enquire-email");
+      var addrEl = document.getElementById("enquire-address");
+      var dateEl = document.getElementById("enquire-tax-date");
+
+      if (nameEl && !nameEl.value.trim()) {
+        nameEl.focus();
+        return;
+      }
+      if (emailEl && !emailEl.value.trim()) {
+        emailEl.focus();
+        return;
+      }
+      if (addrEl && !addrEl.value.trim()) {
+        addrEl.focus();
+        return;
+      }
+      if (dateEl && !dateEl.value.trim()) {
+        dateEl.focus();
+        return;
+      }
+
+      var action = enquireForm.getAttribute("action") || "";
+
+      /* Placeholder Formspree ID — local success so funnel can be reviewed before Joe plugs his ID */
+      if (isFormspreePlaceholder(action)) {
+        showEnquireSuccess(enquireForm);
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+      if (status) {
+        status.hidden = false;
+        status.textContent = "Sending your request…";
+        status.className = "form-status";
+      }
+
+      var data = new FormData(enquireForm);
+
+      fetch(action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            showEnquireSuccess(enquireForm);
+            return;
+          }
+          return res.json().then(function (body) {
+            var msg =
+              (body &&
+                body.errors &&
+                body.errors
+                  .map(function (err) {
+                    return err.message;
+                  })
+                  .join(" ")) ||
+              "Something went wrong. Please call 1300 000 000 or try again.";
+            throw new Error(msg);
+          });
+        })
+        .catch(function (err) {
+          if (status) {
+            status.hidden = false;
+            status.className = "form-status form-status-error";
+            status.textContent =
+              (err && err.message) ||
+              "Could not send. Please call 1300 000 000.";
+          }
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Request a signed valuation";
+          }
+        });
+    });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
     initMobileNav();
     initEstimateDemo();
+    initEnquireForm();
   });
 })();
