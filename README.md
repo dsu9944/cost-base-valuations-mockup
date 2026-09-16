@@ -2,7 +2,7 @@
 
 Static HTML/CSS/vanilla JS landing for **Lock the Date** / Lock the Date Valuations: signed market value for the tax date that splits an Australian rental investor’s gain (30 June 2027 spike + evergreen first-rented / change-of-use dates).
 
-**Ship target:** Friday 19 Sep 2026, 5pm AEST — demand validation (leads), not a live estimate engine.
+**Ship target:** Friday 3 Oct 2026, 5pm AEST — demand validation (leads), not a live estimate engine.
 
 **Strategy:** mass-market AU rental investors; ICP ~45–65 higher-income one-property NSW/VIC holder with an accountant. Brand the **date**. Enemy: ATO straight-line formula + waiting until 2035. Model stays secret (back-office only — never sell automation).
 
@@ -93,7 +93,7 @@ action="https://formspree.io/f/xxxxxxxx"
 
 Illustrative placeholder, e.g. **Indicative estimate as at [date]: $1,050,000** with an illustrative range. Not calculated from market data until the model is live. Framed clearly as indicative / not for tax.
 
-## Ship checklist (Fri 19 Sep 2026 5pm AEST)
+## Ship checklist (Fri 3 Oct 2026 5pm AEST)
 
 - [ ] Replace Formspree `xxxxxxxx` in `start.html` with Joe’s form ID
 - [ ] Confirm Formspree notification email receives test enquire
