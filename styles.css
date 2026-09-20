@@ -1,8 +1,8 @@
-/* Lock the Date — BMT / fast-tax productized counter
+/* Lock the Date — AVM-scale high-volume (v=vol1)
    Paper #F7F5F0 · Ink #1A1A1A · Oxblood #6B2E2E
-   Dense, clear menu, value-for-money — not prestige HTW
-   H1: Fraunces · UI/body: IBM Plex Sans */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+   Dense service-counter menu — not prestige / private-bank
+   Sans-forward: IBM Plex Sans for H1 + UI; Fraunces optional (quotes only) */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
 
 :root {
   --paper: #F7F5F0;
@@ -11,7 +11,8 @@
   --ink: #1A1A1A;
   --ink-soft: #3D3D3D;
   --muted: #6B6560;
-  --line: #DDD8CF;
+  --line: #C9C2B6;
+  --line-strong: #1A1A1A;
   --oxblood: #6B2E2E;
   --oxblood-hover: #542424;
   --oxblood-wash: #F3EBEA;
@@ -20,8 +21,8 @@
   --warning-bg: #F7F0E4;
   --radius: 2px;
   --radius-sm: 2px;
-  --max: 1080px;
-  --measure: 36em;
+  --max: 1040px;
+  --measure: 34em;
   --font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --display: "Fraunces", "Source Serif 4", Georgia, "Times New Roman", serif;
   --header-h: 64px; /* sticky ≤72px */
@@ -228,29 +229,29 @@ main { flex: 1; }
   padding: 0 1.5rem;
 }
 
-.section { padding: 3.25rem 0; }
-.section-tight { padding: 2.75rem 0; }
+.section { padding: 2.25rem 0; }
+.section-tight { padding: 1.75rem 0; }
 .section-alt { background: var(--paper-deep); }
 .section-sand { background: var(--paper-deep); }
 .section-cta { padding-top: 1.5rem; padding-bottom: 3.25rem; }
 
 .section-head {
   max-width: var(--measure);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.15rem;
 }
-.section-head-tight { margin-bottom: 1.35rem; }
+.section-head-tight { margin-bottom: 0.85rem; }
 .section-head-wide { max-width: 40rem; }
 .section-head .lead { margin-bottom: 0; }
 
-/* Type: serif ONLY on H1; H2/H3 stay Plex */
+/* Type: sans-forward (Plex) for H1 too — counter not atelier */
 h1 {
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(2.15rem, 5.5vw, 3.35rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   color: var(--ink);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.55rem;
 }
 h2 {
   font-family: var(--font);
@@ -302,11 +303,11 @@ h3 {
   align-items: center;
   background: var(--ink);
   color: var(--paper);
-  padding: 3.5rem 0 3rem;
+  padding: 2.25rem 0 2rem;
   overflow: hidden;
 }
 .hero-compact {
-  padding: 2.75rem 0 2.5rem;
+  padding: 1.85rem 0 1.65rem;
   min-height: auto;
 }
 
@@ -340,16 +341,19 @@ h3 {
   margin-bottom: 0.65rem;
 }
 .hero-compact h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 0.55rem;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4.2vw, 2.45rem);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.025em;
 }
-.hero .eyebrow { color: #C4A090; }
+.hero .eyebrow { color: #E8D5C4; font-weight: 700; }
 .hero-service,
 .hero-sub {
-  font-size: 1.05rem;
-  color: rgba(247, 245, 240, 0.78);
-  line-height: 1.5;
-  margin: 0 0 0.15rem;
+  font-size: 0.98rem;
+  color: rgba(247, 245, 240, 0.88);
+  line-height: 1.45;
+  margin: 0 0 0.1rem;
   max-width: 34rem;
   font-weight: 400;
 }
@@ -360,7 +364,7 @@ h3 {
   max-width: 30rem;
   line-height: 1.6;
 }
-.hero .btn-group { margin-top: 1.35rem; }
+.hero .btn-group { margin-top: 1rem; gap: 0.55rem; }
 
 .trust-plain {
   margin: 1.15rem 0 0;
@@ -423,11 +427,15 @@ h3 {
   letter-spacing: 0.01em;
 }
 .sku-ctas {
-  margin-top: 1.25rem;
+  margin-top: 0.85rem;
 }
 .sku-card .sku-ctas {
   margin-top: auto;
-  padding-top: 1.25rem;
+  padding-top: 0.85rem;
+}
+.sku-card .sku-ctas .btn {
+  width: 100%;
+  text-align: center;
 }
 
 /* Brand strip */
@@ -452,44 +460,47 @@ h3 {
 .btn {
   display: inline-block;
   font-family: inherit;
-  font-size: 0.92rem;
-  font-weight: 600;
-  padding: 0.85rem 1.45rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.9rem 1.35rem;
   border-radius: 0;
-  border: 1.5px solid transparent;
+  border: 2px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
   letter-spacing: 0.01em;
 }
 .btn:hover { text-decoration: none; }
 .btn-primary {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
+  background: var(--oxblood);
+  color: #fff;
+  border-color: var(--oxblood);
 }
 .btn-primary:hover {
-  background: var(--oxblood);
-  border-color: var(--oxblood);
+  background: var(--oxblood-hover);
+  border-color: var(--oxblood-hover);
   color: #fff;
 }
+/* Solid secondary — not ghost/whisper (works on dark hero + light pages) */
 .btn-secondary {
-  background: transparent;
-  color: var(--paper);
-  border-color: rgba(247, 245, 240, 0.4);
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
 }
 .btn-secondary:hover {
-  background: rgba(247, 245, 240, 0.08);
-  color: var(--paper);
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
 }
 .btn-outline {
-  background: transparent;
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
   border-color: var(--ink);
 }
 .btn-outline:hover {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: #fff;
 }
 .btn-ghost {
   background: transparent;
@@ -507,7 +518,7 @@ h3 {
   margin-top: 1.15rem;
   align-items: center;
 }
-.btn-lg { padding: 1rem 1.75rem; font-size: 1rem; }
+.btn-lg { padding: 1.05rem 1.55rem; font-size: 1.02rem; font-weight: 700; }
 .center-btns { justify-content: flex-start; }
 
 .btn-disabled {
@@ -873,11 +884,11 @@ h3 {
 /* —— Products —— */
 .sku-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .sku-grid-2 {
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.75rem;
+  gap: 1rem;
 }
 @media (max-width: 760px) {
   .sku-grid-2 { grid-template-columns: 1fr; }
@@ -885,31 +896,33 @@ h3 {
 
 .sku-card {
   background: var(--paper-card);
-  border: 1px solid var(--line);
-  padding: 1.5rem 1.4rem 1.35rem;
+  border: 2px solid var(--ink);
+  padding: 1.15rem 1.15rem 1.1rem;
   display: flex;
   flex-direction: column;
   position: relative;
 }
 .sku-card.featured {
   border-color: var(--ink);
-  border-width: 1.5px;
+  border-width: 2px;
+  box-shadow: 4px 4px 0 var(--ink);
 }
 .sku-badge {
   display: inline-block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--oxblood);
-  margin-bottom: 0.55rem;
+  color: #fff;
+  margin-bottom: 0.45rem;
   align-self: flex-start;
-  padding: 0;
-  background: none;
+  padding: 0.28rem 0.55rem;
+  background: var(--oxblood);
 }
 .sku-badge.badge-alt {
-  color: var(--muted);
-  background: none;
+  color: var(--ink);
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
 }
 .sku-sub {
   display: block;
@@ -921,29 +934,29 @@ h3 {
   margin-top: 0.35rem;
 }
 .sku-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   line-height: 1.25;
   margin-bottom: 0;
 }
 .sku-price {
-  font-size: clamp(2.6rem, 5vw, 3.25rem);
+  font-size: clamp(2.85rem, 5.5vw, 3.6rem);
   font-weight: 700;
   color: var(--ink);
-  margin: 0.85rem 0 0.35rem;
+  margin: 0.15rem 0 0.45rem;
   font-family: var(--font);
-  letter-spacing: -0.04em;
-  line-height: 1;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
   font-variant-numeric: tabular-nums;
 }
 .sku-price span {
   display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
   letter-spacing: 0;
-  margin-left: 0.25rem;
+  margin-left: 0.3rem;
   vertical-align: middle;
 }
 .sku-price-inline {
@@ -953,12 +966,12 @@ h3 {
   margin-left: 0.35rem;
 }
 .sku-card ul {
-  margin: 0.85rem 0 0.5rem;
+  margin: 0.55rem 0 0.25rem;
   padding-left: 1.05rem;
-  color: var(--muted);
+  color: var(--ink-soft);
   flex: 1;
-  font-size: 0.9rem;
-  line-height: 1.45;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
 .sku-card li { margin-bottom: 0.3rem; }
 .sku-meta {
@@ -981,8 +994,8 @@ h3 {
 .sku-quiet strong { color: var(--ink-soft); font-weight: 600; }
 
 .pricing-note {
-  margin: 1.25rem 0 0;
-  font-size: 0.82rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.8rem;
   color: var(--muted);
   max-width: var(--measure);
 }
@@ -1591,13 +1604,75 @@ h3 {
   border: 0;
 }
 
+/* —— Home trust + more link (index.html short landing) —— */
+.home-trust-section {
+  padding-top: 0;
+  padding-bottom: 0.5rem;
+}
+.home-trust {
+  list-style: none;
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--ink);
+  background: var(--paper-deep);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.home-trust li {
+  display: inline-flex;
+  align-items: center;
+}
+.home-trust li:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.75rem;
+  color: var(--line-strong, var(--line));
+  font-weight: 400;
+}
+.home-trust a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.home-trust a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.home-more {
+  padding-top: 0.85rem;
+  padding-bottom: 1.75rem;
+}
+.home-more-line {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.home-more-line a {
+  color: var(--oxblood);
+  text-decoration: none;
+  border-bottom: 1px solid var(--oxblood);
+  padding-bottom: 0.05rem;
+}
+.home-more-line a:hover {
+  color: var(--oxblood-hover);
+  border-bottom-color: var(--oxblood-hover);
+}
+
 /* Legacy story-grid / chart — unused but safe if referenced */
 .story-grid { display: none; }
 .chart-card { display: none; }
 .why-grid { display: none; }
 .coming-soon-row { display: none; }
 .sku-card.unavailable { display: none; }
-.trust-strip { display: none; }
+.trust-strip { display: none; } /* legacy; use .home-trust */
 
 
 /* —— Call-to-book landing (start.html) —— */
@@ -1611,9 +1686,9 @@ h3 {
 }
 .call-phone-number {
   display: block;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font);
   font-size: clamp(2.25rem, 6vw, 3.25rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--oxblood);
   text-decoration: none;
   letter-spacing: 0.02em;
@@ -1692,9 +1767,9 @@ h3 {
   margin: 0 0 1rem;
 }
 .estimate-figure {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font);
   font-size: clamp(2.25rem, 6vw, 3rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -1835,7 +1910,247 @@ h3 {
   font-weight: 500;
 }
 
-/* Stronger primary CTA emphasis on ink→oxblood */
+/* mid1: solid CTAs + light-page secondary (ink fill, not whisper) */
 .btn-primary {
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.12);
+  box-shadow: none;
+}
+.section .btn-secondary,
+.page-intro .btn-secondary,
+.cta-band .btn-secondary,
+.estimate-result .btn-secondary {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.section .btn-secondary:hover,
+.page-intro .btn-secondary:hover,
+.cta-band .btn-secondary:hover,
+.estimate-result .btn-secondary:hover {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: #fff;
+}
+.hero .btn-secondary {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+.hero .btn-secondary:hover {
+  background: #fff;
+  color: var(--ink);
+}
+.hero .btn-primary {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: #fff;
+}
+.nav .nav-cta {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: #fff !important;
+  font-weight: 700;
+}
+.nav .nav-cta:hover {
+  background: var(--oxblood-hover);
+  border-color: var(--oxblood-hover);
+  color: #fff !important;
+}
+
+/* Price-first flex order on product cards */
+.sku-card {
+  display: flex;
+  flex-direction: column;
+}
+.sku-card > .sku-badge { order: 0; }
+.sku-card > .sku-price { order: 1; }
+.sku-card > h3 { order: 2; }
+.sku-card > .sku-meta { order: 3; }
+.sku-card > ul { order: 4; }
+.sku-card > .sku-ctas { order: 5; }
+
+/* —— vol1: AVM-scale homepage (Zillow/Ownwell/Duo energy) —— */
+.hero-avm {
+  padding: 1.75rem 0 2rem;
+  min-height: auto;
+  background: var(--ink);
+  color: var(--paper);
+}
+.hero-avm .hero-avm-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+}
+.hero-avm h1 {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: clamp(1.85rem, 5vw, 2.75rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 0.5rem;
+  color: var(--paper);
+  max-width: 22ch;
+}
+.hero-avm .eyebrow {
+  color: #E8D5C4;
+  font-weight: 700;
+}
+.hero-avm .hero-sub {
+  font-size: 1rem;
+  color: rgba(247, 245, 240, 0.88);
+  max-width: 40rem;
+  margin: 0 0 1.25rem;
+  line-height: 1.45;
+}
+
+.avm-box {
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--paper);
+  padding: 1rem 1rem 0.85rem;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
+}
+.avm-form .avm-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(11rem, 14rem) auto;
+  gap: 0.65rem 0.75rem;
+  align-items: end;
+}
+.avm-form .field {
+  margin-bottom: 0;
+}
+.avm-form .field label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+.avm-form .field input,
+.avm-form .field select {
+  width: 100%;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 0.85rem 0.9rem;
+  border: 2px solid var(--ink);
+  background: #fff;
+  border-radius: 0;
+  min-height: 3.15rem;
+}
+.avm-form .field input:focus,
+.avm-form .field select:focus {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 1px;
+  border-color: var(--oxblood);
+}
+.avm-address { grid-column: 1; }
+.avm-purpose { grid-column: 2; }
+.avm-custom { grid-column: 1 / -1; }
+.avm-submit {
+  grid-column: 3;
+  display: flex;
+  align-items: stretch;
+}
+.avm-btn {
+  width: 100%;
+  white-space: nowrap;
+  min-height: 3.15rem;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  box-shadow: none;
+}
+.avm-hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 820px) {
+  .avm-form .avm-row {
+    grid-template-columns: 1fr;
+  }
+  .avm-address,
+  .avm-purpose,
+  .avm-custom,
+  .avm-submit { grid-column: 1; }
+  .avm-btn { width: 100%; }
+}
+
+.avm-result {
+  margin-top: 1.25rem;
+}
+.hero-avm .estimate-demo-card {
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--paper);
+  text-align: left;
+  padding: 1.25rem 1.25rem 1.15rem;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
+}
+.hero-avm .estimate-figure {
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  letter-spacing: -0.04em;
+}
+.hero-avm .estimate-disclaimer {
+  background: var(--warning-bg);
+  color: var(--ink);
+  border: 2px solid #E5D9C4;
+  margin-top: 0.85rem;
+  margin-bottom: 1rem;
+}
+.hero-avm .btn-ghost {
+  background: transparent;
+  color: var(--paper);
+  border: 2px solid rgba(247, 245, 240, 0.45);
+}
+.hero-avm .btn-ghost:hover {
+  background: rgba(247, 245, 240, 0.1);
+  color: #fff;
+  border-color: var(--paper);
+  text-decoration: none;
+}
+.hero-avm .avm-result .btn-primary {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+  color: #fff;
+}
+
+.home-steps {
+  margin-top: 0.25rem;
+}
+.home-steps .step::before { display: none; }
+.home-steps .step {
+  padding: 1rem 1.1rem 1rem 0;
+}
+.home-steps .step h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+.home-steps .step p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.4;
+}
+.home-steps .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.55rem;
+}
+
+/* Dense product menu — bigger $ already in .sku-price */
+#products .sku-card {
+  border-width: 2px;
+  padding: 1.25rem 1.2rem 1.15rem;
+}
+#products .sku-price {
+  font-size: clamp(3rem, 6vw, 3.85rem);
 }

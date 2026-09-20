@@ -12,7 +12,7 @@ Static HTML/CSS/vanilla JS landing for **Lock the Date** / Lock the Date Valuati
 
 **Positioning:** BMT-for-valuations / fast-tax productized counter — efficient, clear price, value-for-money. Not prestige HTW, not $99 AVM junk. Paper/ink trust palette.
 
-**Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · Fraunces (H1 only) + IBM Plex Sans · dense productized counter, not essay/prestige.
+**Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · IBM Plex Sans (sans-forward H1 + UI) · AVM-scale high-volume (`?v=vol1`) — Zillow/Ownwell/Duo energy, not prestige/private-bank.
 
 **Public copy:** no “(George-signed)” / no George first name on public pages — “qualified valuer” only. Soft-market / Cotality deferred.
 
@@ -56,19 +56,22 @@ action="https://formspree.io/f/xxxxxxxx"
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage — short hero punch → two SKUs → 3 story cards → why → how → FAQ → scope → accountants → CTA |
-| `start.html` | **Free indicative estimate** → illustrative result + disclaimer → **Request a signed valuation** (Formspree enquire) |
+| `index.html` | **AVM homepage** — giant address+date hero (free estimate reveal) → two price cards ($229 / $369) → 3 steps → thin strip → why link |
+| `why.html` | Examples & why — recognition stories, $150k table, trimmed how/FAQ/scope |
+| `start.html` | Estimate deep-link + **Request a signed valuation** enquire (Formspree deferred); free estimate also on home `#estimate` |
 | `privacy.html` | Privacy stub — no property docs on site; free estimate uses address + date; enquire collects contact details via Formspree |
 | `terms.html` | Terms stub |
-| `styles.css` | Shared paper / ink / oxblood design system |
-| `app.js` | Mobile nav + illustrative estimate reveal + Formspree enquire / success state |
+| `styles.css` | Shared paper / ink / oxblood design system (`?v=vol1`) |
+| `app.js` | Mobile nav + homepage/start illustrative estimate reveal + Formspree enquire / success state |
+
+**Nav (slim):** Free estimate (#estimate) · Prices · Why · Arrange signed
 
 **Legacy redirects:**
 
 | Old file | Goes to |
 |----------|---------|
 | `products.html` | `index.html#products` |
-| `how-it-works.html` | `index.html#how` |
+| `how-it-works.html` | `why.html` |
 | `records.html` | `start.html` |
 | `intake.html` | `start.html` |
 

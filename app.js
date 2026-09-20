@@ -1,6 +1,6 @@
 /**
  * Lock the Date Valuations — static landing JS
- * Nav + client-side indicative estimate (illustrative figures) + Formspree enquire.
+ * Nav + homepage/start indicative estimate reveal (hardcoded demo) + Formspree enquire (deferred).
  */
 (function () {
   "use strict";
@@ -143,7 +143,9 @@
 
       prefillEnquire(address, asAt);
 
-      if (formPanel) formPanel.hidden = true;
+      /* AVM homepage: keep the address box visible; start.html still swaps panels */
+      var keepForm = !!(formPanel && formPanel.classList.contains("avm-box"));
+      if (formPanel && !keepForm) formPanel.hidden = true;
       if (result) {
         result.hidden = false;
         result.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -156,7 +158,8 @@
         if (formPanel) formPanel.hidden = false;
         form.reset();
         syncCustomDateVisibility();
-        if (formPanel) formPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        var scrollTarget = formPanel || form;
+        if (scrollTarget) scrollTarget.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
   }
