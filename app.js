@@ -214,7 +214,7 @@
 
       var action = enquireForm.getAttribute("action") || "";
 
-      /* Placeholder Formspree ID — local success so funnel can be reviewed before Joe plugs his ID */
+      /* Placeholder Formspree ID — local success so the flow can be reviewed offline (Formspree deferred) */
       if (isFormspreePlaceholder(action)) {
         showEnquireSuccess(enquireForm);
         return;
