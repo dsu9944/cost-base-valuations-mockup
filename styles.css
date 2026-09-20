@@ -435,7 +435,7 @@ li { margin-bottom: 0.35rem; }
 /* —— Hero / AVM —— */
 .hero,
 .hero-avm {
-  padding: 1.75rem 0 2rem;
+  padding: 1.25rem 0 2rem;
   background: var(--bg);
 }
 
@@ -1308,3 +1308,4 @@ ol.steps {
 .start-disclaimer-cluster { margin: 1rem 0; font-size: 0.9rem; }
 
 /* legal2 pages rebuild 20260920T235338Z */
+/* legal3 no-h1 zillow hero */
