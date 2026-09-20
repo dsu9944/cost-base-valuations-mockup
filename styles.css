@@ -1,4 +1,4 @@
-/* Lock the Date — consumer tax/estimate system (v=fresh1)
+/* Lock the Date — consumer tax/estimate system (v=fresh2)
    Near-white · near-black · bold blue accent
    Inter / system-ui only — no serif, no boutique palette */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
@@ -20,7 +20,7 @@
   --success-bg: #E6F7ED;
   --warning-bg: #FFF6E5;
   --warning-border: #F0C14B;
-  --danger-bg: #FEF0F0;
+  --danger-bg: #E8F0FF;
   --radius: 8px;
   --radius-sm: 6px;
   --max: 960px;
@@ -410,11 +410,11 @@ li { margin-bottom: 0.35rem; }
 }
 
 .form-status-error {
-  color: #B42318;
+  color: #0B0F14;
   background: var(--danger-bg);
   padding: 0.65rem 0.85rem;
   border-radius: var(--radius-sm);
-  border: 1px solid #F5C2C0;
+  border: 1px solid #D0D7DE;
 }
 
 .confirm-box {
@@ -573,7 +573,7 @@ li { margin-bottom: 0.35rem; }
 
 .callout {
   background: var(--danger-bg);
-  border: 2px solid #F5C2C0;
+  border: 2px solid #D0D7DE;
   border-radius: var(--radius-sm);
   padding: 0.9rem 1rem;
   margin: 0.85rem 0;
