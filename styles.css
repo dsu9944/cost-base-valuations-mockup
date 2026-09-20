@@ -1,4 +1,4 @@
-/* Lock the Date — consumer tax/estimate system (v=fresh2)
+/* Lock the Date — consumer tax/estimate system (v=legal1)
    Near-white · near-black · bold blue accent
    Inter / system-ui only — no serif, no boutique palette */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
@@ -798,6 +798,19 @@ ol.steps {
   margin: 0;
 }
 
+.home-steps .step h3 {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.hero-micro,
+.post-result-line,
+.term-02 {
+  margin-top: 0.75rem;
+  max-width: 42rem;
+}
+
 /* —— Trust strip —— */
 .home-trust-section {
   padding: 0.85rem 0;
@@ -1278,3 +1291,18 @@ ol.steps {
 .estimate-form-panel {
   margin-top: 1rem;
 }
+
+
+.collection-notice {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  background: var(--bg-soft, #F4F6F8);
+  border: 1px solid var(--border, #D0D7DE);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-secondary, #3A4450);
+}
+.collection-notice p { margin: 0 0 0.65rem; }
+.collection-notice p:last-child { margin-bottom: 0; }
+.start-disclaimer-cluster { margin: 1rem 0; font-size: 0.9rem; }

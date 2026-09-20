@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Free indicative estimate — Lock the Date</title>
-  <meta name="description" content="Get a free indicative estimate as at a CGT tax date (e.g. 30 June 2027 or first rented). Not a valuation. If you need one for tax, request a signed valuation by a qualified valuer. NSW &amp; VIC.">
-  <link rel="stylesheet" href="styles.css?v=simple1">
+  <title>Free desktop estimate as at your tax date — Lock the Date</title>
+  <meta name="description" content="Get a free desktop estimate as at a CGT tax date (e.g. 30 June 2027 or first rented). Indicative only — not a valuation, not for tax. Signed valuations from $229 / from $369 subject to confirmation. NSW &amp; VIC.">
+  <link rel="stylesheet" href="styles.css?v=legal1">
 </head>
 <body>
 
@@ -21,9 +21,9 @@
   <main>
     <section class="section page-intro">
       <div class="container estimate-landing">
-        <p class="eyebrow">Free · indicative only</p>
-        <h1>Get a free indicative estimate</h1>
-        <p class="lead">Address + <strong>CGT tax date</strong> (e.g. <strong>30&nbsp;June&nbsp;2027</strong> or first rented). Framed <em>as at</em> that date — not a Domain/REA “today” estimate. <strong>Indicative only — not a valuation, not for tax.</strong></p>
+        <p class="eyebrow">Free desktop · indicative only</p>
+        <h1>Get a free desktop estimate</h1>
+        <p class="lead">Address + <strong>CGT tax date</strong> (e.g. <strong>30&nbsp;June&nbsp;2027</strong> or first rented). Framed <em>as at</em> that date — not a Domain/REA “today” estimate. <strong>Indicative only — not a valuation, not for tax.</strong> Must not be given to an accountant as evidence.</p>
 
         <div class="form-panel estimate-form-panel" id="estimate-form-panel">
           <form id="estimate-form" novalidate>
@@ -53,10 +53,10 @@
               </div>
             </div>
 
-            <p class="tiny-note privacy-line">Free indicative estimate uses address + date only. We don’t collect property documents on this website.</p>
+            <p class="tiny-note privacy-line">Free desktop estimate uses address + date only. We don’t collect property documents on this website.</p>
 
             <div class="btn-group">
-              <button type="submit" class="btn btn-primary btn-lg">Show free indicative estimate</button>
+              <button type="submit" class="btn btn-primary btn-lg">Show free desktop estimate</button>
               <a class="btn btn-outline" href="#full-valuation">Skip to request a signed valuation</a>
             </div>
             <p class="tiny-note"><a class="phone-placeholder" href="tel:1300000000" title="Phone number coming soon">Call — number coming soon <span class="phone-hint">1300 000 000 (placeholder)</span></a></p>
@@ -64,11 +64,11 @@
         </div>
 
         <div class="estimate-result" id="estimate-result" hidden aria-live="polite">
-          <p class="eyebrow">Indicative estimate</p>
-          <h2>Your free indicative estimate</h2>
+          <p class="eyebrow">Free desktop · indicative only</p>
+          <h2>Your free desktop estimate</h2>
 
           <div class="estimate-demo-card">
-            <p class="estimate-demo-badge" role="status">Indicative · illustrative · not for tax</p>
+            <p class="estimate-demo-badge" role="status">Indicative · illustrative · not a valuation · not for tax</p>
             <p class="estimate-address" id="result-address"></p>
             <p class="estimate-as-at" id="result-as-at"></p>
             <p class="estimate-figure" id="result-figure">$1,050,000</p>
@@ -78,9 +78,10 @@
 
           <div class="callout estimate-disclaimer" role="alert">
             <strong>Important — please read</strong>
-            <p>This is a <strong>free indicative estimate</strong>. It is <strong>not a valuation</strong>, <strong>not for tax or CGT</strong>, and must not be given to an accountant as evidence. A <strong>signed valuation by a qualified valuer</strong> is what you need when a figure must support tax work. No automated valuation model is implied.</p>
+            <p>This is a <strong>free desktop estimate</strong>. It is <strong>not a valuation</strong>, <strong>not for tax or CGT</strong>, and must not be given to an accountant as evidence. Need tax evidence? Request a <strong>signed valuation</strong> (desktop or inspected) by a qualified valuer. No automated valuation model is implied.</p>
           </div>
 
+          <p class="tiny-note post-result-line">Free desktop = address + tax date only. Do not give this figure to your accountant. Need tax evidence? Request a signed valuation (desktop or inspected).</p>
           <div class="btn-group">
             <a class="btn btn-primary" href="#full-valuation">Request a signed valuation</a>
             <button type="button" class="btn btn-outline" id="estimate-reset">Try another address</button>
@@ -88,32 +89,35 @@
         </div>
 
         <!-- Always on page: product CTAs and deep links land here -->
-        <div class="signed-valuation-block" id="full-valuation">
+                <p class="pricing-note start-disclaimer-cluster">NSW &amp; VIC. Fee not based on the concluded value. ATO (or others) may not accept or may disagree. Not tax advice.</p>
+
+          <div class="signed-valuation-block" id="full-valuation">
           <p class="eyebrow">Signed valuations</p>
           <h2>Request a signed valuation</h2>
-          <p class="lead lead-tight">Need one for tax? A <strong>qualified valuer</strong> prepares and signs. Your accountant can consider it for tax records. The ATO (or others) may not accept or may disagree with a valuation. Our fee is not based on the concluded value. Clear prices: <strong>from $229</strong> desktop · <strong>from $369</strong> inspected 2027 (subject to confirmation). NSW &amp; VIC. Not tax, legal, or financial advice.</p>
+            <p class="tiny-note term-02">Requesting a signed valuation starts an enquire only. We confirm scope (desktop signed or inspected), fee (incl GST) and timing before any paid engagement. Reports are valuation opinions — not tax, legal or financial advice. The free desktop estimate is separate and is not signed, validated, or certified when you enquire.</p>
+          <p class="lead lead-tight">Need one for tax? A <strong>qualified valuer</strong> prepares and signs a market valuation under the scope you choose (desktop signed or inspected). Your accountant can consider it for tax records. The ATO (or others) may not accept or may disagree with a valuation. Our fee is not based on the concluded value. Browse prices: <strong>from $229</strong> desktop signed · <strong>from $369</strong> inspected (confirmed on enquire). NSW &amp; VIC. Not tax, legal, or financial advice.</p>
 
           <div class="sku-grid sku-grid-2 signed-sku-grid">
-            <article class="sku-card featured">
-              <span class="sku-badge">Most requested</span>
-              <h3>30 June 2027<span class="sku-sub">Inspected market valuation</span></h3>
-              <p class="sku-price">from $369 <span>incl GST · subject to confirmation</span></p>
-              <p class="sku-meta">5–7 business days · NSW &amp; VIC residential</p>
+            <article class="sku-card">
+              <span class="sku-badge badge-alt">Desktop signed</span>
+              <h3>Desktop signed valuation<span class="sku-sub">No site visit · market value as at your tax date</span></h3>
+              <p class="sku-price">From $229 <span>incl GST · confirmed on enquire</span></p>
+              <p class="sku-meta">Qualified valuer · NSW &amp; VIC residential</p>
               <ul>
-                <li>Signed by a qualified valuer</li>
-                <li>Market value as at 30 June 2027</li>
-                <li>PDF for your accountant</li>
+                <li>Prepared &amp; signed by a qualified valuer</li>
+                <li>Market value as at your tax date</li>
+                <li>PDF your accountant can consider</li>
               </ul>
             </article>
-            <article class="sku-card">
-              <span class="sku-badge badge-alt">Past-date desktop</span>
-              <h3>Past-date desktop<span class="sku-sub">First rented / other past dates · no site visit</span></h3>
-              <p class="sku-price">from $229 <span>incl GST · signed · subject to confirmation</span></p>
-              <p class="sku-meta">3 business days · from records &amp; comps</p>
+            <article class="sku-card featured">
+              <span class="sku-badge">Inspected</span>
+              <h3>Inspected valuation<span class="sku-sub">e.g. 30 Jun 2027 · site visit</span></h3>
+              <p class="sku-price">From $369 <span>incl GST · confirmed on enquire</span></p>
+              <p class="sku-meta">Qualified valuer · NSW &amp; VIC residential</p>
               <ul>
-                <li>Signed by a qualified valuer</li>
-                <li>As at a past tax date you nominate</li>
-                <li>Done from records — no site inspection</li>
+                <li>Prepared &amp; signed by a qualified valuer</li>
+                <li>Site visit · market value as at your tax date</li>
+                <li>PDF your accountant can consider</li>
               </ul>
             </article>
           </div>
@@ -121,6 +125,7 @@
           <div class="enquire-block">
             <h3>Arrange a signed valuation</h3>
             <p>No private document uploads on this site. Enquire below and we’ll follow up. Online checkout not live yet.</p>
+            <p class="tiny-note term-02">Requesting a signed valuation starts an enquire only. We confirm scope (desktop signed or inspected), fee (incl GST) and timing before any paid engagement. Reports are valuation opinions — not tax, legal or financial advice. The free desktop estimate is separate and is not signed, validated, or certified when you enquire.</p>
             <div class="btn-group">
               <a class="btn btn-primary btn-lg" href="#enquire">Request a signed valuation</a>
               <a class="btn btn-outline phone-placeholder" href="tel:1300000000" title="Phone number coming soon">Call — number coming soon</a>
@@ -176,7 +181,10 @@
                 <textarea id="enquire-message" name="message" rows="4" placeholder="e.g. I’d like an inspected 30 June 2027 signed valuation — please call me to arrange."></textarea>
               </div>
 
-              <p class="tiny-note">By submitting, you ask us to contact you about a signed valuation. We don’t collect property documents on this website.</p>
+              <div class="collection-notice" role="note">
+                <p><strong>Collection notice:</strong> Lock the Date Valuations collects your name, email, phone (if given), property address, tax date and message to respond to your signed-valuation enquire and arrange next steps. We may use a form provider (e.g. Formspree) to receive this — that provider may process data outside Australia. We don’t collect property documents on this website. See our <a href="privacy.html">Privacy policy</a>. You can ask us for access or correction, or complain about privacy, using the contact details there.</p>
+                <p>By submitting, you ask Lock the Date Valuations to contact you (email/phone) about this signed-valuation enquire. This is not consent for unrelated marketing emails or SMS.</p>
+              </div>
 
               <div class="btn-group">
                 <button type="submit" class="btn btn-primary" id="enquire-submit">Request a signed valuation</button>
@@ -192,7 +200,7 @@
           </div>
         </div>
 
-        <p class="tiny-note privacy-line">We don’t collect property documents on this website. Free estimate uses address + date only. Paperwork for a paid signed valuation is requested securely after we speak — never via an upload vault on this public site.</p>
+        <p class="tiny-note privacy-line">We don’t collect property documents on this website. Free desktop estimate uses address + date only. Paperwork for a paid signed valuation is requested securely after we speak — never via an upload vault on this public site.</p>
 
         <div class="btn-group">
           <a class="btn btn-outline" href="index.html#products">See signed valuations</a>
@@ -208,12 +216,12 @@
         <div class="footer-brand">Lock the Date Valuations</div>
         <p>Signed market value for the tax date that splits your gain. NSW &amp; VIC residential.</p>
         <p class="footer-meta">Qualified valuer · ABN XX XXX XXX XXX (placeholder)<br>NSW &amp; VIC · <a class="phone-placeholder" href="tel:1300000000" title="Phone number coming soon">1300 000 000 (placeholder)</a> · Email (placeholder)</p>
-        <p class="footer-privacy">We don’t collect property documents on this website. Free estimate uses address + date only.</p>
+        <p class="footer-privacy">We don’t collect property documents on this website. Free desktop estimate uses address + date only.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <ul class="footer-links">
-          <li><a href="index.html#estimate">Free indicative estimate</a></li>
+          <li><a href="index.html#estimate">Free desktop estimate</a></li>
           <li><a href="index.html#products">Prices</a></li>
           <li><a href="why.html">Why the date matters</a></li>
           <li><a href="start.html#full-valuation">Arrange signed</a></li>
@@ -229,7 +237,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice. Free indicative estimates are not valuations.
+      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice. Free desktop estimates are not valuations.
       <span class="footer-illustrative">Indicative estimate is illustrative until the model is live.</span>
     </div>
   </footer>
