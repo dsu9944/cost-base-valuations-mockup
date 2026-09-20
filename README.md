@@ -8,9 +8,13 @@ Static HTML/CSS/vanilla JS landing for **Lock the Date** / Lock the Date Valuati
 
 **Visitor path:**
 1. **Free** — address + purpose/tax date → **indicative estimate** (illustrative figures until the model is live) with clear disclaimer: not a valuation, not for tax.
-2. **Paid** — **Request / arrange a signed valuation**: George-signed report a qualified valuer prepares; your accountant can consider it for tax records. Call or enquire (Formspree deferred). **No** private doc uploads / evidence vault on the public site.
+2. **Paid** — **Request / arrange a signed valuation**: signed report a **qualified valuer** prepares; your accountant can consider it for tax records. Call or enquire (Formspree deferred). **No** private doc uploads / evidence vault on the public site.
 
-**Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · Fraunces (H1 only) + IBM Plex Sans · calm AU professional services, not SaaS.
+**Positioning:** BMT-for-valuations / fast-tax productized counter — efficient, clear price, value-for-money. Not prestige HTW, not $99 AVM junk. Paper/ink trust palette.
+
+**Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · Fraunces (H1 only) + IBM Plex Sans · dense productized counter, not essay/prestige.
+
+**Public copy:** no “(George-signed)” / no George first name on public pages — “qualified valuer” only. Soft-market / Cotality deferred.
 
 **Out of scope for this ship:** live estimate model, Stripe checkout, ASIC, evidence vault. Do **not** git push unless the parent agent owns the push.
 
@@ -52,7 +56,7 @@ action="https://formspree.io/f/xxxxxxxx"
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage — hero (FB cut-through) → signed valuation products → stories → why → how → FAQ → scope → accountants → CTA |
+| `index.html` | Homepage — short hero punch → two SKUs → 3 story cards → why → how → FAQ → scope → accountants → CTA |
 | `start.html` | **Free indicative estimate** → illustrative result + disclaimer → **Request a signed valuation** (Formspree enquire) |
 | `privacy.html` | Privacy stub — no property docs on site; free estimate uses address + date; enquire collects contact details via Formspree |
 | `terms.html` | Terms stub |
@@ -88,10 +92,12 @@ action="https://formspree.io/f/xxxxxxxx"
 - Scope: **NSW & VIC** residential investment tax dates only — not lending, commercial, rural, prestige, or sale appraisal.
 - We do **not** give tax advice; accountants can consider the report for tax records.
 - Paid path: phone (`1300 000 000` placeholder) or enquire. Formspree deferred (xxxxxxxx). Stripe checkout not live.
-- SKUs (price cues):
-  - `cgt_retrospective` — **past-date desktop valuation** (first rented / other past dates — done from records, no site inspection): **from $229** signed; 15+ years / thin comps +$50 (cap **$279**), then quote. Turnaround **3 business days**.
-  - `mv_2027_06_30` — **30 June 2027 inspected** (tax-recommended): **from $369**; regional/complex from **$449**. Turnaround **5–7 business days**.
-  - `mv_2027_06_30_desktop` — SKU2 desktop restricted **$269** — **OFF** until George enables (AVI / not on browse path).
+- SKUs (two clear browse prices):
+  - `cgt_retrospective` — **past-date desktop** (first rented / other past dates — from records, no site visit): **$229** signed. Turnaround **3 business days**.
+  - `mv_2027_06_30` — **30 June 2027 inspected** (most requested): **$369**. Turnaround **5–7 business days**. Complex/regional → custom quote (not a third browse SKU).
+  - `mv_2027_06_30_desktop` — restricted **$269** — **OFF** / AVI off browse path.
+- Master line / hero punch: **“CGT date valuations. Clear price. Signed. Done.”**
+- Phone: label clearly as placeholder (`Call — number coming soon` / `1300 000 000 (placeholder)`).
 - Kill on site: AVM branding, automated/AI valuation as product, “Cost Base Valuations” naming, $149 assessment framing, proptech hype, public evidence vault / private doc uploads, “buy the stamp”.
 
 ## Indicative estimate behaviour

@@ -251,7 +251,7 @@
                     return err.message;
                   })
                   .join(" ")) ||
-              "Something went wrong. Please call 1300 000 000 or try again.";
+              "Something went wrong. Please try again or use the enquire form — phone number coming soon.";
             throw new Error(msg);
           });
         })
@@ -261,7 +261,7 @@
             status.className = "form-status form-status-error";
             status.textContent =
               (err && err.message) ||
-              "Could not send. Please call 1300 000 000.";
+              "Could not send. Please try again — phone number coming soon (placeholder).";
           }
         })
         .finally(function () {
