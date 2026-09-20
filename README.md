@@ -10,9 +10,9 @@ Static HTML/CSS/vanilla JS landing for **Lock the Date** / Lock the Date Valuati
 1. **Free** — address + purpose/tax date → **indicative estimate** (illustrative figures until the model is live) with clear disclaimer: not a valuation, not for tax.
 2. **Paid** — **Request / arrange a signed valuation**: signed report a **qualified valuer** prepares; your accountant can consider it for tax records. Call or enquire (Formspree deferred). **No** private doc uploads / evidence vault on the public site.
 
-**Positioning:** BMT-for-valuations / fast-tax productized counter — efficient, clear price, value-for-money. Not prestige HTW, not $99 AVM junk. Paper/ink trust palette.
+**Positioning:** BMT-for-valuations / fast-tax productized counter — efficient, clear price, value-for-money. Not prestige HTW, not $99 AVM junk. Consumer tax/estimate UI.
 
-**Design system:** paper `#F7F5F0` · ink `#1A1A1A` · oxblood `#6B2E2E` · IBM Plex Sans (sans-forward H1 + UI) · AVM-scale high-volume (`?v=vol1`) — Zillow/Ownwell/Duo energy, not prestige/private-bank.
+**Design system:** near-white `#FFFFFF` · near-black `#0B0F14` · bold blue `#0066FF` · Inter / system-ui only (no serif) · `?v=fresh1` — Zillow/Ownwell/Duo volume energy, not boutique valuation firm.
 
 **Public copy:** no “(George-signed)” / no George first name on public pages — “qualified valuer” only. Soft-market / Cotality deferred.
 
@@ -61,7 +61,7 @@ action="https://formspree.io/f/xxxxxxxx"
 | `start.html` | Estimate deep-link + **Request a signed valuation** enquire (Formspree deferred); free estimate also on home `#estimate` |
 | `privacy.html` | Privacy stub — no property docs on site; free estimate uses address + date; enquire collects contact details via Formspree |
 | `terms.html` | Terms stub |
-| `styles.css` | Shared paper / ink / oxblood design system (`?v=vol1`) |
+| `styles.css` | Shared consumer tax/estimate design system (`?v=fresh1`) |
 | `app.js` | Mobile nav + homepage/start illustrative estimate reveal + Formspree enquire / success state |
 
 **Nav (slim):** Free estimate (#estimate) · Prices · Why · Arrange signed
@@ -124,6 +124,6 @@ Illustrative placeholder, e.g. **Indicative estimate as at [date]: $1,050,000** 
 ## Brand / design
 
 - **Lock the Date** / Lock the Date Valuations — no draft banners in main UI; tiny footer note only
-- Palette: off-white paper, deep ink, one oxblood accent; Fraunces H1 + IBM Plex Sans body
+- Palette: near-white bg, near-black text, one bold blue accent; Inter / system-ui only (no serif)
 - Master line: “Signed market value for the tax date that splits your gain.”
 - Privacy line: “We don’t collect property documents on this website. Free estimate uses address + date only.”
