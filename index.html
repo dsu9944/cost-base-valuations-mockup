@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Free desktop estimate as at your tax date — Lock the Date</title>
-  <meta name="description" content="Free desktop estimate as at your tax date. Indicative only — not a valuation, not for tax. Signed valuations from $229 / from $369 subject to confirmation. NSW &amp; VIC.">
-  <link rel="stylesheet" href="styles.css?v=legal3">
+  <meta name="description" content="Free desktop estimate as at your tax date. Indicative only — not a valuation, not for tax. Signed valuations from $229 subject to confirmation. NSW &amp; VIC.">
+  <link rel="stylesheet" href="styles.css?v=legal4">
 </head>
 <body>
   <header class="site-header">
@@ -24,18 +24,8 @@
               <div class="field avm-address">
                 <label for="property-address">Address</label>
                 <input type="text" id="property-address" name="address" autocomplete="street-address" placeholder="e.g. 12 Example St, Parramatta NSW 2150" required>
+                <span class="hint avm-hint">NSW &amp; VIC · indicative only — not a valuation, not for tax</span>
               </div>
-              <div class="field avm-purpose">
-                <label for="purpose">Tax date</label>
-                <select id="purpose" name="purpose" required>
-                  <option value="2027-06-30">30 June 2027</option>
-                  <option value="first-rented">First rented</option>
-                  <option value="other">Other date</option>
-                </select>
-              </div>
-              <div class="field avm-custom" id="custom-date-wrap" hidden>
-                <label for="custom-date">Date</label>
-                <input type="text" id="custom-date" name="customDate" placeholder="e.g. 15 March 2019">
               </div>
               <div class="avm-submit">
                 <button type="submit" class="btn btn-primary btn-lg avm-btn">Get free desktop estimate</button>
@@ -45,9 +35,8 @@
         </div>
 
         <div class="estimate-result avm-result" id="estimate-result" hidden aria-live="polite">
-          <p class="estimate-demo-badge" role="status">Indicative only — not a valuation, not for tax</p>
           <p class="estimate-figure"><span id="result-figure">$1,050,000</span></p>
-          <p class="tiny-note" id="result-date-inline" hidden></p>
+          <p class="tiny-note estimate-date-note" id="result-date-inline">As at 1 July 2027 · indicative only — not a valuation, not for tax</p>
           <p class="tiny-note post-result-line">Free desktop = address + tax date only. Do not give this figure to your accountant. Need tax evidence? Request a signed valuation (desktop or inspected).</p>
           <div class="btn-group">
             <a class="btn btn-primary" href="#products">See signed prices</a>
@@ -59,21 +48,15 @@
 
     <section class="section section-tight" id="products">
       <div class="container">
-        <div class="sku-grid sku-grid-2">
-          <article class="sku-card" id="past-date-desktop">
-            <h3>Desktop signed valuation</h3>
+        <div class="sku-grid">
+          <article class="sku-card featured" id="signed-valuation">
+            <h3>Signed valuation</h3>
             <p class="sku-price">from $229 <span>incl GST · confirmed on enquire</span></p>
-            <p class="sku-meta">Signed report, no site visit</p>
-            <a class="btn btn-primary" href="start.html#full-valuation">Arrange desktop signed</a>
-          </article>
-          <article class="sku-card featured" id="mv2027">
-            <h3>Inspected valuation</h3>
-            <p class="sku-price">from $369 <span>incl GST · confirmed on enquire</span></p>
-            <p class="sku-meta">Includes a site visit · e.g. 30 Jun 2027</p>
-            <a class="btn btn-primary" href="start.html#full-valuation">Arrange inspected</a>
+            <p class="sku-meta">Qualified valuer · NSW &amp; VIC residential</p>
+            <a class="btn btn-primary" href="start.html#full-valuation">Enquire for a signed valuation</a>
           </article>
         </div>
-        <p class="pricing-note">From prices are browse prices incl GST for standard NSW &amp; VIC residential. Subject to confirmation. Final fee confirmed before you proceed. Complex or regional may need a custom quote. NSW &amp; VIC. Not tax advice · ATO may disagree. Requesting a signed valuation starts an enquire only — we confirm scope, fee (incl GST) and timing before any paid engagement. The free desktop estimate is separate and is not signed, validated, or certified when you enquire.</p>
+        <p class="pricing-note">From prices are browse prices incl GST for standard NSW &amp; VIC residential. Subject to confirmation. Final fee confirmed before you proceed. Complex or regional may need a custom quote. NSW &amp; VIC. Not tax advice · ATO may disagree. Fee isn’t based on the concluded value. Requesting a signed valuation starts an enquire only — we confirm scope, fee (incl GST) and timing before any paid engagement. The free desktop estimate is separate and is not signed, validated, or certified when you enquire.</p>
       </div>
     </section>
 
@@ -81,7 +64,7 @@
       <div class="container">
         <ol class="steps steps-3 home-steps">
           <li class="step"><h3>Free desktop estimate (indicative · not for tax)</h3></li>
-          <li class="step"><h3>Enquire for a signed valuation (desktop or inspected)</h3></li>
+          <li class="step"><h3>Enquire for a signed valuation</h3></li>
           <li class="step"><h3>Qualified valuer prepares &amp; signs → PDF your accountant can consider</h3></li>
         </ol>
         <p class="home-more-line"><a href="why.html">Why the tax date matters</a></p>

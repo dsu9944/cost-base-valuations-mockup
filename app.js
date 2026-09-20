@@ -52,6 +52,7 @@
     rangeLow: "$980,000",
     rangeHigh: "$1,120,000"
   };
+  var DEFAULT_ESTIMATE_DATE = "1 July 2027";
 
   function resolveAsAtDate(purpose, customDate) {
     var custom = (customDate || "").trim();
@@ -84,6 +85,7 @@
     var purpose = document.getElementById("purpose");
     var customWrap = document.getElementById("custom-date-wrap");
     var formPanel = document.getElementById("estimate-form-panel");
+    var isHomepageAvm = !!(formPanel && formPanel.classList.contains("avm-box"));
     var result = document.getElementById("estimate-result");
     var resetBtn = document.getElementById("estimate-reset");
 
@@ -114,12 +116,14 @@
         if (addressEl) addressEl.focus();
         return;
       }
-      if (!purposeVal) {
-        if (purpose) purpose.focus();
+      if (purpose && !purposeVal) {
+        purpose.focus();
         return;
       }
 
-      var asAt = resolveAsAtDate(purposeVal, customEl ? customEl.value : "");
+      var asAt = isHomepageAvm
+        ? DEFAULT_ESTIMATE_DATE
+        : resolveAsAtDate(purposeVal, customEl ? customEl.value : "");
 
       var resultAddress = document.getElementById("result-address");
       var resultAsAt = document.getElementById("result-as-at");
@@ -139,7 +143,11 @@
           " – " +
           DEMO_ESTIMATE.rangeHigh;
       }
-      if (resultDateInline) resultDateInline.textContent = asAt;
+      if (resultDateInline) {
+        resultDateInline.textContent = isHomepageAvm
+          ? "As at " + asAt + " · indicative only — not a valuation, not for tax"
+          : asAt;
+      }
 
       prefillEnquire(address, asAt);
 

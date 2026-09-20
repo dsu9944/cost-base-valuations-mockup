@@ -489,7 +489,7 @@ li { margin-bottom: 0.35rem; }
 @media (min-width: 720px) {
   .avm-form .avm-row {
     display: grid;
-    grid-template-columns: 1fr 180px auto;
+    grid-template-columns: 1fr auto;
     gap: 0.65rem;
     align-items: end;
   }
@@ -505,7 +505,7 @@ li { margin-bottom: 0.35rem; }
 
   .avm-address { grid-column: 1; }
   .avm-purpose { grid-column: 2; }
-  .avm-submit { grid-column: 3; }
+  .avm-submit { grid-column: 2; }
 }
 
 /* Estimate result */
@@ -1309,3 +1309,4 @@ ol.steps {
 
 /* legal2 pages rebuild 20260920T235338Z */
 /* legal3 no-h1 zillow hero */
+/* legal4 single-sku address-only hero */
