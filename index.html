@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CGT date valuations — free estimate + signed from $229 — Lock the Date</title>
-  <meta name="description" content="Free indicative estimate as at your CGT tax date (30 Jun 2027, first rented, other). Then a signed valuation by a qualified valuer — Desktop $229 · Inspected $369. NSW &amp; VIC.">
-  <link rel="stylesheet" href="styles.css?v=fresh2">
+  <title>Free estimate as at your tax date — Lock the Date</title>
+  <meta name="description" content="Free indicative estimate as at your CGT tax date. Signed valuations from $229 / from $369. NSW &amp; VIC. Not tax advice.">
+  <link rel="stylesheet" href="styles.css?v=simple1">
 </head>
 <body>
 
@@ -19,18 +19,16 @@
   </header>
 
   <main>
-    <!-- 1. Hero = giant address + tax-date (Zillow-scale) -->
     <section class="hero hero-avm" id="estimate">
       <div class="container hero-avm-inner">
-        <p class="eyebrow">NSW &amp; VIC · as at your CGT date</p>
-        <h1>Get a free estimate as at your tax date</h1>
-        <p class="hero-sub">Address + date → indicative figure in seconds. Not a Domain “today” price — framed <em>as at</em> 30&nbsp;Jun&nbsp;2027, first rented, or another tax date.</p>
+        <h1>Free estimate as at your tax date</h1>
+        <p class="hero-sub">NSW &amp; VIC · indicative only</p>
 
         <div class="avm-box" id="estimate-form-panel">
           <form id="estimate-form" class="avm-form" novalidate>
             <div class="avm-row">
               <div class="field avm-address">
-                <label for="property-address">Property address</label>
+                <label for="property-address">Address</label>
                 <input type="text" id="property-address" name="address" autocomplete="street-address" placeholder="e.g. 12 Example St, Parramatta NSW 2150" required>
               </div>
               <div class="field avm-purpose">
@@ -51,119 +49,75 @@
                 <button type="submit" class="btn btn-primary btn-lg avm-btn">Get free estimate</button>
               </div>
             </div>
-            <p class="avm-hint">Free · address + date only · no document uploads · indicative only — not a valuation, not for tax</p>
           </form>
         </div>
 
         <div class="estimate-result avm-result" id="estimate-result" hidden aria-live="polite">
           <div class="estimate-demo-card">
-            <p class="estimate-demo-badge" role="status">Indicative · illustrative · not a valuation · not for tax</p>
-            <p class="estimate-address" id="result-address"></p>
-            <p class="estimate-as-at" id="result-as-at"></p>
+            <p class="estimate-demo-badge" role="status">Indicative · not a valuation</p>
             <p class="estimate-figure" id="result-figure">$1,050,000</p>
-            <p class="estimate-range" id="result-range">Illustrative range: $980,000 – $1,120,000</p>
-            <p class="estimate-mock-note">Indicative as at <span id="result-date-inline">the nominated date</span>. <strong>Not a valuation. Not for tax.</strong> Demo figure until the model is live.</p>
-          </div>
-          <div class="callout estimate-disclaimer" role="alert">
-            <strong>Not a valuation — not for tax</strong>
-            <p>This free indicative estimate must not be given to an accountant as evidence. When you need a figure for tax records, arrange a <strong>signed valuation by a qualified valuer</strong>. Not tax advice. No automated valuation is implied.</p>
+            <p class="estimate-address" id="result-address" hidden></p>
+            <p class="estimate-as-at" id="result-as-at" hidden></p>
+            <p class="estimate-range" id="result-range" hidden></p>
+            <span id="result-date-inline" class="sr-only"></span>
           </div>
           <div class="btn-group">
-            <a class="btn btn-primary" href="#products">See signed prices — from $229</a>
-            <button type="button" class="btn btn-outline" id="estimate-reset">Try another address</button>
+            <a class="btn btn-primary" href="#products">Signed from $229</a>
+            <button type="button" class="btn btn-outline" id="estimate-reset">Try another</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Primary conversion: two big price cards ONLY -->
     <section class="section section-tight" id="products">
       <div class="container">
-        <div class="section-head section-head-tight">
-          <p class="eyebrow">Signed valuations</p>
-          <h2>Clear prices. Product menu.</h2>
-        </div>
-
         <div class="sku-grid sku-grid-2">
           <article class="sku-card" id="past-date-desktop">
-            <span class="sku-badge badge-alt">Desktop</span>
-            <p class="sku-price">$229 <span>incl GST · signed</span></p>
-            <h3>Past-date desktop<span class="sku-sub">First rented / other past dates · no site visit</span></h3>
-            <p class="sku-meta">3 business days · from records &amp; comps</p>
-            <ul>
-              <li>As at a past tax date you nominate</li>
-              <li>Signed by a qualified valuer</li>
-              <li>PDF for your accountant</li>
-            </ul>
+            <h3>Past-date desktop</h3>
+            <p class="sku-price">from $229</p>
+            <p class="sku-meta">Signed · no site visit · subject to confirmation</p>
             <div class="btn-group sku-ctas">
-              <a class="btn btn-primary" href="start.html#full-valuation">Arrange signed valuation</a>
+              <a class="btn btn-primary" href="start.html#full-valuation">Arrange signed</a>
             </div>
           </article>
 
           <article class="sku-card featured" id="mv2027">
-            <span class="sku-badge">Most requested</span>
-            <p class="sku-price">$369 <span>incl GST</span></p>
-            <h3>Inspected 30 Jun 2027<span class="sku-sub">Site visit · market value as at the split date</span></h3>
-            <p class="sku-meta">5–7 business days · NSW &amp; VIC</p>
-            <ul>
-              <li>Inspected market value as at 30 June 2027</li>
-              <li>Signed by a qualified valuer</li>
-              <li>PDF for your accountant</li>
-            </ul>
+            <h3>Inspected 30 Jun 2027</h3>
+            <p class="sku-price">from $369</p>
+            <p class="sku-meta">Signed · site visit · subject to confirmation</p>
             <div class="btn-group sku-ctas">
-              <a class="btn btn-primary" href="start.html#full-valuation">Arrange signed valuation</a>
+              <a class="btn btn-primary" href="start.html#full-valuation">Arrange signed</a>
             </div>
           </article>
         </div>
 
-        <p class="pricing-note">Free = indicative only (not a valuation, not for tax). Paid = signed by a <strong>qualified valuer</strong> — accountant can consider for tax records. Incl. GST. Not tax advice. Complex / regional may need a custom quote.</p>
+        <p class="pricing-note">Fee not based on the concluded value. ATO (or others) may not accept or may disagree. NSW &amp; VIC. Not tax advice.</p>
       </div>
     </section>
 
-    <!-- 3. Three steps -->
     <section class="section section-alt section-tight" id="how">
       <div class="container">
-        <div class="section-head section-head-tight">
-          <p class="eyebrow">How it works</p>
-          <h2>Three steps</h2>
-        </div>
         <ol class="steps steps-3 home-steps">
           <li class="step">
             <span class="step-num">1</span>
             <h3>Free estimate</h3>
-            <p>Address + tax date → indicative figure. Not a valuation. Not for tax.</p>
           </li>
           <li class="step">
             <span class="step-num">2</span>
-            <h3>Qualified valuer signs</h3>
-            <p>You arrange a paid signed valuation. A qualified valuer prepares and signs.</p>
+            <h3>Valuer signs</h3>
           </li>
           <li class="step">
             <span class="step-num">3</span>
             <h3>PDF for accountant</h3>
-            <p>You get a PDF your accountant can consider for tax records. Not tax advice.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- 4. Thin strip -->
-    <section class="section section-tight home-trust-section" aria-label="Scope">
-      <div class="container">
-        <ul class="home-trust">
-          <li>NSW &amp; VIC</li>
-          <li>3 / 5–7 days</li>
-          <li>Not tax advice</li>
-          <li>No doc vault</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 5. Secondary links only -->
     <section class="section section-tight home-more">
       <div class="container">
         <p class="home-more-line">
-          <a href="why.html">Why the date matters / Examples →</a>
+          <a href="why.html">Why the date matters →</a>
         </p>
       </div>
     </section>
@@ -172,32 +126,22 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <div class="footer-brand">Lock the Date Valuations</div>
-        <p>CGT date valuations — free indicative estimate, then signed by a qualified valuer. NSW &amp; VIC residential.</p>
-        <p class="footer-meta">Qualified valuer · ABN XX XXX XXX XXX (placeholder)<br>NSW &amp; VIC · <a class="phone-placeholder" href="tel:1300000000" title="Phone number coming soon">1300 000 000 (placeholder)</a> · Email (placeholder)</p>
-        <p class="footer-privacy">We don’t collect property documents on this website. Free estimate uses address + date only. Paperwork for a paid signed valuation is requested securely after we speak — not uploaded here.</p>
+        <div class="footer-brand">Lock the Date</div>
+        <p>NSW &amp; VIC · Not tax advice</p>
       </div>
       <div class="footer-col">
-        <h4>Explore</h4>
         <ul class="footer-links">
-          <li><a href="#estimate">Free indicative estimate</a></li>
+          <li><a href="#estimate">Estimate</a></li>
           <li><a href="#products">Prices</a></li>
-          <li><a href="why.html">Why the date matters</a></li>
-          <li><a href="start.html#full-valuation">Request signed</a></li>
-          <li><a class="phone-placeholder" href="tel:1300000000" title="Phone number coming soon">Call — number coming soon</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul class="footer-links">
+          <li><a href="why.html">Why</a></li>
+          <li><a href="start.html#full-valuation">Arrange signed</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="terms.html">Terms</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice. Valuation opinions only — your accountant applies them to your facts.
-      <span class="footer-illustrative">Indicative estimate is illustrative until the model is live.</span>
+      © 2026 Lock the Date Valuations. Not financial, tax, or legal advice.
     </div>
   </footer>
 
