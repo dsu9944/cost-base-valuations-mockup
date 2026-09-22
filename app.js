@@ -1,5 +1,5 @@
 /**
- * Lock the Date Valuations — static landing JS
+ * Ashford Valuations — static landing JS
  * Nav + homepage/start indicative estimate reveal (hardcoded demo) + Formspree enquire (deferred).
  */
 (function () {
