@@ -203,10 +203,11 @@ li { margin-bottom: 0.35rem; }
 }
 
 .logo-mark {
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.8vw, 1.45rem);
+  letter-spacing: -0.03em;
   color: var(--text);
+  line-height: 1.15;
 }
 
 .logo-glyph,
@@ -1280,7 +1281,7 @@ ol.steps {
 
 .footer-brand {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
   color: var(--text);
   margin-bottom: 0.4rem;
 }
@@ -1490,3 +1491,5 @@ a[href^="tel:"] {
 /* design5 = ashford brand on tesla chrome */
 
 /* design6 full market valuation CTAs */
+
+/* design6b larger Ashford wordmark */
