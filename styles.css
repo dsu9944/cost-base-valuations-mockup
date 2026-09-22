@@ -1481,3 +1481,6 @@ a[href^="tel:"] {
   display: none !important;
 }
 
+
+/* design4b: date overlay removed */
+.graphic-band-date { display: none !important; }

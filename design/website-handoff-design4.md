@@ -95,3 +95,9 @@ No faces.
 5. legal5 locks intact  
 
 Ping Designer with `?v=design4` URL + screenshots (include graphic band).
+
+## Rev design4b (Joe 22 Sep 21:13 AEST)
+
+**Remove** large **1 JUL 2027** (or any date) typographic overlay on the photo band.  
+Keep full-bleed residential graphic.  
+As-at **1 July 2027** remains only in normal UI copy (result note, sku-meta, etc.).
