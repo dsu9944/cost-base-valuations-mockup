@@ -1,18 +1,18 @@
-/* Lock the Date — design2 modern clean 2026 preview (BMT + soft teal CTAs)
-   Soft page bg · elevated cards · teal primary — preview only, not Joe-approved publish
+/* Lock the Date — design3 dense crisp-white preview (not Joe-approved)
+   White page · one hero surface · compact price · flat steps · teal CTAs
    Product locks: address-only hero, as-at 1 July 2027, from $229 — copy unchanged */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg: #F7F8FA;
+  --bg: #FFFFFF;
+  --bg-soft: #F4F6F8;
   --bg-elevated: #FFFFFF;
-  --bg-soft: #EEF1F4;
-  --bg-muted: #E4E8ED;
+  --bg-muted: #E8ECF0;
   --text: #0B0F14;
   --text-secondary: #3A4450;
-  --muted: #6B7280;
-  --border: #E5E7EB;
-  --border-strong: #D1D5DB;
+  --muted: #5C6773;
+  --border: #E2E8F0;
+  --border-strong: #CBD5E1;
   --accent: #0F6B6B;
   --accent-hover: #0A5555;
   --accent-soft: #E6F3F3;
@@ -22,19 +22,19 @@
   --cta-text: #FFFFFF;
   --success: #0A7A3E;
   --success-bg: #E6F7ED;
-  --warning-bg: #F7F8FA;
-  --warning-border: #E5E7EB;
+  --warning-bg: #F4F6F8;
+  --warning-border: #E2E8F0;
   --danger-bg: #E6F3F3;
-  --shadow-sm: 0 1px 2px rgba(11, 15, 20, 0.04);
-  --shadow-md: 0 4px 16px rgba(11, 15, 20, 0.06), 0 1px 3px rgba(11, 15, 20, 0.04);
-  --radius: 10px;
-  --radius-lg: 16px;
-  --radius-card: 16px;
-  --radius-sm: 10px;
+  --shadow-sm: 0 1px 2px rgba(11, 15, 20, 0.05);
+  --shadow-md: 0 1px 2px rgba(11, 15, 20, 0.05);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-card: 12px;
+  --radius-sm: 8px;
   --radius-pill: 999px;
-  --max: 720px;
+  --max: 640px;
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --header-h: 64px;
+  --header-h: 56px;
   --tap: 48px;
 }
 
@@ -51,7 +51,7 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
-  font-size: 15.5px;
+  font-size: 16px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -108,15 +108,19 @@ li { margin-bottom: 0.35rem; }
 }
 
 .section {
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
 }
 
 @media (min-width: 720px) {
-  .section { padding: 3.25rem 0; }
+  .section { padding: 2rem 0; }
 }
 
 .section-tight {
-  padding: 2rem 0;
+  padding: 1.25rem 0;
+}
+
+@media (min-width: 720px) {
+  .section-tight { padding: 1.75rem 0; }
 }
 
 .section-alt {
@@ -158,11 +162,11 @@ li { margin-bottom: 0.35rem; }
 }
 
 .page-intro {
-  padding-top: 1.75rem;
-  padding-bottom: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
 }
 
-/* —— Header: wordmark + Call only —— */
+/* —— Header: wordmark + Enquire teal text only —— */
 .site-header {
   background: var(--bg-elevated);
   border-bottom: 1px solid var(--border);
@@ -404,7 +408,7 @@ li { margin-bottom: 0.35rem; }
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
   padding: 1.25rem;
   margin: 1rem 0;
 }
@@ -457,12 +461,19 @@ li { margin-bottom: 0.35rem; }
 /* —— Hero / AVM —— */
 .hero,
 .hero-avm {
-  padding: 1.75rem 0 2.5rem;
+  padding: 1.25rem 0 0.75rem;
   background: transparent;
 }
 
+@media (min-width: 720px) {
+  .hero,
+  .hero-avm {
+    padding: 1.75rem 0 1rem;
+  }
+}
+
 .hero-avm-inner {
-  max-width: 720px;
+  max-width: var(--max);
 }
 
 .hero h1 {
@@ -477,12 +488,12 @@ li { margin-bottom: 0.35rem; }
 }
 
 .avm-box {
-  background: var(--bg-elevated);
+  background: var(--bg-soft);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.35rem;
-  margin-bottom: 1rem;
+  box-shadow: none;
+  padding: 1.15rem;
+  margin-bottom: 0;
 }
 
 .avm-form .avm-row {
@@ -542,8 +553,8 @@ li { margin-bottom: 0.35rem; }
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.25rem;
+  box-shadow: none;
+  padding: 1.15rem;
   margin-bottom: 0.85rem;
 }
 
@@ -575,10 +586,10 @@ li { margin-bottom: 0.35rem; }
 }
 
 .estimate-figure {
-  font-size: clamp(2.25rem, 8vw, 3.25rem);
+  font-size: clamp(1.75rem, 6vw, 2.25rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1;
+  line-height: 1.1;
   color: var(--text);
   margin: 0.35rem 0 0.5rem;
 }
@@ -641,11 +652,11 @@ li { margin-bottom: 0.35rem; }
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.35rem;
+  box-shadow: none;
+  padding: 1.15rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.55rem;
   position: relative;
   overflow: hidden;
 }
@@ -653,17 +664,29 @@ li { margin-bottom: 0.35rem; }
 .sku-card.featured {
   border-color: var(--border);
   border-width: 1px;
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
 }
 
+/* Kill design2 featured teal top bar (app-card feel) */
 .sku-card.featured::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
+  content: none;
+  display: none;
+}
+
+/* Homepage price: compact band under hero, not a second tall elevated card */
+#products .sku-grid {
+  gap: 0;
+}
+
+#products .sku-card,
+#products .sku-card.featured {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.15rem 0 0.85rem;
+  overflow: visible;
 }
 
 .sku-badge {
@@ -686,12 +709,12 @@ li { margin-bottom: 0.35rem; }
 }
 
 .sku-price {
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1;
+  line-height: 1.1;
   color: var(--text);
-  margin: 0.25rem 0 0.35rem;
+  margin: 0.15rem 0 0.25rem;
 }
 
 .sku-price span {
@@ -744,7 +767,7 @@ li { margin-bottom: 0.35rem; }
 }
 
 .pricing-note {
-  margin-top: 1.5rem;
+  margin-top: 0.85rem;
   font-size: 0.75rem;
   font-weight: 400;
   line-height: 1.5;
@@ -766,8 +789,8 @@ li { margin-bottom: 0.35rem; }
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.25rem;
+  box-shadow: none;
+  padding: 1.15rem;
   margin: 1.25rem 0;
 }
 
@@ -795,25 +818,48 @@ ol.steps {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 0.75rem;
+  gap: 0;
 }
 
 @media (min-width: 720px) {
   .steps-3 {
     grid-template-columns: repeat(3, 1fr);
+    gap: 0;
   }
 }
 
 .step {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 1rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.75rem 0;
 }
 
 .section-alt .step {
-  background: var(--bg);
+  background: transparent;
+}
+
+@media (min-width: 720px) {
+  .steps-3 .step {
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+    padding: 0.35rem 0.85rem 0.35rem 0;
+  }
+  .steps-3 .step:last-child {
+    border-right: 0;
+    padding-right: 0;
+  }
+  .steps-3 .step:first-child {
+    padding-left: 0;
+  }
+}
+
+.home-steps {
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
 }
 
 .step-num {
@@ -841,9 +887,10 @@ ol.steps {
 }
 
 .home-steps .step h3 {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.35;
-  font-weight: 700;
+  font-weight: 600;
+  margin: 0;
 }
 
 .hero-micro,
@@ -922,8 +969,8 @@ ol.steps {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: 1.15rem;
+  box-shadow: none;
+  padding: 1rem;
 }
 
 .story-meta {
@@ -972,8 +1019,8 @@ ol.steps {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.25rem;
+  box-shadow: none;
+  padding: 1.15rem;
 }
 
 .example-label {
@@ -1144,12 +1191,12 @@ ol.steps {
 }
 
 .cta-band {
-  background: var(--bg-elevated);
+  background: var(--bg-soft);
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 1.75rem 1.25rem;
+  box-shadow: none;
+  padding: 1.5rem 1.15rem;
   text-align: center;
 }
 
@@ -1357,3 +1404,5 @@ ol.steps {
 /* legal3 no-h1 zillow hero */
 /* legal4 single-sku address-only hero */
 /* legal5 v1 locked homepage */
+
+/* design3 dense crisp-white */
