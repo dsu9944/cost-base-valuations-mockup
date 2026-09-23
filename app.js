@@ -72,7 +72,7 @@
     if (dateEl && asAt) dateEl.value = asAt;
     if (msgEl && asAt) {
       msgEl.value =
-        "I’d like to arrange a signed valuation as at " +
+        "I’d like a full market valuation as at " +
         asAt +
         " for the address above. Please get in touch.";
     }
@@ -145,7 +145,7 @@
       }
       if (resultDateInline) {
         resultDateInline.textContent = isHomepageAvm
-          ? "As at " + asAt + " · indicative only — not a valuation, not for tax"
+          ? "As at " + asAt + " · indicative — not a valuation, not for tax"
           : asAt;
       }
 
@@ -278,7 +278,7 @@
         .finally(function () {
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = "Request a signed valuation";
+            submitBtn.textContent = "Enquire";
           }
         });
     });
