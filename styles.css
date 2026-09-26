@@ -1120,6 +1120,14 @@ ol.steps {
   margin-top: 0.35rem;
 }
 
+/* Obvious copy placeholders (not final copy) */
+.copy-placeholder {
+  background: #FFF1A8;
+  color: var(--text);
+  padding: 0 0.2em;
+  border-radius: 2px;
+}
+
 /* —— Example / compare table —— */
 .example-block {
   background: var(--bg-elevated);
