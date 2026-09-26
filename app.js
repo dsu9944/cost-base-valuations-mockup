@@ -52,11 +52,9 @@
     rangeLow: "$980,000",
     rangeHigh: "$1,120,000"
   };
-  var DEFAULT_ESTIMATE_DATE = "1 July 2027";
 
   function resolveAsAtDate(purpose, customDate) {
     var custom = (customDate || "").trim();
-    if (purpose === "30 June 2027") return "30 June 2027";
     if (custom) return custom;
     if (purpose === "First rented / change of use") return "first rented / change of use";
     if (purpose === "Date of death") return "date of death";
@@ -107,9 +105,7 @@
         return;
       }
 
-      var asAt = isHomepageAvm
-        ? DEFAULT_ESTIMATE_DATE
-        : resolveAsAtDate(purposeVal, customEl ? customEl.value : "");
+      var asAt = resolveAsAtDate(purposeVal, customEl ? customEl.value : "");
 
       var resultAddress = document.getElementById("result-address");
       var resultAsAt = document.getElementById("result-as-at");
@@ -131,7 +127,7 @@
       }
       if (resultDateInline) {
         resultDateInline.textContent = isHomepageAvm
-          ? "As at " + asAt + " · indicative — not a valuation, not for tax"
+          ? "Indicative only · not a valuation, not for tax"
           : asAt;
       }
 
@@ -205,7 +201,7 @@
         return;
       }
       if (yrRaw && (isNaN(yr) || yr < QUOTE_MIN_YEAR || yr > QUOTE_MAX_YEAR)) {
-        show("prompt", "Enter the year you bought it as four digits, e.g. 2018.");
+        show("prompt", "Enter a year between " + QUOTE_MIN_YEAR + " and " + QUOTE_MAX_YEAR + ".");
         return;
       }
       if (!addr.value.trim() || !st || !ty || isNaN(yr) || !own.value) {
