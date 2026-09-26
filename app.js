@@ -284,10 +284,31 @@
     });
   }
 
+
+  /* Click-to-play YouTube facade: no YouTube player requests until the user clicks.
+     Without JS the facade is a plain link to the YouTube watch page. */
+  function initVideoFacades() {
+    document.querySelectorAll(".yt-facade[data-yt-id]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        var id = link.getAttribute("data-yt-id");
+        if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+        e.preventDefault();
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + id;
+        iframe.title = link.getAttribute("data-yt-title") || "YouTube video";
+        iframe.setAttribute("allow", "encrypted-media; picture-in-picture; fullscreen");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        link.parentNode.replaceChild(iframe, link);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
     initMobileNav();
     initEstimateDemo();
     initEnquireForm();
+    initVideoFacades();
   });
 })();

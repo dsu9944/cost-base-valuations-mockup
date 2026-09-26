@@ -982,6 +982,126 @@ ol.steps {
   color: var(--text);
 }
 
+.news-read {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.news-foot {
+  margin: 0.85rem 0 0;
+}
+
+.news-foot + .news-list {
+  margin-top: 1.25rem;
+}
+
+.news-videos {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .news-videos { grid-template-columns: 1fr 1fr; }
+}
+
+.news-video {
+  margin: 0;
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--text);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.video-frame iframe,
+.yt-facade,
+.yt-facade img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yt-facade img {
+  object-fit: cover;
+}
+
+.yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 40px;
+  margin: -20px 0 0 -28px;
+  border-radius: var(--radius);
+  background: rgba(23, 26, 32, 0.85);
+}
+
+.yt-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -5px;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #FFFFFF;
+}
+
+.yt-facade:hover .yt-play,
+.yt-facade:focus-visible .yt-play {
+  background: #000000;
+}
+
+.news-caption {
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.news-caption a {
+  text-decoration: underline;
+}
+
+#in-the-news {
+  scroll-margin-top: 64px;
+}
+
+/* Home: small teaser linking to why.html#in-the-news */
+.news-teaser {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+@media (min-width: 720px) {
+  .news-teaser { padding: 48px 0; }
+}
+
+.news-teaser p {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.news-teaser p:last-child {
+  margin-bottom: 0;
+}
+
+.news-teaser .news-teaser-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.news-teaser-link {
+  color: var(--text);
+  text-decoration: underline;
+}
+
 /* —— Example / compare table —— */
 .example-block {
   background: var(--bg-elevated);
@@ -1472,3 +1592,4 @@ a[href^="tel:"] {
 /* design6b larger Ashford wordmark */
 
 /* design6d in-the-news links replace stories */
+/* design6f click-to-play YouTube facades + richer article cards */
