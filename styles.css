@@ -1004,7 +1004,7 @@ li { margin-bottom: 0.35rem; }
   text-decoration: underline;
 }
 
-/* start.html: on-page fixed-price quote (design6h) */
+/* start.html: on-page "from" price quote */
 .quote-order-note {
   margin-top: 0.75rem;
   margin-bottom: 0;
@@ -1023,7 +1023,7 @@ li { margin-bottom: 0.35rem; }
   margin-top: 0.35rem;
 }
 
-/* start.html: valuation-date choice (design6j, order-step preview) */
+/* start.html: valuation-date choice (order-step preview) */
 .date-choice {
   border: 0;
   padding: 0;
@@ -1550,10 +1550,10 @@ a[href^="tel:"] {
 
 /* design5 = ashford brand on tesla chrome */
 
-/* design6 full market valuation CTAs */
+/* signed valuation CTAs */
 
 /* design6b larger Ashford wordmark */
 
 /* design6d in-the-news links replace stories */
 /* design6f click-to-play YouTube facades + richer article cards */
-/* design6h two products on home, start.html fixed-price quote, how-it-works removed */
+/* design6h two products on home, start.html price quote, how-it-works removed */
