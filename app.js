@@ -156,7 +156,6 @@
      No network call, no storage, no URL/query-string writes; the form never submits. */
   var QUOTE_PRICE_STANDARD = 229;
   var QUOTE_PRICE_OLDER = 279;
-  var QUOTE_FROM_TAIL = "The final price depends on distance, the type of inspection and any extra work. We'll confirm it before we start, and you can cancel free any time before the inspection.";
   var QUOTE_OLDER_CUTOFF_YEAR = 2012; /* bought 15+ years before 2027 */
   var QUOTE_MIN_YEAR = 1900;
   var QUOTE_MAX_YEAR = 2027;
@@ -216,8 +215,6 @@
       gst.textContent = "incl GST";
       price.appendChild(gst);
       older.hidden = !isOlder;
-      var fromLine = document.getElementById("quote-from-line");
-      if (fromLine) fromLine.textContent = "From $" + amount + " incl GST. " + QUOTE_FROM_TAIL;
       show("price");
     }
 
@@ -234,18 +231,15 @@
     var group = document.getElementById("valuation-date");
     if (!group) return;
     var pastWrap = document.getElementById("o-past-wrap");
-    var preorder = document.getElementById("o-preorder");
     var pastDate = document.getElementById("o-past-date");
     if (pastDate) {
-      var d = new Date();
-      var pad = function (n) { return (n < 10 ? "0" : "") + n; };
-      pastDate.max = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+      /* Local date as YYYY-MM-DD (en-CA format) so a future date can't be picked. */
+      pastDate.max = new Date().toLocaleDateString("en-CA");
     }
     function sync() {
       var picked = group.querySelector('input[type="radio"]:checked');
       var val = picked ? picked.value : "";
       pastWrap.hidden = val !== "past";
-      preorder.hidden = val !== "tax";
     }
     group.addEventListener("change", sync);
     sync();

@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Signed market valuation — quote — Ashford Valuations</title>
-  <meta name="description" content="Signed market valuation. Enter your property details to see your price: from $229 incl GST ($279 if bought in 2012 or earlier). NSW &amp; VIC. Not tax advice.">
-  <link rel="stylesheet" href="styles.css?v=design6k">
+  <title>Market valuation — quote — Ashford Valuations</title>
+  <meta name="description" content="Market valuation. Enter your property details to see your price: from $229 incl GST ($279 if bought in 2012 or earlier). NSW &amp; VIC. Not tax advice.">
+  <link rel="stylesheet" href="styles.css?v=design6l">
 </head>
 <body>
 
@@ -21,9 +21,9 @@
   <main>
     <section class="section page-intro">
       <div class="container estimate-landing">
-        <div id="signed-valuation">
-          <h1>Signed market valuation</h1>
-          <p>Signed by a qualified valuer who inspects every property, inside and out or from the street. <a class="news-teaser-link" href="why.html#faq">What's included</a></p>
+        <div id="market-valuation">
+          <h1>Market valuation</h1>
+          <p>Signed by an AVI valuer. <a class="news-teaser-link" href="why.html#faq">What's included</a></p>
         </div>
 
         <div class="form-panel" id="quote">
@@ -82,10 +82,11 @@
             <p class="quote-message" id="quote-message" hidden></p>
             <div id="quote-price-block" hidden>
               <p class="sku-price" id="quote-price">From $229 <span>incl GST</span></p>
-              <p class="price-line" id="quote-from-line">From $229 incl GST. The final price depends on distance, the type of inspection and any extra work. We'll confirm it before we start, and you can cancel free any time before the inspection.</p>
               <p id="quote-older" hidden>Bought in 2012 or earlier: older purchases need more research.</p>
-              <p>Fee not based on the value we conclude.</p>
-              <p class="quote-legal">Valuations are dated on or before the day the valuer signs. A valuation for the new CGT rules can only be done once the tax date has passed. We'll explain when you order.</p>
+              <p class="price-line" id="quote-final-price">The final price depends on distance, the type of inspection and any extra work. We'll confirm it before we start, and you can cancel free any time before the inspection.</p>
+              <p id="quote-inspects">The valuer inspects every property, inside and out or from the street.</p>
+              <p id="quote-tax-date">A valuation at the tax date can only be done once that date has passed.</p>
+              <p class="quote-legal" id="quote-dating">Valuations are dated on or before the day the valuer signs. A valuation for the new CGT rules can only be done once the tax date has passed. We'll explain when you order.</p>
 
               <!-- Order step preview: browser-only. Not inside a form, so nothing can be submitted; no storage, no network. -->
               <fieldset class="date-choice" id="valuation-date">
@@ -97,15 +98,14 @@
                   <input type="date" id="o-past-date" min="1900-01-01">
                 </div>
                 <label class="date-option"><input type="radio" name="o-date" id="o-date-tax" value="tax"> The CGT tax date (just before 1 July 2027): pre-order</label>
-                <div class="date-choice-detail" id="o-preorder" hidden>
-                  <p>A valuation at the tax date can only be done once that date has passed.</p>
-                </div>
               </fieldset>
 
               <div class="order-payment">
                 <p>No payment today. <mark class="copy-placeholder">[You pay after the inspection / when you receive your report: Joe to pick]</mark></p>
               </div>
 
+              <p id="quote-fee">Fee not based on the value we conclude.</p>
+              <p id="quote-ato">The ATO may disagree with a valuation.</p>
               <button type="button" class="btn btn-primary btn-lg" disabled aria-disabled="true" aria-describedby="order-note">Place order</button>
               <p class="quote-order-note" id="order-note">[Online ordering not live in this preview]</p>
             </div>
@@ -132,7 +132,7 @@
       <div class="footer-col">
         <ul class="footer-links">
           <li><a href="why.html">The tax change</a></li>
-          <li><a href="start.html">Signed valuation quote</a></li>
+          <li><a href="start.html">Market valuation quote</a></li>
           <li><a href="privacy.html">Privacy</a> <span class="phone-hint">(draft)</span></li>
           <li><a href="terms.html">Terms</a> <span class="phone-hint">(draft)</span></li>
         </ul>
@@ -140,6 +140,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=design6k"></script>
+  <script src="app.js?v=design6l"></script>
 </body>
 </html>
