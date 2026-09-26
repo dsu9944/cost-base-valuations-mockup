@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Full valuation — fixed-price quote — Ashford Valuations</title>
-  <meta name="description" content="Full valuation. Enter your property details to see a fixed price: from $229 incl GST ($279 if bought in 2012 or earlier). NSW &amp; VIC. Not tax advice.">
-  <link rel="stylesheet" href="styles.css?v=design6j">
+  <title>Signed market valuation — quote — Ashford Valuations</title>
+  <meta name="description" content="Signed market valuation. Enter your property details to see your price: from $229 incl GST ($279 if bought in 2012 or earlier). NSW &amp; VIC. Not tax advice.">
+  <link rel="stylesheet" href="styles.css?v=design6k">
 </head>
 <body>
 
@@ -21,9 +21,9 @@
   <main>
     <section class="section page-intro">
       <div class="container estimate-landing">
-        <div id="full-valuation">
-          <h1>Full valuation</h1>
-          <p>Inspected in person and signed by a qualified valuer. Values your property at the point the new CGT rules use: just before they start. <a class="news-teaser-link" href="why.html#faq">What's included</a></p>
+        <div id="signed-valuation">
+          <h1>Signed market valuation</h1>
+          <p>Signed by a qualified valuer who inspects every property, inside and out or from the street. <a class="news-teaser-link" href="why.html#faq">What's included</a></p>
         </div>
 
         <div class="form-panel" id="quote">
@@ -78,13 +78,12 @@
           </form>
 
           <div class="quote-result" id="quote-result" aria-live="polite">
-            <p class="muted" id="quote-prompt">Fill in all fields to see your fixed price.</p>
+            <p class="muted" id="quote-prompt">Fill in all fields to see your price.</p>
             <p class="quote-message" id="quote-message" hidden></p>
             <div id="quote-price-block" hidden>
-              <p class="sku-price" id="quote-price">Your fixed price: $229 <span>incl GST</span></p>
-              <p id="quote-current">Current price. It may change before ordering opens.</p>
+              <p class="sku-price" id="quote-price">From $229 <span>incl GST</span></p>
+              <p class="price-line" id="quote-from-line">From $229 incl GST. The final price depends on distance, the type of inspection and any extra work. We'll confirm it before we start, and you can cancel free any time before the inspection.</p>
               <p id="quote-older" hidden>Bought in 2012 or earlier: older purchases need more research.</p>
-              <p>Fixed price for standard NSW and VIC homes. If your property needs a different quote, we'll tell you before any work starts and you won't pay unless you agree.</p>
               <p>Fee not based on the value we conclude.</p>
               <p class="quote-legal">Valuations are dated on or before the day the valuer signs. A valuation for the new CGT rules can only be done once the tax date has passed. We'll explain when you order.</p>
 
@@ -99,14 +98,12 @@
                 </div>
                 <label class="date-option"><input type="radio" name="o-date" id="o-date-tax" value="tax"> The CGT tax date (just before 1 July 2027): pre-order</label>
                 <div class="date-choice-detail" id="o-preorder" hidden>
-                  <p>We can only value at the tax date once it has passed (the ATO doesn't accept valuations done in advance). George inspects and signs after 30 June 2027. We'll contact you after the tax date to book your inspection.</p>
+                  <p>A valuation at the tax date can only be done once that date has passed.</p>
                 </div>
               </fieldset>
 
               <div class="order-payment">
-                <p>No payment today. You pay $<span id="order-pay-price">229</span> <mark class="copy-placeholder">[after the inspection / when you receive your report: Joe to pick]</mark>.</p>
-                <p>The price shown when you order is the price you pay.</p>
-                <p>Cancel any time before the inspection at no cost.</p>
+                <p>No payment today. <mark class="copy-placeholder">[You pay after the inspection / when you receive your report: Joe to pick]</mark></p>
               </div>
 
               <button type="button" class="btn btn-primary btn-lg" disabled aria-disabled="true" aria-describedby="order-note">Place order</button>
@@ -135,7 +132,7 @@
       <div class="footer-col">
         <ul class="footer-links">
           <li><a href="why.html">The tax change</a></li>
-          <li><a href="start.html">Full valuation quote</a></li>
+          <li><a href="start.html">Signed valuation quote</a></li>
           <li><a href="privacy.html">Privacy</a> <span class="phone-hint">(draft)</span></li>
           <li><a href="terms.html">Terms</a> <span class="phone-hint">(draft)</span></li>
         </ul>
@@ -143,6 +140,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=design6j"></script>
+  <script src="app.js?v=design6k"></script>
 </body>
 </html>

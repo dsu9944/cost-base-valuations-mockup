@@ -1,6 +1,6 @@
 /**
  * Ashford Valuations — static landing JS
- * Nav + homepage indicative estimate reveal (hardcoded demo) + start.html on-page fixed-price quote + video facades.
+ * Nav + homepage indicative estimate reveal (hardcoded demo) + start.html on-page price quote ("from" pricing) + video facades.
  */
 (function () {
   "use strict";
@@ -152,10 +152,11 @@
     }
   }
 
-  /* Fixed-price quote on start.html — worked out in the browser only.
+  /* "From" price quote on start.html — worked out in the browser only.
      No network call, no storage, no URL/query-string writes; the form never submits. */
   var QUOTE_PRICE_STANDARD = 229;
   var QUOTE_PRICE_OLDER = 279;
+  var QUOTE_FROM_TAIL = "The final price depends on distance, the type of inspection and any extra work. We'll confirm it before we start, and you can cancel free any time before the inspection.";
   var QUOTE_OLDER_CUTOFF_YEAR = 2012; /* bought 15+ years before 2027 */
   var QUOTE_MIN_YEAR = 1900;
   var QUOTE_MAX_YEAR = 2027;
@@ -205,18 +206,18 @@
         return;
       }
       if (!addr.value.trim() || !st || !ty || isNaN(yr) || !own.value) {
-        show("prompt", "Fill in all fields to see your fixed price.");
+        show("prompt", "Fill in all fields to see your price.");
         return;
       }
       var isOlder = yr <= QUOTE_OLDER_CUTOFF_YEAR;
       var amount = isOlder ? QUOTE_PRICE_OLDER : QUOTE_PRICE_STANDARD;
-      price.textContent = "Your fixed price: $" + amount + " ";
+      price.textContent = "From $" + amount + " ";
       var gst = document.createElement("span");
       gst.textContent = "incl GST";
       price.appendChild(gst);
       older.hidden = !isOlder;
-      var payPrice = document.getElementById("order-pay-price");
-      if (payPrice) payPrice.textContent = String(amount);
+      var fromLine = document.getElementById("quote-from-line");
+      if (fromLine) fromLine.textContent = "From $" + amount + " incl GST. " + QUOTE_FROM_TAIL;
       show("price");
     }
 

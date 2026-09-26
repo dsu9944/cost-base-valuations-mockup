@@ -16,7 +16,7 @@ A static HTML/CSS/JavaScript preview of a website for a residential property val
 |------|---------|
 | `index.html` | Home: free desktop estimate (illustrative), products, news teaser |
 | `why.html` | The tax change: hypothetical example, news coverage, FAQ, scope |
-| `start.html` | Full valuation: fixed-price quote and valuation-date choice (browser-only preview) |
+| `start.html` | Signed market valuation: "from" price quote and valuation-date choice (browser-only preview) |
 | `privacy.html`, `terms.html` | Draft placeholders, not in force |
 | `how-it-works.html`, `intake.html`, `products.html`, `records.html` | Redirects to current pages |
 | `styles.css`, `app.js` | Shared styles and scripts |
