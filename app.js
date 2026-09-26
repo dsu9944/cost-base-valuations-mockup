@@ -215,6 +215,8 @@
       gst.textContent = "incl GST";
       price.appendChild(gst);
       older.hidden = !isOlder;
+      var payPrice = document.getElementById("order-pay-price");
+      if (payPrice) payPrice.textContent = String(amount);
       show("price");
     }
 
