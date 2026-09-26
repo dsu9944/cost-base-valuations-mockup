@@ -1078,13 +1078,15 @@ ol.steps {
 }
 
 /* Home: small teaser linking to why.html#in-the-news */
-.news-teaser {
+.news-teaser,
+.bridge-section {
   border-top: 1px solid var(--border);
   padding: 32px 0;
 }
 
 @media (min-width: 720px) {
-  .news-teaser { padding: 48px 0; }
+  .news-teaser,
+  .bridge-section { padding: 48px 0; }
 }
 
 .news-teaser p {

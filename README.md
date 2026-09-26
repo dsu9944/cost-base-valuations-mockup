@@ -96,8 +96,8 @@ action="https://formspree.io/f/xxxxxxxx"
 - We do **not** give tax advice; accountants can consider the report for tax records.
 - Paid path: phone (`1300 000 000` placeholder) or enquire. Formspree deferred (xxxxxxxx). Stripe checkout not live.
 - SKUs (two clear browse prices):
-  - `cgt_retrospective` — **past-date desktop** (first rented / other past dates — from records, no site visit): **$229** signed. Turnaround **3 business days**.
-  - `mv_2027_06_30` — **30 June 2027 inspected** (most requested): **$369**. Turnaround **5–7 business days**. Complex/regional → custom quote (not a third browse SKU).
+  - `cgt_retrospective` — **past-date desktop** (first rented / other past dates — from records, no site visit): **$229** signed. _(superseded; no turnaround promised)_
+  - `mv_2027_06_30` — **30 June 2027 inspected** (most requested): **$369**. _(superseded; no turnaround promised; signed reports issued after 30 June 2027)_ Complex/regional → custom quote (not a third browse SKU).
   - `mv_2027_06_30_desktop` — restricted **$269** — **OFF** / AVI off browse path.
 - Master line / hero punch: **“CGT date valuations. Clear price. Signed. Done.”**
 - Phone: label clearly as placeholder (`Call — number coming soon` / `1300 000 000 (placeholder)`).
