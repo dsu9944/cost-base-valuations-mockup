@@ -1,5 +1,7 @@
 # Lock the Date Valuations — demand-validation landing
 
+> **design6i (26 Sep 2026):** public site is branded Ashford Valuations. Public copy carries **no specific CGT dates** (Joe, 26 Sep 5:08 PM). The formula is only ever "the Government's draft apportioning formula" (Compliance). Strategy and SKU notes below are **historical and superseded** where they conflict.
+
 Static HTML/CSS/vanilla JS landing for **Lock the Date** / Lock the Date Valuations: signed market value for the tax date that splits an Australian rental investor’s gain (30 June 2027 spike + evergreen first-rented / change-of-use dates).
 
 **Checkpoint:** Thursday 24 Sep 2026 — **clean-copy** public site (placeholder prices & contact OK). Formspree wiring **deferred** (keep `xxxxxxxx`). Demand validation later; not a live estimate engine.
@@ -56,10 +58,10 @@ action="https://formspree.io/f/xxxxxxxx"
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage — address hero (free indicative estimate reveal) → two products (Free indicative estimate · Full market valuation from $229 / $279) → news teaser (design6h: how-it-works steps and why link removed) |
-| `why.html` | Why — $150k example, "In the news" (2 click-to-play videos + article cards), FAQ, scope, CTA band (design6h: how-it-works removed) |
-| `start.html` | Full market valuation — property-details form with an on-page fixed-price quote ($229, or $279 if bought in 2012 or earlier; worked out in the browser, nothing sent or stored). Ordering button disabled ("Ordering opens soon"). No Formspree, no contact fields |
-| `privacy.html` | Privacy stub — no property docs on site; free estimate uses address + date; enquire collects contact details via Formspree |
+| `index.html` | Homepage — address hero (free desktop estimate reveal) → two products (Desktop estimate · Free / Full valuation from $229 / $279) → news teaser "The CGT change, in the news" (design6i: no specific CGT dates in copy) |
+| `why.html` | "The tax change" — law-status line, dollar example "Draft formula vs market valuation" (draft formula ≈ $848,500 vs market $1,050,000, ≈ $201,500 difference, hypothetical), "In the news" (2 click-to-play videos + article cards), FAQ, scope, bridge line, CTA band |
+| `start.html` | Full valuation — property-details form with an on-page fixed-price quote ($229, or $279 if bought in 2012 or earlier; worked out in the browser, nothing sent or stored). Ordering button disabled ("Ordering not open yet"). No Formspree, no contact fields |
+| `privacy.html` | Privacy stub — no property docs on site; free estimate and quote worked out in the browser; no enquiry/contact form |
 | `terms.html` | Terms stub |
 | `styles.css` | Shared consumer tax/estimate design system (`?v=fresh1`) |
 | `app.js` | Mobile nav + homepage illustrative estimate reveal + start.html fixed-price quote + YouTube click-to-play facades |
