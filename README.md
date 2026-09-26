@@ -57,7 +57,7 @@ action="https://formspree.io/f/xxxxxxxx"
 | File | Purpose |
 |------|---------|
 | `index.html` | **AVM homepage** — giant address+date hero (free estimate reveal) → two price cards ($229 / $369) → 3 steps → thin strip → why link |
-| `why.html` | Examples & why — recognition stories, $150k table, trimmed how/FAQ/scope |
+| `why.html` | Why — "In the news" links (independent AU coverage of the CGT change), $150k table, trimmed how/FAQ/scope |
 | `start.html` | Estimate deep-link + **Request a signed valuation** enquire (Formspree deferred); free estimate also on home `#estimate` |
 | `privacy.html` | Privacy stub — no property docs on site; free estimate uses address + date; enquire collects contact details via Formspree |
 | `terms.html` | Terms stub |
@@ -116,7 +116,7 @@ Illustrative placeholder, e.g. **Indicative estimate as at [date]: $1,050,000** 
 - [x] CTAs: “Request / Arrange a signed valuation” (no buy-the-stamp / upgrade / get a full…)
 - [x] Free = indicative estimate; paid = signed valuation by a qualified valuer
 - [x] “Accountant can consider for tax records”; not-tax-advice / example-only disclaimers kept
-- [x] Safari recognition stories: flex + faces; no doc vault on public site
+- [x] design6d: recognition stories + faces removed; replaced by "In the news" links (no iframes, new tab, noopener noreferrer); no doc vault on public site
 - [ ] Later: replace Formspree `xxxxxxxx`, confirm notification email, replace phone/ABN/email
 - [ ] Later: host static files; counsel privacy/terms before paid engagements at scale
 - [ ] Do **not** git push from casual edits unless the owning agent/process pushes deliberately

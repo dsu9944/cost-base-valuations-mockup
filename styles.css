@@ -947,62 +947,39 @@ ol.steps {
   font-size: 1rem;
 }
 
-/* —— Why page: stories —— */
-.story-list {
+/* —— Why page: in the news (independent coverage links) —— */
+.news-list {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.story-row {
-  display: flex;
-  gap: 0.85rem;
+.news-item {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: none;
   padding: 1rem;
+  margin: 0;
 }
 
-.story-meta {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
-  min-width: 2rem;
-}
-
-.story-face {
-  display: none !important;
-}
-
-.story-num {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.story-who {
-  font-weight: 600;
-  color: var(--text);
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
-}
-
-.story-beat {
-  font-size: 0.92rem;
-  margin: 0 0 0.5rem;
-}
-
-.story-note {
+.news-meta {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--muted);
-  font-size: 0.85em;
+  margin: 0 0 0.35rem;
 }
 
-.story-cta {
+.news-title {
+  display: block;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--text);
 }
 
 /* —— Example / compare table —— */
@@ -1493,3 +1470,5 @@ a[href^="tel:"] {
 /* design6 full market valuation CTAs */
 
 /* design6b larger Ashford wordmark */
+
+/* design6d in-the-news links replace stories */
