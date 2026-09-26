@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Full market valuation from $229 — Ashford Valuations</title>
-  <meta name="description" content="Full market valuation from $229 as at 1 July 2027. Enquire only — scope, fee and timing confirmed before any paid engagement. NSW &amp; VIC. Not tax advice.">
-  <link rel="stylesheet" href="styles.css?v=design6g">
+  <title>Full market valuation — fixed-price quote — Ashford Valuations</title>
+  <meta name="description" content="Full market valuation as at 1 July 2027. Enter your property details to see a fixed price: from $229 incl GST ($279 if bought in 2012 or earlier). NSW &amp; VIC. Not tax advice.">
+  <link rel="stylesheet" href="styles.css?v=design6h">
 </head>
 <body>
 
@@ -14,92 +14,85 @@
       <a class="logo" href="index.html">
         <span class="logo-mark">Ashford Valuations</span>
       </a>
-      <a class="header-enquire" href="start.html#full-valuation">Order</a>
+      <a class="header-enquire" href="start.html">Order</a>
     </div>
   </header>
 
   <main>
     <section class="section page-intro">
       <div class="container estimate-landing">
-
-        <div class="signed-valuation-block" id="full-valuation">
-          <h2>Full market valuation</h2>
-          <p class="sku-price">from $229 <span>incl GST · confirmed on enquire</span></p>
-          <p class="sku-meta">As at 1 July 2027 · date confirmed when you enquire</p>
-          <p class="tiny-note term-02">Enquire starts enquire only. We confirm scope, fee (incl GST) and timing before any paid engagement. Reports are valuation opinions — not tax, legal or financial advice. The free desktop estimate is separate and is not signed, validated, or certified when you enquire.</p>
-          <div class="btn-group">
-            <a class="btn btn-primary btn-lg" href="#enquire">Enquire</a>
-          </div>
+        <div id="full-valuation">
+          <h1>Full market valuation</h1>
+          <p>Prepared and signed by a qualified valuer, who forms their own opinion of market value as at 1 July 2027. You get a PDF report.</p>
         </div>
 
-        <div class="form-panel enquire-panel" id="enquire">
-          <h3 class="enquire-heading">Enquire for a full market valuation</h3>
-          <p class="muted enquire-intro">Leave your details — we’ll follow up. No document uploads on this site.</p>
-
-          <!--
-            FORMSPREE: Replace action URL with your form ID.
-            Create a form at https://formspree.io → copy the endpoint
-            e.g. https://formspree.io/f/xyzabcde
-            See README.md “Formspree”.
-            Placeholder xxxxxxxx — Formspree not live.
-          -->
-          <form id="enquire-form"
-                action="https://formspree.io/f/xxxxxxxx"
-                method="POST"
-                novalidate>
-            <input type="hidden" name="_subject" value="Ashford Valuations — full market valuation enquire">
-            <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-panel" id="quote">
+          <!-- Quote is worked out in the browser only: no action, no field names, no network call, no storage. -->
+          <form id="quote-form" novalidate autocomplete="on">
+            <div class="field">
+              <label for="q-address">Property address</label>
+              <input type="text" id="q-address" autocomplete="street-address" placeholder="e.g. 12 Example St, Parramatta NSW 2150">
+            </div>
 
             <div class="field-row">
               <div class="field">
-                <label for="enquire-name">Name</label>
-                <input type="text" id="enquire-name" name="name" autocomplete="name" required placeholder="Your full name">
+                <label for="q-state">State</label>
+                <select id="q-state">
+                  <option value="">Select…</option>
+                  <option value="NSW">NSW</option>
+                  <option value="VIC">VIC</option>
+                  <option value="QLD">QLD</option>
+                  <option value="WA">WA</option>
+                  <option value="SA">SA</option>
+                  <option value="TAS">TAS</option>
+                  <option value="ACT">ACT</option>
+                  <option value="NT">NT</option>
+                </select>
               </div>
               <div class="field">
-                <label for="enquire-email">Email</label>
-                <input type="email" id="enquire-email" name="email" autocomplete="email" required placeholder="you@example.com">
+                <label for="q-type">Property type</label>
+                <select id="q-type">
+                  <option value="">Select…</option>
+                  <option value="House">House</option>
+                  <option value="Townhouse">Townhouse</option>
+                  <option value="Unit or apartment">Unit or apartment</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
             </div>
 
-            <div class="field">
-              <label for="enquire-phone">Phone <span class="label-optional">(optional)</span></label>
-              <input type="tel" id="enquire-phone" name="phone" autocomplete="tel" placeholder="Best number for a callback">
+            <div class="field-row">
+              <div class="field">
+                <label for="q-year">Year you bought it</label>
+                <input type="number" id="q-year" inputmode="numeric" min="1900" max="2027" step="1" placeholder="e.g. 2018">
+              </div>
+              <div class="field">
+                <label for="q-own">Do you still own it?</label>
+                <select id="q-own">
+                  <option value="">Select…</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
             </div>
-
-            <div class="field">
-              <label for="enquire-address">Property address</label>
-              <input type="text" id="enquire-address" name="property_address" autocomplete="street-address" required placeholder="e.g. 12 Example St, Parramatta NSW 2150">
-            </div>
-
-            <div class="field">
-              <label for="enquire-tax-date">Tax date</label>
-              <input type="text" id="enquire-tax-date" name="tax_date" required placeholder="e.g. 1 July 2027 or 15 March 2019">
-              <span class="hint">The tax date the valuation should be as at.</span>
-            </div>
-
-            <div class="field">
-              <label for="enquire-message">Message</label>
-              <textarea id="enquire-message" name="message" rows="3" placeholder="e.g. I’d like a full market valuation as at 1 July 2027 — please call me."></textarea>
-            </div>
-
-            <div class="collection-notice" role="note">
-              <p><strong>Collection notice:</strong> We collect name, email, phone (if given), property address, tax date and message to respond to this enquire. A form provider (e.g. Formspree) may process data outside Australia. No property documents on this site. See <a href="privacy.html">Privacy</a> for access, correction or complaints.</p>
-              <p>By submitting, you ask us to contact you about this enquire only — not unrelated marketing.</p>
-            </div>
-
-            <div class="btn-group">
-              <button type="submit" class="btn btn-primary" id="enquire-submit">Enquire</button>
-            </div>
-            <p class="form-status" id="enquire-status" hidden role="status"></p>
           </form>
 
-          <div class="confirm-box" id="enquire-confirm" hidden>
-            <h3>Thank you — we’ve received your enquire</h3>
-            <p class="mb-0">We’ll be in touch shortly. This is enquire only — scope, fee and timing confirmed before any paid engagement.</p>
+          <div class="quote-result" id="quote-result" aria-live="polite">
+            <p class="muted" id="quote-prompt">Fill in all fields to see your fixed price.</p>
+            <p class="quote-message" id="quote-message" hidden></p>
+            <div id="quote-price-block" hidden>
+              <p class="sku-price" id="quote-price">Your fixed price: $229 <span>incl GST</span></p>
+              <p id="quote-older" hidden>Bought in 2012 or earlier: older purchases need more research.</p>
+              <p class="sku-meta">As at 1 July 2027</p>
+              <p>Fixed price for standard NSW and VIC homes. If your property needs a different quote, we'll tell you before any work starts and you won't pay unless you agree.</p>
+              <p>Fee not based on the value we conclude.</p>
+              <button type="button" class="btn btn-primary btn-lg" disabled aria-disabled="true">Ordering opens soon</button>
+            </div>
           </div>
         </div>
 
-        <p class="pricing-note">NSW &amp; VIC · not tax advice · ATO may disagree · fee not based on concluded value · free estimate not signed/validated/certified · enquire starts enquire only</p>
+        <p>Your details stay in your browser to work out the price. We don't send or store them.</p>
+        <p>Not tax advice. The ATO may disagree with a valuation. Your valuation may differ from your free estimate, which is not signed, validated or certified.</p>
 
         <div class="btn-group">
           <a class="btn btn-outline" href="index.html">Back to home</a>
@@ -126,6 +119,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=design6g"></script>
+  <script src="app.js?v=design6h"></script>
 </body>
 </html>

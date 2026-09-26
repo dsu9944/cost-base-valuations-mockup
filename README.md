@@ -27,7 +27,7 @@ python3 -m http.server 8080
 
 Then open [http://127.0.0.1:8080/](http://127.0.0.1:8080/). Also works via `file://` / GitHub Pages from repo root.
 
-## Formspree (deferred for Thu 24 Sep clean-copy)
+## Formspree (removed from start.html in design6h — the page is now an on-page quote; notes below are historical)
 
 **Not wired yet** for this checkpoint — leave the placeholder ID. Joe plugs a real Formspree form ID before collecting live leads.
 
@@ -56,13 +56,13 @@ action="https://formspree.io/f/xxxxxxxx"
 
 | File | Purpose |
 |------|---------|
-| `index.html` | **AVM homepage** — giant address+date hero (free estimate reveal) → two price cards ($229 / $369) → 3 steps → thin strip → why link |
-| `why.html` | Why — "In the news" links (independent AU coverage of the CGT change), $150k table, trimmed how/FAQ/scope |
-| `start.html` | Estimate deep-link + **Request a signed valuation** enquire (Formspree deferred); free estimate also on home `#estimate` |
+| `index.html` | Homepage — address hero (free indicative estimate reveal) → two products (Free indicative estimate · Full market valuation from $229 / $279) → news teaser (design6h: how-it-works steps and why link removed) |
+| `why.html` | Why — $150k example, "In the news" (2 click-to-play videos + article cards), FAQ, scope, CTA band (design6h: how-it-works removed) |
+| `start.html` | Full market valuation — property-details form with an on-page fixed-price quote ($229, or $279 if bought in 2012 or earlier; worked out in the browser, nothing sent or stored). Ordering button disabled ("Ordering opens soon"). No Formspree, no contact fields |
 | `privacy.html` | Privacy stub — no property docs on site; free estimate uses address + date; enquire collects contact details via Formspree |
 | `terms.html` | Terms stub |
 | `styles.css` | Shared consumer tax/estimate design system (`?v=fresh1`) |
-| `app.js` | Mobile nav + homepage/start illustrative estimate reveal + Formspree enquire / success state |
+| `app.js` | Mobile nav + homepage illustrative estimate reveal + start.html fixed-price quote + YouTube click-to-play facades |
 
 **Nav (slim):** Free estimate (#estimate) · Prices · Why · Arrange signed
 

@@ -1,6 +1,6 @@
 /**
  * Ashford Valuations — static landing JS
- * Nav + homepage/start indicative estimate reveal (hardcoded demo) + Formspree enquire (deferred).
+ * Nav + homepage indicative estimate reveal (hardcoded demo) + start.html on-page fixed-price quote + video facades.
  */
 (function () {
   "use strict";
@@ -62,20 +62,6 @@
     if (purpose === "Date of death") return "date of death";
     if (purpose) return purpose;
     return "the nominated date";
-  }
-
-  function prefillEnquire(address, asAt) {
-    var addrEl = document.getElementById("enquire-address");
-    var dateEl = document.getElementById("enquire-tax-date");
-    var msgEl = document.getElementById("enquire-message");
-    if (addrEl && address) addrEl.value = address;
-    if (dateEl && asAt) dateEl.value = asAt;
-    if (msgEl && asAt) {
-      msgEl.value =
-        "I’d like a full market valuation as at " +
-        asAt +
-        " for the address above. Please get in touch.";
-    }
   }
 
   function initEstimateDemo() {
@@ -149,8 +135,6 @@
           : asAt;
       }
 
-      prefillEnquire(address, asAt);
-
       /* AVM homepage: keep the address box visible; start.html still swaps panels */
       var keepForm = !!(formPanel && formPanel.classList.contains("avm-box"));
       if (formPanel && !keepForm) formPanel.hidden = true;
@@ -172,118 +156,78 @@
     }
   }
 
-  function isFormspreePlaceholder(action) {
-    return !action || action.indexOf("/f/xxxxxxxx") !== -1;
-  }
+  /* Fixed-price quote on start.html — worked out in the browser only.
+     No network call, no storage, no URL/query-string writes; the form never submits. */
+  var QUOTE_PRICE_STANDARD = 229;
+  var QUOTE_PRICE_OLDER = 279;
+  var QUOTE_OLDER_CUTOFF_YEAR = 2012; /* bought 15+ years before 2027 */
+  var QUOTE_MIN_YEAR = 1900;
+  var QUOTE_MAX_YEAR = 2027;
 
-  function showEnquireSuccess(form) {
-    var confirm = document.getElementById("enquire-confirm");
-    var status = document.getElementById("enquire-status");
-    if (form) form.hidden = true;
-    if (status) {
-      status.hidden = true;
-      status.textContent = "";
-    }
-    if (confirm) {
-      confirm.hidden = false;
-      confirm.classList.add("visible");
-      confirm.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
-  }
+  function initQuote() {
+    var form = document.getElementById("quote-form");
+    if (!form) return;
+    var addr = document.getElementById("q-address");
+    var state = document.getElementById("q-state");
+    var type = document.getElementById("q-type");
+    var year = document.getElementById("q-year");
+    var own = document.getElementById("q-own");
+    var prompt = document.getElementById("quote-prompt");
+    var message = document.getElementById("quote-message");
+    var block = document.getElementById("quote-price-block");
+    var price = document.getElementById("quote-price");
+    var older = document.getElementById("quote-older");
 
-  function initEnquireForm() {
-    var enquireForm = document.getElementById("enquire-form");
-    if (!enquireForm) return;
-
-    var submitBtn = document.getElementById("enquire-submit");
-    var status = document.getElementById("enquire-status");
-
-    enquireForm.addEventListener("submit", function (e) {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-
-      var nameEl = document.getElementById("enquire-name");
-      var emailEl = document.getElementById("enquire-email");
-      var addrEl = document.getElementById("enquire-address");
-      var dateEl = document.getElementById("enquire-tax-date");
-
-      if (nameEl && !nameEl.value.trim()) {
-        nameEl.focus();
-        return;
-      }
-      if (emailEl && !emailEl.value.trim()) {
-        emailEl.focus();
-        return;
-      }
-      if (addrEl && !addrEl.value.trim()) {
-        addrEl.focus();
-        return;
-      }
-      if (dateEl && !dateEl.value.trim()) {
-        dateEl.focus();
-        return;
-      }
-
-      var action = enquireForm.getAttribute("action") || "";
-
-      /* Placeholder Formspree ID — local success so the flow can be reviewed offline (Formspree deferred) */
-      if (isFormspreePlaceholder(action)) {
-        showEnquireSuccess(enquireForm);
-        return;
-      }
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending…";
-      }
-      if (status) {
-        status.hidden = false;
-        status.textContent = "Sending your request…";
-        status.className = "form-status";
-      }
-
-      var data = new FormData(enquireForm);
-
-      fetch(action, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" }
-      })
-        .then(function (res) {
-          if (res.ok) {
-            showEnquireSuccess(enquireForm);
-            return;
-          }
-          return res.json().then(function (body) {
-            var msg =
-              (body &&
-                body.errors &&
-                body.errors
-                  .map(function (err) {
-                    return err.message;
-                  })
-                  .join(" ")) ||
-              "Something went wrong. Please try again or use the enquire form — phone number coming soon.";
-            throw new Error(msg);
-          });
-        })
-        .catch(function (err) {
-          if (status) {
-            status.hidden = false;
-            status.className = "form-status form-status-error";
-            status.textContent =
-              (err && err.message) ||
-              "Could not send. Please try again — phone number coming soon (placeholder).";
-          }
-        })
-        .finally(function () {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Enquire";
-          }
-        });
     });
-  }
 
+    function show(mode, text) {
+      prompt.hidden = mode !== "prompt";
+      message.hidden = mode !== "message";
+      block.hidden = mode !== "price";
+      if (mode === "message") message.textContent = text;
+      if (mode === "prompt" && text) prompt.textContent = text;
+    }
+
+    function update() {
+      var st = state.value;
+      var ty = type.value;
+      var yrRaw = (year.value || "").trim();
+      var yr = /^\d{4}$/.test(yrRaw) ? parseInt(yrRaw, 10) : NaN;
+
+      if (st && st !== "NSW" && st !== "VIC") {
+        show("message", "We currently cover NSW and VIC only");
+        return;
+      }
+      if (ty === "Other") {
+        show("message", "We'll need to quote this one");
+        return;
+      }
+      if (yrRaw && (isNaN(yr) || yr < QUOTE_MIN_YEAR || yr > QUOTE_MAX_YEAR)) {
+        show("prompt", "Enter the year you bought it as four digits, e.g. 2018.");
+        return;
+      }
+      if (!addr.value.trim() || !st || !ty || isNaN(yr) || !own.value) {
+        show("prompt", "Fill in all fields to see your fixed price.");
+        return;
+      }
+      var isOlder = yr <= QUOTE_OLDER_CUTOFF_YEAR;
+      var amount = isOlder ? QUOTE_PRICE_OLDER : QUOTE_PRICE_STANDARD;
+      price.textContent = "Your fixed price: $" + amount + " ";
+      var gst = document.createElement("span");
+      gst.textContent = "incl GST";
+      price.appendChild(gst);
+      older.hidden = !isOlder;
+      show("price");
+    }
+
+    [addr, state, type, year, own].forEach(function (el) {
+      el.addEventListener("input", update);
+      el.addEventListener("change", update);
+    });
+    update();
+  }
 
   /* Click-to-play YouTube facade: no YouTube player requests until the user clicks.
      Without JS the facade is a plain link to the YouTube watch page. */
@@ -308,7 +252,7 @@
     setActiveNav();
     initMobileNav();
     initEstimateDemo();
-    initEnquireForm();
+    initQuote();
     initVideoFacades();
   });
 })();

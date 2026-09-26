@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
-  src: url("fonts/inter-latin-wght-normal.woff2?v=design6g") format("woff2");
+  src: url("fonts/inter-latin-wght-normal.woff2?v=design6h") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -1106,6 +1106,20 @@ ol.steps {
   text-decoration: underline;
 }
 
+/* start.html: on-page fixed-price quote (design6h) */
+.quote-result {
+  margin-top: 0.5rem;
+}
+
+.quote-message {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.quote-result .btn {
+  margin-top: 0.35rem;
+}
+
 /* —— Example / compare table —— */
 .example-block {
   background: var(--bg-elevated);
@@ -1591,3 +1605,4 @@ a[href^="tel:"] {
 
 /* design6d in-the-news links replace stories */
 /* design6f click-to-play YouTube facades + richer article cards */
+/* design6h two products on home, start.html fixed-price quote, how-it-works removed */
