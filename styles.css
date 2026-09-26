@@ -1,7 +1,15 @@
 /* Lock the Date — design4 Tesla clean-order + valuation graphics (preview, not Joe-approved)
    White page · black CTAs · address-only · photo band · no teal / no Call
    Product locks: address-only hero, as-at 1 July 2027, from $229 — copy unchanged */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* Inter (self-hosted, SIL OFL 1.1 — see fonts/OFL.txt). Latin subset, variable wght 400–700 (covers 400/500/600/700 used). */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/inter-latin-wght-normal.woff2?v=design6g") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 :root {
   --bg: #FFFFFF;
@@ -1069,10 +1077,6 @@ ol.steps {
   text-decoration: underline;
 }
 
-#in-the-news {
-  scroll-margin-top: 64px;
-}
-
 /* Home: small teaser linking to why.html#in-the-news */
 .news-teaser {
   border-top: 1px solid var(--border);
@@ -1170,12 +1174,6 @@ ol.steps {
   background: var(--accent-soft);
   color: var(--text);
   font-weight: 600;
-}
-
-.td-note {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--muted);
 }
 
 .example-saving {
