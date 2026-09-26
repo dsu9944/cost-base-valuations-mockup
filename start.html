@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Full valuation — fixed-price quote — Ashford Valuations</title>
   <meta name="description" content="Full valuation. Enter your property details to see a fixed price: from $229 incl GST ($279 if bought in 2012 or earlier). NSW &amp; VIC. Not tax advice.">
-  <link rel="stylesheet" href="styles.css?v=design6i">
+  <link rel="stylesheet" href="styles.css?v=design6j">
 </head>
 <body>
 
@@ -86,13 +86,36 @@
               <p id="quote-older" hidden>Bought in 2012 or earlier: older purchases need more research.</p>
               <p>Fixed price for standard NSW and VIC homes. If your property needs a different quote, we'll tell you before any work starts and you won't pay unless you agree.</p>
               <p>Fee not based on the value we conclude.</p>
-              <button type="button" class="btn btn-primary btn-lg" disabled aria-disabled="true" aria-describedby="quote-order-note">Ordering not open yet</button>
-              <p class="quote-order-note" id="quote-order-note">Orders open once valuations for the tax date can be prepared and signed.</p>
+              <p class="quote-legal">Valuations are dated on or before the day the valuer signs. A valuation for the new CGT rules can only be done once the tax date has passed. We'll explain when you order.</p>
+
+              <!-- Order step preview: browser-only. Not inside a form, so nothing can be submitted; no storage, no network. -->
+              <fieldset class="date-choice" id="valuation-date">
+                <legend>Valuation date</legend>
+                <label class="date-option"><input type="radio" name="o-date" id="o-date-today" value="today"> Today</label>
+                <label class="date-option"><input type="radio" name="o-date" id="o-date-past" value="past"> A past date</label>
+                <div class="field date-choice-detail" id="o-past-wrap" hidden>
+                  <label for="o-past-date">Past valuation date</label>
+                  <input type="date" id="o-past-date" min="1900-01-01">
+                </div>
+                <label class="date-option"><input type="radio" name="o-date" id="o-date-tax" value="tax"> The CGT tax date (just before 1 July 2027): pre-order</label>
+                <div class="date-choice-detail" id="o-preorder" hidden>
+                  <p>We can only value at the tax date once it has passed (the ATO doesn't accept valuations done in advance). George inspects and signs after 30 June 2027 and delivers within <mark class="copy-placeholder">[X weeks: Joe to set]</mark>.</p>
+                  <p><mark class="copy-placeholder">[Pre-order capacity cap: Joe to set]</mark></p>
+                </div>
+              </fieldset>
+
+              <div class="order-payment">
+                <p><mark class="copy-placeholder">[Pay now / pay after inspection: Joe to decide]</mark></p>
+                <p><mark class="copy-placeholder">[If pay now: full refund if cancelled before inspection; automatic full refund if the delivery window is missed]</mark></p>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-lg" disabled aria-disabled="true" aria-describedby="order-note">Place order</button>
+              <p class="quote-order-note" id="order-note">[Online ordering not live in this preview]</p>
             </div>
           </div>
         </div>
 
-        <p>Your details stay in your browser to work out the price. We don't send or store them.</p>
+        <p>Your details and date choice stay in your browser. We don't send or store them.</p>
         <p>Not tax advice. The ATO may disagree with a valuation. The free estimate is not signed, validated or certified.</p>
 
         <div class="btn-group">
@@ -120,6 +143,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=design6i"></script>
+  <script src="app.js?v=design6j"></script>
 </body>
 </html>

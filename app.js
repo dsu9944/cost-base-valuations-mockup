@@ -225,6 +225,29 @@
     update();
   }
 
+  /* Order step preview on start.html: valuation-date choice shows/hides detail.
+     Browser-only: no network call, no storage, no URL writes; nothing is submitted. */
+  function initOrderDate() {
+    var group = document.getElementById("valuation-date");
+    if (!group) return;
+    var pastWrap = document.getElementById("o-past-wrap");
+    var preorder = document.getElementById("o-preorder");
+    var pastDate = document.getElementById("o-past-date");
+    if (pastDate) {
+      var d = new Date();
+      var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+      pastDate.max = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+    }
+    function sync() {
+      var picked = group.querySelector('input[type="radio"]:checked');
+      var val = picked ? picked.value : "";
+      pastWrap.hidden = val !== "past";
+      preorder.hidden = val !== "tax";
+    }
+    group.addEventListener("change", sync);
+    sync();
+  }
+
   /* Click-to-play YouTube facade: no YouTube player requests until the user clicks.
      Without JS the facade is a plain link to the YouTube watch page. */
   function initVideoFacades() {
@@ -249,6 +272,7 @@
     initMobileNav();
     initEstimateDemo();
     initQuote();
+    initOrderDate();
     initVideoFacades();
   });
 })();
